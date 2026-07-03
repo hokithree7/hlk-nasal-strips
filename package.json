@@ -1,0 +1,17 @@
+{
+  "name": "hlk-nasal-strips",
+  "version": "1.0.0",
+  "description": "HLK Nasal Strips — Premium B2B Nasal Strip Manufacturer Website",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.2.8",
+    "@fontsource-variable/plus-jakarta-sans": "^5.2.8",
+    "astro": "^5.16.6"
+  }
+}

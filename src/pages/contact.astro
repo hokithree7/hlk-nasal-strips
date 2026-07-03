@@ -1,0 +1,264 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contact HLK — Request Quote for Nasal Strips | Factory Direct"
+  description="Get a factory-direct quotation for nasal strips within 24 hours. Contact HLK by email, WhatsApp, or inquiry form. Free samples available for qualified buyers."
+>
+  <section class="page-header">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>Get a quote within 24 hours. We respond to every inquiry personally.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid-2" style="gap: 3rem;">
+        <!-- Contact form -->
+        <div>
+          <h2 style="margin-bottom: 0.5rem;">Send Us a Message</h2>
+          <p style="margin-bottom: 2rem; color: var(--gray-500);">Fill out the form and our team will get back to you within one business day.</p>
+
+          <form id="contactForm" class="contact-form" novalidate>
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required placeholder="Your name" autocomplete="name">
+            </div>
+
+            <div class="form-group">
+              <label for="company">Company Name</label>
+              <input type="text" id="company" name="company" placeholder="Your company" autocomplete="organization">
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required placeholder="your@email.com" autocomplete="email">
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone / WhatsApp</label>
+                <input type="tel" id="phone" name="phone" placeholder="+1 234 567 8900" autocomplete="tel">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="product">Interested Product *</label>
+              <select id="product" name="product" required>
+                <option value="">Select a product</option>
+                <option value="Classic Nasal Strips">Classic Nasal Strips</option>
+                <option value="Sports Performance Strips">Sports Performance Strips</option>
+                <option value="Custom/Private Label">Custom / Private Label</option>
+                <option value="Other/Multiple Products">Other / Multiple Products</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="quantity">Estimated Order Quantity</label>
+              <select id="quantity" name="quantity">
+                <option value="">Select quantity</option>
+                <option value="Sample Only (Testing)">Sample Only (Testing)</option>
+                <option value="1,000 - 5,000 units">1,000 - 5,000 units</option>
+                <option value="5,000 - 20,000 units">5,000 - 20,000 units</option>
+                <option value="20,000 - 50,000 units">20,000 - 50,000 units</option>
+                <option value="50,000+ units">50,000+ units</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" required placeholder="Tell us about your requirements: target market, packaging preferences, timeline, special requests..."></textarea>
+            </div>
+
+            <!-- Alert area -->
+            <div id="formAlert" style="display:none; padding: 0.85rem 1rem; border-radius: var(--radius-md); margin-bottom: 1rem; font-size: 0.9rem;"></div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;" id="submitBtn">
+              Submit Inquiry
+            </button>
+            <p style="font-size: 0.8rem; color: var(--gray-400); text-align: center; margin-top: 0.75rem;">We respect your privacy. Your information will never be shared.</p>
+          </form>
+        </div>
+
+        <!-- Contact info -->
+        <div>
+          <h2 style="margin-bottom: 0.5rem;">Contact Information</h2>
+          <p style="margin-bottom: 2rem; color: var(--gray-500);">Reach us directly through any of these channels.</p>
+
+          <div style="margin-bottom: 2.5rem;">
+            <div style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.5rem; padding: 1.25rem; background: var(--gray-50); border-radius: var(--radius-md);">
+              <div style="min-width: 44px; height: 44px; background: var(--blue-50); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 1.2rem;"><span aria-hidden="true">&#9993;</span></div>
+              <div>
+                <strong style="display: block; margin-bottom: 0.2rem; font-size: 0.95rem;">Email</strong>
+                <a href="mailto:sales@hlknasalstrips.com" style="font-size: 0.9rem;">sales@hlknasalstrips.com</a>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.5rem; padding: 1.25rem; background: var(--gray-50); border-radius: var(--radius-md);">
+              <div style="min-width: 44px; height: 44px; background: #E8F5E9; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 1.2rem;"><span aria-hidden="true">&#128172;</span></div>
+              <div>
+                <strong style="display: block; margin-bottom: 0.2rem; font-size: 0.95rem;">WhatsApp</strong>
+                <a href="https://wa.me/8619559068109" target="_blank" rel="noopener" style="font-size: 0.9rem;">+86 195 5906 8109</a>
+                <p style="font-size: 0.8rem; color: var(--gray-400); margin-top: 0.25rem;">Available Mon - Sat, 9:00 AM - 6:00 PM (GMT+8)</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.5rem; padding: 1.25rem; background: var(--gray-50); border-radius: var(--radius-md);">
+              <div style="min-width: 44px; height: 44px; background: #FFF3E0; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 1.2rem;"><span aria-hidden="true">&#128222;</span></div>
+              <div>
+                <strong style="display: block; margin-bottom: 0.2rem; font-size: 0.95rem;">Phone</strong>
+                <span style="font-size: 0.9rem;">+86 195 5906 8109</span>
+                <span style="font-size: 0.9rem; display: block;">+86 198 0595 7675</span>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; align-items: flex-start; padding: 1.25rem; background: var(--gray-50); border-radius: var(--radius-md);">
+              <div style="min-width: 44px; height: 44px; background: #F3E5F5; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 1.2rem;"><span aria-hidden="true">&#128205;</span></div>
+              <div>
+                <strong style="display: block; margin-bottom: 0.2rem; font-size: 0.95rem;">Factory Address</strong>
+                <span style="font-size: 0.9rem;">Quanzhou City, Fujian Province</span>
+                <span style="font-size: 0.9rem; display: block;">China 362000</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick links -->
+          <div style="background: linear-gradient(135deg, var(--blue-50), var(--teal-100)); border-radius: var(--radius-lg); padding: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.75rem;">Quick Links</h3>
+            <ul style="list-style: none; padding: 0;">
+              <li style="margin-bottom: 0.5rem;"><a href="/products" style="font-size: 0.9rem;">&rarr; View Product Specifications</a></li>
+              <li style="margin-bottom: 0.5rem;"><a href="/oem" style="font-size: 0.9rem;">&rarr; Learn About OEM Process</a></li>
+              <li style="margin-bottom: 0.5rem;"><a href="/faq" style="font-size: 0.9rem;">&rarr; Frequently Asked Questions</a></li>
+              <li><a href="/blog" style="font-size: 0.9rem;">&rarr; Industry Insights &amp; Articles</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const alertEl = document.getElementById('formAlert');
+  const submitBtn = document.getElementById('submitBtn');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Clear previous state
+    hideAlert();
+    clearFieldErrors();
+
+    // Gather data
+    const data = {
+      name: document.getElementById('name').value.trim(),
+      company: document.getElementById('company').value.trim(),
+      email: document.getElementById('email').value.trim(),
+      phone: document.getElementById('phone').value.trim(),
+      product: document.getElementById('product').value,
+      quantity: document.getElementById('quantity').value,
+      message: document.getElementById('message').value.trim(),
+    };
+
+    // Validate
+    const errors = [];
+    if (!data.name) errors.push({ field: 'name', msg: 'Please enter your name' });
+    if (!data.email) {
+      errors.push({ field: 'email', msg: 'Please enter your email' });
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+      errors.push({ field: 'email', msg: 'Please enter a valid email address' });
+    }
+    if (!data.product) errors.push({ field: 'product', msg: 'Please select a product' });
+    if (!data.message) errors.push({ field: 'message', msg: 'Please enter your message' });
+
+    if (errors.length > 0) {
+      showFieldErrors(errors);
+      return;
+    }
+
+    // Submit
+    setLoading(true);
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json();
+
+      if (res.ok && result.success) {
+        showAlert('success', result.message || 'Thank you! Your inquiry has been sent.');
+        form.reset();
+      } else {
+        showAlert('error', result.error || 'Something went wrong. Please try again.');
+      }
+    } catch {
+      showAlert('error', 'Network error. Please check your connection and try again.');
+    } finally {
+      setLoading(false);
+    }
+  });
+
+  function setLoading(loading) {
+    submitBtn.disabled = loading;
+    submitBtn.innerHTML = loading
+      ? '<span style="display:inline-block;width:18px;height:18px;border:2px solid rgba(255,255,255,0.3);border-top-color:white;border-radius:50%;animation:spin 0.6s linear infinite;margin-right:8px;"></span>Sending...'
+      : 'Submit Inquiry';
+  }
+
+  function showAlert(type, message) {
+    alertEl.style.display = 'block';
+    alertEl.textContent = message;
+    if (type === 'success') {
+      alertEl.style.background = '#ECFDF5';
+      alertEl.style.color = '#065F46';
+      alertEl.style.border = '1px solid #A7F3D0';
+    } else {
+      alertEl.style.background = '#FEF2F2';
+      alertEl.style.color = '#991B1B';
+      alertEl.style.border = '1px solid #FECACA';
+    }
+    alertEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function hideAlert() {
+    alertEl.style.display = 'none';
+  }
+
+  function showFieldErrors(errors) {
+    errors.forEach(({ field, msg }) => {
+      const el = document.getElementById(field);
+      if (el) {
+        el.style.borderColor = 'var(--red-500)';
+        el.style.boxShadow = '0 0 0 3px rgba(239,68,68,0.1)';
+        // Show error text below field
+        let errSpan = el.parentNode.querySelector('.field-error');
+        if (!errSpan) {
+          errSpan = document.createElement('span');
+          errSpan.className = 'field-error';
+          errSpan.style.cssText = 'display:block;font-size:0.8rem;color:var(--red-500);margin-top:0.3rem;';
+          el.parentNode.appendChild(errSpan);
+        }
+        errSpan.textContent = msg;
+      }
+    });
+  }
+
+  function clearFieldErrors() {
+    document.querySelectorAll('.form-group input, .form-group textarea, .form-group select').forEach((el) => {
+      el.style.borderColor = 'var(--gray-200)';
+      el.style.boxShadow = '';
+    });
+    document.querySelectorAll('.field-error').forEach((el) => el.remove());
+  }
+</script>
+
+<style>
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+</style>

@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const posts = [
+  {
+    slug: 'how-to-choose-nasal-strips',
+    title: 'How to Choose the Right Nasal Strips for Your Market',
+    excerpt: 'Key factors to consider when selecting nasal strips for different regions and consumer segments — from adhesive strength to packaging preferences.',
+    date: 'June 28, 2026',
+    readTime: '5 min read',
+    category: 'Product Guide',
+  },
+  {
+    slug: 'nasal-strips-vs-sprays',
+    title: 'Nasal Strips vs. Nasal Sprays: What Retailers Should Know',
+    excerpt: 'A comprehensive product comparison to help retailers, distributors, and brand owners understand the market opportunity for nasal strips.',
+    date: 'June 28, 2026',
+    readTime: '6 min read',
+    category: 'Market Insights',
+  },
+  {
+    slug: 'oem-nasal-strips-guide',
+    title: 'OEM Nasal Strips: A Complete Guide for Importers',
+    excerpt: 'Step-by-step process for launching your own nasal strip brand from China — from supplier selection to final delivery.',
+    date: 'June 28, 2026',
+    readTime: '7 min read',
+    category: 'Import Guide',
+  },
+];
+---
+
+<BaseLayout
+  title="Blog — Nasal Strips Industry Insights & Market Intelligence | HLK"
+  description="Expert articles on nasal strip manufacturing, OEM importing, market trends, retailer guides, and breathing health. Written for B2B buyers and brand owners."
+>
+  <section class="page-header">
+    <div class="container">
+      <h1>Industry Insights</h1>
+      <p>Market intelligence and expert guides for nasal strip buyers, importers, and brand owners.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="blog-grid">
+        {posts.map(post => (
+          <div class="blog-card">
+            <div class="blog-card-image" style="background: linear-gradient(135deg, #E3F2FD, #BBDEFB); display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">
+              {post.slug === 'how-to-choose-nasal-strips' ? '📋' : post.slug === 'nasal-strips-vs-sprays' ? '📊' : '📦'}
+            </div>
+            <div class="blog-card-body">
+              <div style="margin-bottom: 0.5rem;">
+                <span class="badge badge-blue" style="font-size: 0.7rem;">{post.category}</span>
+              </div>
+              <h3>
+                <a href={`/blog/${post.slug}`} style="color: var(--gray-900);">
+                  {post.title}
+                </a>
+              </h3>
+              <p>{post.excerpt}</p>
+              <div class="blog-card-meta">
+                <span>{post.date}</span>
+                <span>{post.readTime}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
