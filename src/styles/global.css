@@ -1024,3 +1024,38 @@ img {
 @media (max-width: 768px) {
   .oem-additional-options { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* Certification logos banner (replaces text badges) */
+.cert-logos-banner {
+  background: white;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--gray-200);
+  padding: 2rem 2.5rem;
+  margin-top: 2.5rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition);
+}
+
+.cert-logos-banner:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--blue-200);
+}
+
+.cert-logos-banner img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.cert-logos-banner .banner-caption {
+  font-size: 0.8rem;
+  color: var(--gray-400);
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .cert-logos-banner { padding: 1.5rem 1rem; }
+}
