@@ -3,149 +3,380 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Nasal Strips — Specifications, Pricing & Custom Options | HLK"
-  description="Browse HLK nasal strip product line: classic, sports, and custom. Full specifications, OEM options, MOQ, and packaging details. Factory-direct wholesale pricing."
+  title="Nasal Strips, Mouth Tape, Sleep Patches & Face Tape — Full Product Line | HLK"
+  description="Complete product catalog: nasal strips, mouth tape, sleep patches, face tape & OEM custom solutions. Factory-direct pricing, FDA/CE certified. Wholesale & bulk orders."
 >
   <!-- ===== Page Header ===== -->
   <section class="page-header">
     <div class="container">
-      <h1>Nasal Strip Products</h1>
-      <p>Medical-grade nasal strips manufactured in our FDA-registered, ISO 13485 certified facility.</p>
+      <h1>Our Products</h1>
+      <p>Medical-grade adhesive products manufactured in our 5,000m&sup2; T&Uuml;V Rheinland certified facility. Four product lines, unlimited customization possibilities.</p>
     </div>
   </section>
 
-  <!-- ===== Classic Nasal Strips ===== -->
-  <section class="section">
+  <!-- ===== Product Category Nav ===== -->
+  <section style="background: var(--gray-50); padding: 1rem 0; position: sticky; top: 0; z-index: 50; border-bottom: 1px solid var(--gray-200);">
     <div class="container">
-      <div class="product-grid">
-        <div class="product-image" style="background: linear-gradient(135deg, #E3F2FD, #BBDEFB); min-height: 380px; display: flex; align-items: center; justify-content: center; font-size: 6rem;">
-          🫁
-        </div>
-        <div>
-          <span class="badge badge-blue" style="margin-bottom: 1rem;">Bestseller</span>
-          <h2 style="margin-bottom: 0.75rem;">Classic Nasal Strips</h2>
-          <p style="margin-bottom: 1rem;">Our most popular product, trusted by leading brands worldwide. Dual spring-action bands with medical-grade hypoallergenic adhesive that gently lifts nasal passages for improved airflow.</p>
+      <nav style="display: flex; gap: 0.5rem; overflow-x: auto; padding-bottom: 0.25rem;" aria-label="Product categories">
+        <a href="#nasal-strips" style="white-space: nowrap; padding: 0.5rem 1.2rem; background: var(--blue-600); color: white; border-radius: 50px; font-size: 0.85rem; font-weight: 600; text-decoration: none;">Nasal Strips</a>
+        <a href="#mouth-tape" style="white-space: nowrap; padding: 0.5rem 1.2rem; background: white; color: var(--gray-700); border-radius: 50px; font-size: 0.85rem; font-weight: 600; text-decoration: none; border: 1px solid var(--gray-300);">Mouth Tape</a>
+        <a href="#sleep-patch" style="white-space: nowrap; padding: 0.5rem 1.2rem; background: white; color: var(--gray-700); border-radius: 50px; font-size: 0.85rem; font-weight: 600; text-decoration: none; border: 1px solid var(--gray-300);">Sleep Patch</a>
+        <a href="#face-tape" style="white-space: nowrap; padding: 0.5rem 1.2rem; background: white; color: var(--gray-700); border-radius: 50px; font-size: 0.85rem; font-weight: 600; text-decoration: none; border: 1px solid var(--gray-300);">Face Tape</a>
+      </nav>
+    </div>
+  </section>
 
-          <h3 style="font-size: 1.1rem; margin-bottom: 0.75rem;">Specifications</h3>
+  <!-- ========================================== -->
+  <!-- NASAL STRIPS -->
+  <!-- ========================================== -->
+  <section id="nasal-strips" class="section">
+    <div class="container">
+      <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+        <span style="font-size: 2.2rem;">🫁</span>
+        <div>
+          <h2 class="section-title" style="margin-bottom: 0.25rem;">Nasal Strips</h2>
+          <p class="section-subtitle" style="margin-bottom: 0;">Dual spring-action bands. Instant airflow improvement. FDA, CE, ISO 13485 certified.</p>
+        </div>
+      </div>
+
+      <!-- Classic -->
+      <div class="product-detail-card" style="margin-top: 2.5rem;">
+        <div class="product-detail-image">
+          <img src="/images/1 (1).jpg" alt="HLK Classic Nasal Strips — Clear & Tan" loading="lazy" style="width: 100%; height: auto; border-radius: 12px;" />
+        </div>
+        <div class="product-detail-info">
+          <span class="badge badge-blue" style="margin-bottom: 0.75rem;">Bestseller</span>
+          <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;">Classic Nasal Strips</h3>
+          <p style="margin-bottom: 1.25rem; color: var(--gray-600);">Our flagship product trusted by leading brands globally. Medical-grade hypoallergenic adhesive with dual spring-action bands gently lifts nasal passages for immediate airflow improvement. Available in clear, tan, and custom Pantone-matched colors.</p>
+
           <table class="spec-table">
             <tr><th>Material</th><td>Non-woven fabric + PET spring bands</td></tr>
-            <tr><th>Adhesive</th><td>Medical-grade acrylic, hypoallergenic</td></tr>
-            <tr><th>Sizes</th><td>Medium (55mm x 16mm), Large (66mm x 19mm)</td></tr>
-            <tr><th>Colors</th><td>Clear, Tan, Custom (Pantone match)</td></tr>
-            <tr><th>Packaging</th><td>Individual sachet, 10/30/50/100 pcs per box</td></tr>
-            <tr><th>Certifications</th><td>FDA, CE, ISO 13485, SGS, RoHS</td></tr>
-            <tr><th>MOQ</th><td>1,000 boxes (custom packaging / 5,000 boxes)</td></tr>
-            <tr><th>Lead Time</th><td>Samples 3-5 days / Bulk 7-15 days</td></tr>
+            <tr><th>Adhesive</th><td>Medical-grade hypoallergenic acrylic</td></tr>
+            <tr><th>Sizes</th><td>Medium (55&times;16mm), Large (66&times;19mm), Custom</td></tr>
+            <tr><th>Colors</th><td>Clear, Tan, Black, Custom Pantone</td></tr>
+            <tr><th>Packaging</th><td>Individual sachet / 10-100 pcs per box</td></tr>
+            <tr><th>MOQ</th><td>1,000 boxes (custom 5,000)</td></tr>
+            <tr><th>Price Range</th><td>$0.03-0.05/piece (bulk)</td></tr>
           </table>
 
-          <div style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
-            <a href="/contact" class="btn btn-primary">Get Quotation</a>
-            <a href="/oem" class="btn btn-outline">Custom Options</a>
+          <!-- Product gallery thumbnails -->
+          <div style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap;">
+            <img src="/images/1 (2).jpg" alt="Nasal strip variant" loading="lazy" style="width: 72px; height: 72px; object-fit: cover; border-radius: 8px; border: 2px solid var(--gray-200);" />
+            <img src="/images/1 (3).jpg" alt="Nasal strip variant" loading="lazy" style="width: 72px; height: 72px; object-fit: cover; border-radius: 8px; border: 2px solid var(--gray-200);" />
+            <img src="/images/1 (4).jpg" alt="Nasal strip variant" loading="lazy" style="width: 72px; height: 72px; object-fit: cover; border-radius: 8px; border: 2px solid var(--gray-200);" />
+            <img src="/images/1 (5).jpg" alt="Nasal strip variant" loading="lazy" style="width: 72px; height: 72px; object-fit: cover; border-radius: 8px; border: 2px solid var(--gray-200);" />
+          </div>
+
+          <div style="margin-top: 1.25rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <a href="/contact" class="btn btn-primary" style="font-size: 0.9rem;">Request Quote</a>
+            <a href="/oem" class="btn btn-outline" style="font-size: 0.9rem;">Customize Yours</a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ===== Sports Strips ===== -->
-  <section class="section" style="background: var(--gray-50);">
-    <div class="container">
-      <div class="product-grid">
-        <div>
-          <span class="badge badge-teal" style="margin-bottom: 1rem;">Popular</span>
-          <h2 style="margin-bottom: 0.75rem;">Sports Performance Strips</h2>
-          <p style="margin-bottom: 1rem;">Engineered for athletes and fitness enthusiasts. Extra-strong adhesive withstands intense sweat and movement. Ultra-breathable material ensures comfort during extended wear.</p>
+      <!-- Sports -->
+      <div class="product-detail-card product-detail-card--reverse" style="margin-top: 3rem;">
+        <div class="product-detail-image">
+          <img src="/images/hlk_sports_performance.jpg" alt="HLK Sports Performance Nasal Strips" loading="lazy" style="width: 100%; height: auto; border-radius: 12px;" />
+        </div>
+        <div class="product-detail-info">
+          <span class="badge badge-teal" style="margin-bottom: 0.75rem;">Athlete Favorite</span>
+          <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;">Sports Performance Strips</h3>
+          <p style="margin-bottom: 1.25rem; color: var(--gray-600);">Engineered for high-intensity activity. Extra-strength sweat-resistant adhesive stays secure through the toughest workouts. Ultra-breathable material for extended comfort.</p>
 
-          <h3 style="font-size: 1.1rem; margin-bottom: 0.75rem;">Specifications</h3>
           <table class="spec-table">
             <tr><th>Material</th><td>Breathable non-woven + reinforced spring</td></tr>
             <tr><th>Adhesive</th><td>Extra-strength sweat-resistant acrylic</td></tr>
             <tr><th>Sizes</th><td>Standard, Large</td></tr>
             <tr><th>Colors</th><td>Black, Blue, Neon, Custom</td></tr>
-            <tr><th>Packaging</th><td>10/30/50 pcs per box</td></tr>
-            <tr><th>Certifications</th><td>FDA, CE, ISO 13485</td></tr>
             <tr><th>MOQ</th><td>1,000 boxes</td></tr>
-            <tr><th>Lead Time</th><td>Samples 3-5 days / Bulk 7-15 days</td></tr>
+            <tr><th>Price Range</th><td>$0.03-0.05/piece</td></tr>
           </table>
 
-          <div style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
-            <a href="/contact" class="btn btn-primary">Get Quotation</a>
-            <a href="/oem" class="btn btn-outline">Custom Options</a>
+          <div style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap;">
+            <img src="/images/1 (6).jpg" alt="Sports strip" loading="lazy" style="width: 72px; height: 72px; object-fit: cover; border-radius: 8px; border: 2px solid var(--gray-200);" />
+            <img src="/images/hlk_outdoor_fitness.jpg" alt="Outdoor fitness" loading="lazy" style="width: 72px; height: 72px; object-fit: cover; border-radius: 8px; border: 2px solid var(--gray-200);" />
+            <img src="/images/1 (7).jpg" alt="Sports strip variant" loading="lazy" style="width: 72px; height: 72px; object-fit: cover; border-radius: 8px; border: 2px solid var(--gray-200);" />
+            <img src="/images/1 (8).jpg" alt="Sports strip variant" loading="lazy" style="width: 72px; height: 72px; object-fit: cover; border-radius: 8px; border: 2px solid var(--gray-200);" />
+          </div>
+
+          <div style="margin-top: 1.25rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <a href="/contact" class="btn btn-primary" style="font-size: 0.9rem;">Get Quotation</a>
+            <a href="/oem" class="btn btn-outline" style="font-size: 0.9rem;">Custom Options</a>
           </div>
         </div>
-        <div class="product-image" style="background: linear-gradient(135deg, #E3F2FD, #90CAF9); min-height: 380px; display: flex; align-items: center; justify-content: center; font-size: 6rem;">
-          🏃
-        </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ===== Custom / Private Label ===== -->
-  <section class="section">
-    <div class="container">
-      <div class="product-grid">
-        <div class="product-image" style="background: linear-gradient(135deg, #ECFDF5, #A7F3D0); min-height: 380px; display: flex; align-items: center; justify-content: center; font-size: 6rem;">
-          ✨
+      <!-- Private Label -->
+      <div class="product-detail-card" style="margin-top: 3rem;">
+        <div class="product-detail-image">
+          <img src="/images/1 (9).jpg" alt="HLK Custom Private Label Nasal Strips" loading="lazy" style="width: 100%; height: auto; border-radius: 12px;" />
         </div>
-        <div>
-          <span class="badge badge-green" style="margin-bottom: 1rem;">Customizable</span>
-          <h2 style="margin-bottom: 0.75rem;">Custom Private Label Nasal Strips</h2>
-          <p style="margin-bottom: 1rem;">Everything is negotiable. We develop nasal strips to your exact specifications — from adhesive formulation to packaging artwork. Your brand, built by the experts.</p>
+        <div class="product-detail-info">
+          <span class="badge badge-green" style="margin-bottom: 0.75rem;">Fully Customizable</span>
+          <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;">Custom Private Label Nasal Strips</h3>
+          <p style="margin-bottom: 1.25rem; color: var(--gray-600);">Your brand, our expertise. From adhesive formulation to packaging artwork — we develop nasal strips to your exact specifications. Low MOQ, fast sampling.</p>
 
-          <h3 style="font-size: 1.1rem; margin-bottom: 0.75rem;">What We Can Customize</h3>
           <table class="spec-table">
             <tr><th>Strip Size</th><td>Any dimensions — pediatric to extra-large</td></tr>
-            <tr><th>Adhesive Strength</th><td>Gentle to extra-strong for sports</td></tr>
+            <tr><th>Adhesive Strength</th><td>Gentle to extra-strong (sports grade)</td></tr>
             <tr><th>Material</th><td>Non-woven, transparent film, fabric</td></tr>
             <tr><th>Color</th><td>Any Pantone color, multi-color</td></tr>
-            <tr><th>Packaging</th><td>Box design, sachet, blister, retail display</td></tr>
-            <tr><th>Formulation</th><td>Add menthol, lavender, or other ingredients</td></tr>
-            <tr><th>MOQ</th><td>5,000 boxes for custom packaging</td></tr>
-            <tr><th>Sample Fee</th><td>Refundable on first order</td></tr>
+            <tr><th>Additives</th><td>Menthol, lavender, essential oils</td></tr>
+            <tr><th>MOQ</th><td>5,000 boxes (custom packaging)</td></tr>
+            <tr><th>Sample Lead Time</th><td>3-5 business days</td></tr>
           </table>
 
-          <div style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
-            <a href="/contact" class="btn btn-primary">Start Your Project</a>
-            <a href="/oem" class="btn btn-outline">OEM Process</a>
+          <div style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap;">
+            <img src="/images/1 (10).jpg" alt="Custom strip" loading="lazy" style="width: 72px; height: 72px; object-fit: cover; border-radius: 8px; border: 2px solid var(--gray-200);" />
+            <img src="/images/1 (11).jpg" alt="Custom strip" loading="lazy" style="width: 72px; height: 72px; object-fit: cover; border-radius: 8px; border: 2px solid var(--gray-200);" />
+            <img src="/images/1 (12).jpg" alt="Custom strip" loading="lazy" style="width: 72px; height: 72px; object-fit: cover; border-radius: 8px; border: 2px solid var(--gray-200);" />
+            <img src="/images/H277fd7e90574484c999769043aefbb56v.jpg" alt="Package variant" loading="lazy" style="width: 72px; height: 72px; object-fit: cover; border-radius: 8px; border: 2px solid var(--gray-200);" />
+          </div>
+
+          <div style="margin-top: 1.25rem;">
+            <a href="/contact" class="btn btn-primary" style="font-size: 0.9rem;">Start Your Project</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== Packaging Options ===== -->
-  <section class="section" style="background: var(--gray-50);">
+  <!-- ========================================== -->
+  <!-- MOUTH TAPE -->
+  <!-- ========================================== -->
+  <section id="mouth-tape" class="section" style="background: var(--gray-50);">
     <div class="container">
-      <h2 class="section-title">Packaging Options</h2>
-      <p class="section-subtitle">Flexible packaging solutions for every retail channel.</p>
+      <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+        <span style="font-size: 2.2rem;">😴</span>
+        <div>
+          <h2 class="section-title" style="margin-bottom: 0.25rem;">Mouth Tape</h2>
+          <p class="section-subtitle" style="margin-bottom: 0;">Promote nasal breathing during sleep. Hypoallergenic, latex-free, comfortable all-night wear.</p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="card" style="overflow: hidden;">
+          <img src="/images/mouth-tape-classic.jpg" alt="Classic Mouth Tape" loading="lazy" style="width: 100%; height: 220px; object-fit: cover;" />
+          <div style="padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem;">Classic Mouth Tape</h3>
+            <p style="font-size: 0.88rem; color: var(--gray-600); margin-bottom: 0.75rem;">Soft non-woven fabric. Gentle adhesive. 30 strips per box. Perfect for first-time users.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: 700; color: var(--blue-600);">$0.02-0.04/pc</span>
+              <span class="badge badge-blue">MOQ 1,000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="overflow: hidden;">
+          <img src="/images/mouth-tape-black.jpg" alt="Black Mouth Tape" loading="lazy" style="width: 100%; height: 220px; object-fit: cover;" />
+          <div style="padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem;">Black Cotton Mouth Tape</h3>
+            <p style="font-size: 0.88rem; color: var(--gray-600); margin-bottom: 0.75rem;">Premium cotton material in sleek black. Stylish alternative for the modern consumer.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: 700; color: var(--blue-600);">$0.03-0.04/pc</span>
+              <span class="badge badge-blue">MOQ 1,000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="overflow: hidden;">
+          <img src="/images/mouth-tape-cotton.jpg" alt="Infused Collagen Mouth Tape" loading="lazy" style="width: 100%; height: 220px; object-fit: cover;" />
+          <div style="padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem;">Infused Collagen Mouth Tape</h3>
+            <p style="font-size: 0.88rem; color: var(--gray-600); margin-bottom: 0.75rem;">6-ingredient formula: Vitamin, Aloe, COQ10 + Collagen. Reusable up to 30 days.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: 700; color: var(--blue-600);">$0.03-0.05/pc</span>
+              <span class="badge badge-teal">New!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <table class="spec-table" style="margin-top: 2rem; max-width: 700px;">
+        <tr><th>Material Options</th><td>Non-woven fabric, Cotton, Nylon, Custom</td></tr>
+        <tr><th>Adhesive</th><td>Medical-grade, latex-free, hypoallergenic</td></tr>
+        <tr><th>Shape</th><td>Rectangle, Oval, X-shape, Custom die-cut</td></tr>
+        <tr><th>Packaging</th><td>30/60/90 strips per box</td></tr>
+        <tr><th>Certifications</th><td>CE, FDA, ISO 13485, SGS</td></tr>
+        <tr><th>Customization</th><td>Size, shape, color, ingredient infusion, packaging</td></tr>
+      </table>
+
+      <div style="margin-top: 1.5rem;">
+        <a href="/contact" class="btn btn-primary">Inquire About Mouth Tape</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- SLEEP PATCH -->
+  <!-- ========================================== -->
+  <section id="sleep-patch" class="section">
+    <div class="container">
+      <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+        <span style="font-size: 2.2rem;">🌿</span>
+        <div>
+          <h2 class="section-title" style="margin-bottom: 0.25rem;">Sleep Patch</h2>
+          <p class="section-subtitle" style="margin-bottom: 0;">100% natural plant-based sleep aid. Drug-free, melatonin-free, 8-hour slow release.</p>
+        </div>
+      </div>
+
+      <div class="product-detail-card">
+        <div class="product-detail-image">
+          <img src="/images/sleep-patch-lavender.jpg" alt="HLK Sleep Patch — Lavender & Chamomile" loading="lazy" style="width: 100%; height: auto; border-radius: 12px;" />
+        </div>
+        <div class="product-detail-info">
+          <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;">Natural Plant Sleep Patches</h3>
+          <p style="margin-bottom: 1rem; color: var(--gray-600);">Drug-free sleep solution using lavender, chamomile and other natural essential oils. 8-hour slow-release mechanism through breathable spunlace nonwoven backing. Perfect for the growing wellness and natural products market.</p>
+
+          <table class="spec-table">
+            <tr><th>Active Ingredients</th><td>Lavender, Chamomile, Valerian, Custom blends</td></tr>
+            <tr><th>Release Duration</th><td>8 hours sustained release</td></tr>
+            <tr><th>Material</th><td>Breathable spunlace nonwoven</td></tr>
+            <tr><th>Pack Size</th><td>30/60/90 patches per box</td></tr>
+            <tr><th>MOQ</th><td>1,000 boxes</td></tr>
+            <tr><th>Price Range</th><td>$0.01-0.12/patch (varies by formula)</td></tr>
+          </table>
+
+          <div style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap;">
+            <img src="/images/sleep-patch-chamomile.jpg" alt="Sleep patch chamomile" loading="lazy" style="width: 72px; height: 72px; object-fit: cover; border-radius: 8px; border: 2px solid var(--gray-200);" />
+            <img src="/images/sleep-patch-box.jpg" alt="Sleep patch packaging" loading="lazy" style="width: 72px; height: 72px; object-fit: cover; border-radius: 8px; border: 2px solid var(--gray-200);" />
+            <img src="/images/11.jpg" alt="Sleep patch variant" loading="lazy" style="width: 72px; height: 72px; object-fit: cover; border-radius: 8px; border: 2px solid var(--gray-200);" />
+          </div>
+
+          <div style="margin-top: 1.25rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <a href="/contact" class="btn btn-primary" style="font-size: 0.9rem;">Request Sleep Patch Quote</a>
+            <a href="/oem" class="btn btn-outline" style="font-size: 0.9rem;">Custom Formula</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- FACE TAPE -->
+  <!-- ========================================== -->
+  <section id="face-tape" class="section" style="background: var(--gray-50);">
+    <div class="container">
+      <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+        <span style="font-size: 2.2rem;">✨</span>
+        <div>
+          <h2 class="section-title" style="margin-bottom: 0.25rem;">Face Tape</h2>
+          <p class="section-subtitle" style="margin-bottom: 0;">Anti-wrinkle, face lifting & jawline contouring. Premium kinesiology-grade materials.</p>
+        </div>
+      </div>
+
+      <div class="product-detail-card product-detail-card--reverse">
+        <div class="product-detail-image">
+          <img src="/images/face-tape-lifting.jpg" alt="HLK Face Lifting Tape — Anti-Wrinkle" loading="lazy" style="width: 100%; height: auto; border-radius: 12px;" />
+        </div>
+        <div class="product-detail-info">
+          <span class="badge badge-teal" style="margin-bottom: 0.75rem;">Beauty &amp; Wellness</span>
+          <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;">Face Lifting Tape</h3>
+          <p style="margin-bottom: 1rem; color: var(--gray-600);">Premium kinesiology-grade cotton face tape for anti-wrinkle, double chin lifting, jawline contouring and forehead firming. Latex-free, hypoallergenic, ultra-thin design that disappears under makeup.</p>
+
+          <table class="spec-table">
+            <tr><th>Material</th><td>Cotton, Kinesiology stretch fabric</td></tr>
+            <tr><th>Adhesive</th><td>Medical-grade hypoallergenic acrylic</td></tr>
+            <tr><th>Available Shapes</th><td>Precut strips, V-line, Jawline, Forehead</td></tr>
+            <tr><th>Packaging</th><td>30/60 pcs per box</td></tr>
+            <tr><th>MOQ</th><td>1,000 boxes</td></tr>
+            <tr><th>Price Range</th><td>$0.06-0.50/piece</td></tr>
+          </table>
+
+          <div style="margin-top: 1.25rem;">
+            <a href="/contact" class="btn btn-primary" style="font-size: 0.9rem;">Get Face Tape Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- PACKAGING OPTIONS -->
+  <!-- ========================================== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Packaging That Sells</h2>
+      <p class="section-subtitle">Every product line available in flexible packaging formats for any retail channel.</p>
 
       <div class="grid-3" style="margin-top: 2rem;">
         <div class="card" style="text-align: center;">
           <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">📦</div>
           <h3 style="margin-bottom: 0.5rem; font-size: 1.1rem;">Individual Sachet</h3>
           <p style="font-size: 0.9rem;">Single-use foil sachet. Best for pharmacy &amp; drugstore retail. 10/30/50 per box.</p>
+          <span class="badge badge-blue" style="margin-top: 0.5rem;">Most Popular</span>
         </div>
         <div class="card" style="text-align: center;">
           <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">🎁</div>
           <h3 style="margin-bottom: 0.5rem; font-size: 1.1rem;">Retail Display Box</h3>
           <p style="font-size: 0.9rem;">Counter-top display with peg hole. Full-color custom print. 12/24/48 units.</p>
+          <span class="badge badge-teal" style="margin-top: 0.5rem;">Shelf-Ready</span>
         </div>
         <div class="card" style="text-align: center;">
           <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">🏪</div>
           <h3 style="margin-bottom: 0.5rem; font-size: 1.1rem;">Club / Bulk Pack</h3>
           <p style="font-size: 0.9rem;">100+ count value packs for warehouse clubs and subscription box channels.</p>
+          <span class="badge badge-green" style="margin-top: 0.5rem;">High Value</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- FACTORY LIFESTYLE IMAGE SECTION -->
+  <!-- ========================================== -->
+  <section class="section" style="background: var(--gray-50);">
+    <div class="container">
+      <h2 class="section-title">Quality You Can See</h2>
+      <p class="section-subtitle">Real product photography from our manufacturing facility and real-world usage.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 2rem;">
+        <img src="/images/HLK_Lifestyle_Female_Model.jpg" alt="HLK Nasal Strip Lifestyle" loading="lazy" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px;" />
+        <img src="/images/hlk_outdoor_fitness.jpg" alt="HLK Sports Nasal Strip in Use" loading="lazy" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px;" />
+        <img src="/images/combo-strips-tape.jpg" alt="HLK Product Combination" loading="lazy" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px;" />
       </div>
     </div>
   </section>
 
   <!-- ===== CTA ===== -->
   <section class="cta-section">
-    <h2>Find the Right Nasal Strip for Your Market</h2>
-    <p>Not sure which product fits your target customers? Let us help you select the right specification, packaging, and pricing tier.</p>
+    <h2>Not Sure Which Product Fits Your Market?</h2>
+    <p>Our product specialists can recommend the right product mix, specifications, and packaging for your target customers. Free consultation, no obligation.</p>
     <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
       <a href="/contact" class="btn btn-white btn-lg">Get Expert Recommendation</a>
-      <a href="https://wa.me/8619559068109" target="_blank" rel="noopener" class="btn btn-outline btn-lg" style="border-color: rgba(255,255,255,0.5); color: white;">WhatsApp Us</a>
+      <a href="https://wa.me/8619559068109" target="_blank" rel="noopener" class="btn btn-outline btn-lg" style="border-color: rgba(255,255,255,0.5); color: white;">WhatsApp: +86 19559068109</a>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+.product-detail-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  border: 1px solid var(--gray-100);
+}
+
+.product-detail-card--reverse .product-detail-image {
+  order: 2;
+}
+.product-detail-card--reverse .product-detail-info {
+  order: 1;
+}
+
+@media (max-width: 768px) {
+  .product-detail-card {
+    grid-template-columns: 1fr;
+    padding: 1.25rem;
+  }
+  .product-detail-card--reverse .product-detail-image {
+    order: 0;
+  }
+}
+</style>

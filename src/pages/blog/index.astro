@@ -45,9 +45,7 @@ const posts = [
       <div class="blog-grid">
         {posts.map(post => (
           <div class="blog-card">
-            <div class="blog-card-image" style="background: linear-gradient(135deg, #E3F2FD, #BBDEFB); display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">
-              {post.slug === 'how-to-choose-nasal-strips' ? '📋' : post.slug === 'nasal-strips-vs-sprays' ? '📊' : '📦'}
-            </div>
+            <img src={post.slug === 'how-to-choose-nasal-strips' ? '/images/1 (1).jpg' : post.slug === 'nasal-strips-vs-sprays' ? '/images/hlk_sports_performance.jpg' : '/images/1 (9).jpg'} alt={post.title} loading="lazy" class="blog-card-image" style="object-fit: cover;" />
             <div class="blog-card-body">
               <div style="margin-bottom: 0.5rem;">
                 <span class="badge badge-blue" style="font-size: 0.7rem;">{post.category}</span>
