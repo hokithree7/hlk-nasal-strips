@@ -901,4 +901,126 @@ img {
   .factory-gallery { grid-template-columns: 1fr; }
   .video-gallery { grid-template-columns: 1fr; }
   .factory-stats { grid-template-columns: 1fr; }
+  .oem-additional-options { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Customization Process Infographic */
+.customization-infographic {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--gray-200);
+  transition: all var(--transition);
+  cursor: zoom-in;
+  background: white;
+}
+
+.customization-infographic:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-3px);
+  border-color: var(--blue-300);
+}
+
+.customization-infographic img {
+  width: 100%;
+  height: auto;
+  display: block;
+  padding: 0.5rem;
+  border-radius: var(--radius-xl);
+}
+
+.oem-step-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.oem-step-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1rem;
+  background: var(--gray-50);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--gray-100);
+  transition: all var(--transition);
+}
+
+.oem-step-item:hover {
+  border-color: var(--blue-300);
+  box-shadow: var(--shadow-sm);
+  transform: translateX(4px);
+}
+
+.oem-step-num {
+  min-width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue-500), var(--teal-500));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(30, 136, 229, 0.25);
+}
+
+.oem-step-item h4 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: var(--gray-900);
+}
+
+.oem-step-item p {
+  font-size: 0.85rem;
+  color: var(--gray-500);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.oem-additional-options {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--gray-300);
+}
+
+.oem-additional-option {
+  text-align: center;
+  padding: 1.25rem 0.75rem;
+  background: white;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--gray-200);
+  transition: all var(--transition);
+}
+
+.oem-additional-option:hover {
+  border-color: var(--blue-300);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.oem-additional-option .addon-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.oem-additional-option h5 {
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+  color: var(--gray-800);
+}
+
+.oem-additional-option p {
+  font-size: 0.78rem;
+  color: var(--gray-500);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .oem-additional-options { grid-template-columns: repeat(2, 1fr); }
 }
