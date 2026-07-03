@@ -31,5 +31,36 @@ const { title, description } = Astro.props;
       <slot />
     </main>
     <Footer />
+
+    <!-- Certificate Lightbox Dialog -->
+    <dialog id="cert-lightbox" class="cert-lightbox">
+      <div class="cert-lightbox-inner">
+        <img id="cert-lightbox-img" src="" alt="Certificate" />
+        <div class="cert-lightbox-close">
+          <span id="cert-lightbox-caption">Certificate</span>
+          <button onclick="document.getElementById('cert-lightbox').close()">Close</button>
+        </div>
+      </div>
+    </dialog>
+    <script>
+      (function() {
+        const lightbox = document.getElementById('cert-lightbox');
+        const img = document.getElementById('cert-lightbox-img');
+        const caption = document.getElementById('cert-lightbox-caption');
+        document.querySelectorAll('.cert-lightbox-trigger').forEach(el => {
+          el.addEventListener('click', function() {
+            img.src = this.dataset.full || this.src;
+            caption.textContent = this.alt || 'Certificate';
+            lightbox.showModal();
+          });
+        });
+        lightbox.addEventListener('click', function(e) {
+          if (e.target === lightbox) lightbox.close();
+        });
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && lightbox.open) lightbox.close();
+        });
+      })();
+    </script>
   </body>
 </html>

@@ -146,6 +146,59 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
+  <!-- ===== FACTORY SHOWCASE ===== -->
+  <section class="section" style="background: var(--gray-50);">
+    <div class="container">
+      <h2 class="section-title">Our Manufacturing Facility</h2>
+      <p class="section-subtitle">5,000m² production base with automated lines, in-house R&D, and strict QC — serving global brands since 2005.</p>
+
+      <div class="factory-stats">
+        <div class="stat-item">
+          <div class="stat-number">5,000</div>
+          <div class="stat-label">m² Production Base</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">5</div>
+          <div class="stat-label">Automated Lines</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">2M+</div>
+          <div class="stat-label">Monthly Capacity</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">30+</div>
+          <div class="stat-label">Export Countries</div>
+        </div>
+      </div>
+
+      <div class="factory-gallery">
+        <div class="factory-item">
+          <img src="/images/factory-banner-1.jpg" alt="HLK OEM ODM Manufacturing" loading="lazy" />
+          <div class="factory-caption">OEM/ODM Production</div>
+        </div>
+        <div class="factory-item">
+          <img src="/images/factory-banner-2.jpg" alt="One-Stop Custom Tape Supplier" loading="lazy" />
+          <div class="factory-caption">Full Customization</div>
+        </div>
+        <div class="factory-item">
+          <img src="/images/factory-banner-3.jpg" alt="HLK Product Portfolio" loading="lazy" />
+          <div class="factory-caption">Product Portfolio</div>
+        </div>
+        <div class="factory-item">
+          <img src="/images/factory-banner-4.jpg" alt="Private Label Packaging" loading="lazy" />
+          <div class="factory-caption">Private Label Packaging</div>
+        </div>
+      </div>
+
+      <div class="vr-tour-card" style="margin-top: 2rem; grid-column: 1 / -1;">
+        <div class="vr-badge">VR Showroom Available</div>
+        <h3>Take a Virtual Factory Tour</h3>
+        <p>Explore our production facility in 360° through our Alibaba Virtual Reality Showroom. See our workshop, equipment, and quality control process from anywhere.</p>
+        <a href="https://cnhlk.en.alibaba.com/" target="_blank" rel="noopener" class="btn btn-white">Launch VR Showroom on Alibaba &rarr;</a>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== OUR NASAL STRIPS ===== -->
   <section class="section" style="background: var(--gray-50);">
     <div class="container">
@@ -233,15 +286,36 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="section" style="background: var(--gray-50);">
     <div class="container">
       <h2 class="section-title">Certified Quality You Can Trust</h2>
-      <p class="section-subtitle">Our facility and products meet the world's most rigorous standards.</p>
-      <div class="cert-grid">
+      <p class="section-subtitle">Our facility and products meet the world's most rigorous standards — verified by international authorities.</p>
+
+      <div class="cert-gallery-grid" style="margin-top: 2rem;">
+        <div class="cert-gallery-item">
+          <img class="cert-lightbox-trigger cert-thumb" src="/images/cert-ce.jpg" alt="CE Marked — EU Medical Device Regulation MDR 2017/745" data-full="/images/cert-ce.jpg" />
+          <div class="cert-info">
+            <h4>CE Marked</h4>
+            <p>EU Medical Device Regulation (MDR 2017/745). Free sale across the European Union. Cert No. TST20240303098-3RC.</p>
+          </div>
+        </div>
+        <div class="cert-gallery-item">
+          <img class="cert-lightbox-trigger cert-thumb" src="/images/cert-rohs.jpg" alt="RoHS Compliant — Restriction of Hazardous Substances" data-full="/images/cert-rohs.jpg" />
+          <div class="cert-info">
+            <h4>RoHS Compliant</h4>
+            <p>All raw materials are RoHS-compliant, ensuring no hazardous substances are present in our products. Cert No. BSTDGF526245241010381HC.</p>
+          </div>
+        </div>
+        <div class="cert-gallery-item">
+          <img class="cert-lightbox-trigger cert-thumb" src="/images/cert-epr-de.jpg" alt="EPR Germany — Packaging Registration" data-full="/images/cert-epr-de.jpg" />
+          <div class="cert-info">
+            <h4>EPR Germany</h4>
+            <p>Extended Producer Responsibility registered for German packaging compliance. Reg No. DE1848439896773.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-grid" style="margin-top: 2.5rem;">
         <div class="cert-badge">
           <div class="cert-icon">FDA</div>
           <div class="cert-name">FDA Registered</div>
-        </div>
-        <div class="cert-badge">
-          <div class="cert-icon">CE</div>
-          <div class="cert-name">CE Marked</div>
         </div>
         <div class="cert-badge">
           <div class="cert-icon">ISO</div>
@@ -252,8 +326,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="cert-name">SGS Tested</div>
         </div>
         <div class="cert-badge">
-          <div class="cert-icon" style="font-size: 1.6rem;">RoHS</div>
-          <div class="cert-name">RoHS Compliant</div>
+          <div class="cert-icon" style="font-size: 1.6rem;">REACH</div>
+          <div class="cert-name">REACH Compliant</div>
+        </div>
+        <div class="cert-badge">
+          <div class="cert-icon" style="font-size: 1.6rem;">MSDS</div>
+          <div class="cert-name">MSDS Available</div>
         </div>
       </div>
     </div>

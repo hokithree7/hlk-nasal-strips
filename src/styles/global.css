@@ -332,6 +332,259 @@ img {
   font-size: 1.1rem;
 }
 
+/* Factory Gallery */
+.factory-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.factory-gallery .factory-item {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--gray-100);
+  min-height: 220px;
+  cursor: pointer;
+  transition: all var(--transition);
+  border: 1px solid var(--gray-200);
+}
+
+.factory-gallery .factory-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.factory-gallery .factory-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 220px;
+  transition: transform 0.5s ease;
+}
+
+.factory-gallery .factory-item:hover img {
+  transform: scale(1.05);
+}
+
+.factory-gallery .factory-item .factory-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.factory-gallery .factory-item:hover .factory-caption {
+  opacity: 1;
+}
+
+/* Certificate Gallery */
+.cert-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.cert-gallery-item {
+  background: white;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-200);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition);
+  cursor: zoom-in;
+  text-align: center;
+}
+
+.cert-gallery-item:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-4px);
+  border-color: var(--blue-300);
+}
+
+.cert-gallery-item .cert-thumb {
+  width: 100%;
+  height: 240px;
+  object-fit: contain;
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+  padding: 1.5rem;
+  transition: transform 0.4s ease;
+}
+
+.cert-gallery-item:hover .cert-thumb {
+  transform: scale(1.05);
+}
+
+.cert-gallery-item .cert-info {
+  padding: 1rem 1.25rem 1.25rem;
+  border-top: 1px solid var(--gray-100);
+}
+
+.cert-gallery-item .cert-info h4 {
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
+  color: var(--gray-900);
+}
+
+.cert-gallery-item .cert-info p {
+  font-size: 0.82rem;
+  color: var(--gray-500);
+  margin: 0;
+}
+
+/* Lightbox Dialog */
+.cert-lightbox {
+  border: none;
+  border-radius: var(--radius-lg);
+  max-width: 90vw;
+  max-height: 90vh;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.cert-lightbox::backdrop {
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(8px);
+}
+
+.cert-lightbox-inner {
+  background: white;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  max-width: 900px;
+  width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.cert-lightbox-inner img {
+  width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  background: #f8fafc;
+}
+
+.cert-lightbox-close {
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  border-top: 1px solid var(--gray-100);
+}
+
+.cert-lightbox-close span {
+  font-weight: 600;
+  color: var(--gray-700);
+  font-size: 0.95rem;
+}
+
+.cert-lightbox-close button {
+  background: var(--gray-100);
+  border: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.cert-lightbox-close button:hover {
+  background: var(--gray-200);
+}
+
+/* VR Tour CTA */
+.vr-tour-card {
+  background: linear-gradient(135deg, var(--blue-900), var(--blue-700));
+  border-radius: var(--radius-xl);
+  padding: 3rem;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  grid-column: span 2;
+}
+
+.vr-tour-card h3 {
+  color: white;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.vr-tour-card p {
+  color: rgba(255,255,255,0.75);
+  max-width: 480px;
+  margin: 0;
+}
+
+.vr-tour-card .vr-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 0.5rem;
+}
+
+.vr-tour-card .vr-badge::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: #22C55E;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(34,197,94,0.6);
+}
+
+/* Factory Stats Bar */
+.factory-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 2rem 2.5rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-100);
+  margin-bottom: 2rem;
+}
+
+.factory-stats .stat-item {
+  text-align: center;
+  padding: 1rem 0.5rem;
+}
+
+.factory-stats .stat-item .stat-number {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--blue-600);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.factory-stats .stat-item .stat-label {
+  font-size: 0.85rem;
+  color: var(--gray-500);
+}
+
 /* Certification badges */
 .cert-grid {
   display: flex;
@@ -556,6 +809,9 @@ img {
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .factory-gallery { grid-template-columns: repeat(2, 1fr); }
+  .cert-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .factory-stats { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
@@ -570,6 +826,11 @@ img {
   .cert-grid { gap: 1rem; }
   .cert-badge { padding: 1rem 1.25rem; }
   .cta-section { margin: 2rem 1rem; padding: 3rem 1.5rem; }
+  .factory-gallery { grid-template-columns: repeat(2, 1fr); }
+  .factory-gallery .vr-tour-card { grid-column: span 2; }
+  .cert-gallery-grid { grid-template-columns: 1fr; }
+  .factory-stats { grid-template-columns: repeat(2, 1fr); gap: 1rem; padding: 1.5rem; }
+  .cert-lightbox-inner { width: 95vw; }
   
   h1 { font-size: 2rem; }
   h2 { font-size: 1.6rem; }
@@ -579,4 +840,7 @@ img {
   .container { padding: 0 1rem; }
   .hero-buttons { flex-direction: column; }
   .hero-buttons .btn { width: 100%; text-align: center; justify-content: center; }
+  .factory-gallery { grid-template-columns: 1fr; }
+  .factory-gallery .vr-tour-card { grid-column: span 1; }
+  .factory-stats { grid-template-columns: 1fr; }
 }

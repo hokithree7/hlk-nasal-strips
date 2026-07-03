@@ -34,22 +34,49 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h2 class="section-title">Our Manufacturing Facility</h2>
       <p class="section-subtitle">State-of-the-art production lines with strict quality management.</p>
 
-      <div class="grid-3" style="margin-top: 2rem;">
-        <div class="card" style="text-align: center;">
-          <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">🏗️</div>
-          <h3 style="margin-bottom: 0.5rem; font-size: 1.1rem;">5,000m&sup2; Workshop</h3>
-          <p style="font-size: 0.9rem;">Climate-controlled production environment. Separate zones for raw material storage, production, packaging, and finished goods warehouse.</p>
+      <div class="factory-stats">
+        <div class="stat-item">
+          <div class="stat-number">5,000</div>
+          <div class="stat-label">m² Production Base</div>
         </div>
-        <div class="card" style="text-align: center;">
-          <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">🤖</div>
-          <h3 style="margin-bottom: 0.5rem; font-size: 1.1rem;">Automated Lines</h3>
-          <p style="font-size: 0.9rem;">5 fully automated production lines with precision cutting, adhesive application, and packaging. Capacity: 2M+ units per month.</p>
+        <div class="stat-item">
+          <div class="stat-number">5</div>
+          <div class="stat-label">Automated Lines</div>
         </div>
-        <div class="card" style="text-align: center;">
-          <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">🔬</div>
-          <h3 style="margin-bottom: 0.5rem; font-size: 1.1rem;">In-House R&amp;D Lab</h3>
-          <p style="font-size: 0.9rem;">Adhesion testing, skin irritation testing, accelerated aging tests, packaging integrity verification — all performed on-site.</p>
+        <div class="stat-item">
+          <div class="stat-number">2M+</div>
+          <div class="stat-label">Monthly Capacity</div>
         </div>
+        <div class="stat-item">
+          <div class="stat-number">30+</div>
+          <div class="stat-label">Export Countries</div>
+        </div>
+      </div>
+
+      <div class="factory-gallery">
+        <div class="factory-item">
+          <img src="/images/factory-banner-1.jpg" alt="HLK OEM ODM Manufacturing" loading="lazy" />
+          <div class="factory-caption">OEM/ODM Production</div>
+        </div>
+        <div class="factory-item">
+          <img src="/images/factory-banner-2.jpg" alt="One-Stop Custom Tape Supplier" loading="lazy" />
+          <div class="factory-caption">Full Customization</div>
+        </div>
+        <div class="factory-item">
+          <img src="/images/factory-banner-3.jpg" alt="HLK Product Portfolio" loading="lazy" />
+          <div class="factory-caption">Product Portfolio</div>
+        </div>
+        <div class="factory-item">
+          <img src="/images/factory-banner-4.jpg" alt="Private Label Packaging" loading="lazy" />
+          <div class="factory-caption">Private Label Packaging</div>
+        </div>
+      </div>
+
+      <div class="vr-tour-card" style="margin-top: 2rem; grid-column: 1 / -1;">
+        <div class="vr-badge">VR Showroom Available</div>
+        <h3>Take a Virtual Factory Tour</h3>
+        <p>Explore our production facility in 360° through our Alibaba Virtual Reality Showroom. See our workshop, equipment, and quality control process from anywhere.</p>
+        <a href="https://cnhlk.en.alibaba.com/" target="_blank" rel="noopener" class="btn btn-white">Launch VR Showroom on Alibaba &rarr;</a>
       </div>
     </div>
   </section>
@@ -60,36 +87,50 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h2 class="section-title">Our Certifications</h2>
       <p class="section-subtitle">Quality, safety, and compliance — verified by international authorities.</p>
 
-      <div class="grid-3" style="margin-top: 2rem;">
-        <div class="card" style="text-align: center;">
-          <div style="font-size: 3rem; font-weight: 900; color: var(--blue-600); margin-bottom: 0.5rem;">FDA</div>
-          <h3 style="margin-bottom: 0.5rem; font-size: 1.1rem;">FDA Registered</h3>
-          <p style="font-size: 0.9rem;">Our facility and products are registered with the U.S. Food and Drug Administration, meeting all requirements for medical devices sold in the United States.</p>
+      <div class="cert-gallery-grid" style="margin-top: 2rem;">
+        <div class="cert-gallery-item">
+          <img class="cert-lightbox-trigger cert-thumb" src="/images/cert-ce.jpg" alt="CE Marked — EU Medical Device Regulation MDR 2017/745" data-full="/images/cert-ce.jpg" />
+          <div class="cert-info">
+            <h4>CE Marked</h4>
+            <p>EU Medical Device Regulation (MDR 2017/745). Free sale across the European Union. Cert No. TST20240303098-3RC.</p>
+          </div>
         </div>
-        <div class="card" style="text-align: center;">
-          <div style="font-size: 2.5rem; font-weight: 900; color: var(--blue-600); margin-bottom: 0.5rem;">CE</div>
-          <h3 style="margin-bottom: 0.5rem; font-size: 1.1rem;">CE Marked</h3>
-          <p style="font-size: 0.9rem;">Our nasal strips comply with EU Medical Device Regulation (MDR) 2017/745, enabling free sale across the European Union.</p>
+        <div class="cert-gallery-item">
+          <img class="cert-lightbox-trigger cert-thumb" src="/images/cert-rohs.jpg" alt="RoHS Compliant — Restriction of Hazardous Substances" data-full="/images/cert-rohs.jpg" />
+          <div class="cert-info">
+            <h4>RoHS Compliant</h4>
+            <p>All raw materials are RoHS-compliant, ensuring no hazardous substances are present in our products. Cert No. BSTDGF526245241010381HC.</p>
+          </div>
         </div>
-        <div class="card" style="text-align: center;">
-          <div style="font-size: 2.2rem; font-weight: 900; color: var(--blue-600); margin-bottom: 0.5rem;">ISO</div>
-          <h3 style="margin-bottom: 0.5rem; font-size: 1.1rem;">ISO 13485</h3>
-          <p style="font-size: 0.9rem;">Medical device quality management system certified. Every batch is produced and tested under strict quality standards.</p>
+        <div class="cert-gallery-item">
+          <img class="cert-lightbox-trigger cert-thumb" src="/images/cert-epr-de.jpg" alt="EPR Germany — Packaging Registration" data-full="/images/cert-epr-de.jpg" />
+          <div class="cert-info">
+            <h4>EPR Germany</h4>
+            <p>Extended Producer Responsibility registered for German packaging compliance. Reg No. DE1848439896773.</p>
+          </div>
         </div>
-        <div class="card" style="text-align: center;">
-          <div style="font-size: 2.5rem; font-weight: 900; color: var(--blue-600); margin-bottom: 0.5rem;">SGS</div>
-          <h3 style="margin-bottom: 0.5rem; font-size: 1.1rem;">SGS Tested</h3>
-          <p style="font-size: 0.9rem;">Third-party testing for material safety, biocompatibility, and performance by SGS — the world's leading testing laboratory.</p>
+      </div>
+
+      <div class="cert-grid" style="margin-top: 2.5rem;">
+        <div class="cert-badge">
+          <div class="cert-icon">FDA</div>
+          <div class="cert-name">FDA Registered</div>
         </div>
-        <div class="card" style="text-align: center;">
-          <div style="font-size: 2rem; font-weight: 900; color: var(--blue-600); margin-bottom: 0.5rem;">RoHS</div>
-          <h3 style="margin-bottom: 0.5rem; font-size: 1.1rem;">RoHS Compliant</h3>
-          <p style="font-size: 0.9rem;">All raw materials are RoHS-compliant, ensuring no hazardous substances are present in our products.</p>
+        <div class="cert-badge">
+          <div class="cert-icon">ISO</div>
+          <div class="cert-name">ISO 13485</div>
         </div>
-        <div class="card" style="text-align: center;">
-          <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🤝</div>
-          <h3 style="margin-bottom: 0.5rem; font-size: 1.1rem;">Audited Factory</h3>
-          <p style="font-size: 0.9rem;">We welcome factory audits from clients and third-party inspection agencies. Transparency builds trust.</p>
+        <div class="cert-badge">
+          <div class="cert-icon">SGS</div>
+          <div class="cert-name">SGS Tested</div>
+        </div>
+        <div class="cert-badge">
+          <div class="cert-icon" style="font-size: 1.6rem;">REACH</div>
+          <div class="cert-name">REACH Compliant</div>
+        </div>
+        <div class="cert-badge">
+          <div class="cert-icon" style="font-size: 1.6rem;">MSDS</div>
+          <div class="cert-name">MSDS Available</div>
         </div>
       </div>
     </div>
