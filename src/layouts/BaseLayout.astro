@@ -61,6 +61,14 @@ const { title, description } = Astro.props;
           if (e.key === 'Escape' && lightbox.open) lightbox.close();
         });
       })();
+
+      // YouTube inline video player — click thumbnail to play
+      function playVideo(el) {
+        const videoId = el.dataset.videoId;
+        if (!videoId) return;
+        el.innerHTML = '<div class="video-iframe-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy" title="HLK Factory Video"></iframe></div>';
+        el.style.cursor = 'default';
+      }
     </script>
   </body>
 </html>

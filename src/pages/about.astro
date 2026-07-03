@@ -72,11 +72,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
       </div>
 
-      <div class="vr-tour-card" style="margin-top: 2rem; grid-column: 1 / -1;">
-        <div class="vr-badge">VR Showroom Available</div>
-        <h3>Take a Virtual Factory Tour</h3>
-        <p>Explore our production facility in 360° through our Alibaba Virtual Reality Showroom. See our workshop, equipment, and quality control process from anywhere.</p>
-        <a href="https://cnhlk.en.alibaba.com/" target="_blank" rel="noopener" class="btn btn-white">Launch VR Showroom on Alibaba &rarr;</a>
+      <h3 style="text-align: center; margin: 2.5rem 0 0.5rem; font-size: 1.4rem;">See Our Factory in Action</h3>
+      <p style="text-align: center; color: var(--gray-500); max-width: 600px; margin: 0 auto 1rem;">Watch our production lines and see how we make your products — from raw materials to finished packaging.</p>
+      <div class="video-gallery">
+        <div class="video-card">
+          <div class="video-thumb" data-video-id="cfaE2a2VJ6w" onclick="playVideo(this)">
+            <img src="https://img.youtube.com/vi/cfaE2a2VJ6w/maxresdefault.jpg" alt="HLK Factory Production Tour" loading="lazy" />
+            <div class="video-play-btn">
+              <div class="video-play-icon"></div>
+            </div>
+          </div>
+          <div class="video-title">Factory Production Line Tour — See How We Manufacture</div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumb" data-video-id="zjVHvVEgJTE" onclick="playVideo(this)">
+            <img src="https://img.youtube.com/vi/zjVHvVEgJTE/maxresdefault.jpg" alt="HLK Quality Control & Packaging" loading="lazy" />
+            <div class="video-play-btn">
+              <div class="video-play-icon"></div>
+            </div>
+          </div>
+          <div class="video-title">Quality Control & Packaging — From Inspection to Shipment</div>
+        </div>
       </div>
     </div>
   </section>
