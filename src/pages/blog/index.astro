@@ -1,32 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
 
-const posts = [
-  {
-    slug: 'how-to-choose-nasal-strips',
-    title: 'How to Choose the Right Nasal Strips for Your Market',
-    excerpt: 'Key factors to consider when selecting nasal strips for different regions and consumer segments — from adhesive strength to packaging preferences.',
-    date: 'June 28, 2026',
-    readTime: '5 min read',
-    category: 'Product Guide',
-  },
-  {
-    slug: 'nasal-strips-vs-sprays',
-    title: 'Nasal Strips vs. Nasal Sprays: What Retailers Should Know',
-    excerpt: 'A comprehensive product comparison to help retailers, distributors, and brand owners understand the market opportunity for nasal strips.',
-    date: 'June 28, 2026',
-    readTime: '6 min read',
-    category: 'Market Insights',
-  },
-  {
-    slug: 'oem-nasal-strips-guide',
-    title: 'OEM Nasal Strips: A Complete Guide for Importers',
-    excerpt: 'Step-by-step process for launching your own nasal strip brand from China — from supplier selection to final delivery.',
-    date: 'June 28, 2026',
-    readTime: '7 min read',
-    category: 'Import Guide',
-  },
-];
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
 ---
 
 <BaseLayout
@@ -45,20 +22,26 @@ const posts = [
       <div class="blog-grid">
         {posts.map(post => (
           <div class="blog-card">
-            <img src={post.slug === 'how-to-choose-nasal-strips' ? '/images/1 (1).jpg' : post.slug === 'nasal-strips-vs-sprays' ? '/images/hlk_sports_performance.jpg' : '/images/1 (9).jpg'} alt={post.title} loading="lazy" class="blog-card-image" style="object-fit: cover;" />
+            <img
+              src={post.data.cover || '/images/1 (1).jpg'}
+              alt={post.data.title}
+              loading="lazy"
+              class="blog-card-image"
+              style="object-fit: cover;"
+            />
             <div class="blog-card-body">
               <div style="margin-bottom: 0.5rem;">
-                <span class="badge badge-blue" style="font-size: 0.7rem;">{post.category}</span>
+                <span class="badge badge-blue" style="font-size: 0.7rem;">{post.data.category}</span>
               </div>
               <h3>
-                <a href={`/blog/${post.slug}`} style="color: var(--gray-900);">
-                  {post.title}
+                <a href={`/blog/${post.id}`} style="color: var(--gray-900);">
+                  {post.data.title}
                 </a>
               </h3>
-              <p>{post.excerpt}</p>
+              <p>{post.data.excerpt}</p>
               <div class="blog-card-meta">
-                <span>{post.date}</span>
-                <span>{post.readTime}</span>
+                <span>{post.data.date}</span>
+                <span>{post.data.readTime}</span>
               </div>
             </div>
           </div>

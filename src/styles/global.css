@@ -1139,3 +1139,91 @@ img {
 @media (max-width: 768px) {
   .cert-logos-banner { padding: 1.5rem 1rem; }
 }
+
+/* ===== Markdown prose (blog articles) ===== */
+.prose h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--gray-900);
+}
+
+.prose h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--gray-900);
+}
+
+.prose p {
+  margin-bottom: 1rem;
+}
+
+.prose ul, .prose ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.prose ul li {
+  list-style: disc;
+  margin-bottom: 0.4rem;
+}
+
+.prose ol li {
+  list-style: decimal;
+  margin-bottom: 0.4rem;
+}
+
+.prose a {
+  color: var(--primary-color, #1E88E5);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose a:hover {
+  opacity: 0.8;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+.prose table th {
+  background: var(--gray-100, #f4f4f5);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  border: 1px solid var(--gray-200, #e4e4e7);
+}
+
+.prose table td {
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--gray-200, #e4e4e7);
+}
+
+.prose table tr:nth-child(even) td {
+  background: var(--gray-50, #fafafa);
+}
+
+.prose strong {
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.prose blockquote {
+  border-left: 4px solid var(--primary-color, #1E88E5);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: var(--gray-500);
+  font-style: italic;
+}
+
+.prose img {
+  border-radius: var(--radius-md);
+  margin: 1.5rem 0;
+}

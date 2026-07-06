@@ -1,213 +1,48 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
 
-export function getStaticPaths() {
-  return [
-    { params: { slug: 'how-to-choose-nasal-strips' } },
-    { params: { slug: 'nasal-strips-vs-sprays' } },
-    { params: { slug: 'oem-nasal-strips-guide' } },
-  ];
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
 }
 
-const { slug } = Astro.params;
-
-const articles = {
-  'how-to-choose-nasal-strips': {
-    title: 'How to Choose the Right Nasal Strips for Your Market',
-    date: 'June 28, 2026',
-    readTime: '5 min read',
-    category: 'Product Guide',
-    content: `
-      <p>The global nasal strip market is projected to reach $12.8 billion by 2030, growing at 8.2% CAGR. For importers, distributors, and brand owners, choosing the right product specifications is the single most important decision you'll make. Here's what to consider.</p>
-
-      <h2>1. Understand Your Target Consumer</h2>
-      <p>Different markets have different needs:</p>
-      <ul>
-        <li><strong>North America:</strong> Consumers prioritize brand recognition, packaging quality, and clear product claims. Medium to large strips dominate.</li>
-        <li><strong>European Union:</strong> Regulatory compliance (CE marking) is non-negotiable. Eco-friendly packaging is increasingly important.</li>
-        <li><strong>Latin America:</strong> Price sensitivity is higher. Smaller pack sizes (10-count) sell better than bulk packs.</li>
-        <li><strong>Asia-Pacific:</strong> Growing demand for menthol-infused and herbal variants. E-commerce-ready packaging is essential.</li>
-        <li><strong>Middle East:</strong> Premium positioning works well. Color options matter more than in other regions.</li>
-      </ul>
-
-      <h2>2. Adhesive Strength Matters</h2>
-      <p>This is where many importers make mistakes. The adhesive must balance:</p>
-      <ul>
-        <li><strong>Hold strength:</strong> Strong enough to stay on through the night or during exercise.</li>
-        <li><strong>Gentle removal:</strong> Should not cause skin irritation or leave residue.</li>
-        <li><strong>Skin types:</strong> Oily skin requires stronger adhesive; sensitive skin requires gentler formulations.</li>
-      </ul>
-      <p>At HLK, we offer 3 adhesion levels: Standard (daily use), Strong (sports/sleep), and Extra-Gentle (sensitive skin). We can also develop custom formulations for your market.</p>
-
-      <h2>3. Sizing and Fit</h2>
-      <p>One size does not fit all. We recommend:</p>
-      <ul>
-        <li><strong>Medium (55mm x 16mm):</strong> 70-80% of global demand. Fits most adult nose bridges.</li>
-        <li><strong>Large (66mm x 19mm):</strong> 20-25% of demand. Preferred in North America and Northern Europe.</li>
-        <li><strong>Small/Pediatric:</strong> Niche but growing segment for children's breathing aids.</li>
-      </ul>
-
-      <h2>4. Packaging That Sells</h2>
-      <p>Your packaging is your silent salesperson. Consider:</p>
-      <ul>
-        <li><strong>Retail box:</strong> Must have strong shelf appeal with clear branding, features, and instructions.</li>
-        <li><strong>Individual sachets:</strong> Protect each strip from humidity and contamination. Essential for pharmacy channels.</li>
-        <li><strong>Count per box:</strong> 10, 30, 50, or 100. 30-count is the global bestseller for retail.</li>
-        <li><strong>Display options:</strong> Peg-hole for hanging, counter display, or shelf-ready packaging.</li>
-      </ul>
-
-      <h2>5. Color and Material</h2>
-      <p>Clear strips are the global bestseller (invisible on skin). Tan strips are popular in North America. Black and colored strips are trending in sports and fitness channels. Material choice (non-woven fabric vs. transparent film) affects both appearance and performance.</p>
-
-      <h2>6. Regulatory Requirements</h2>
-      <p>Before importing, verify:</p>
-      <ul>
-        <li><strong>USA:</strong> FDA registration required for medical device claims.</li>
-        <li><strong>EU:</strong> CE marking under MDR 2017/745.</li>
-        <li><strong>Australia:</strong> TGA registration for therapeutic claims.</li>
-        <li><strong>Other markets:</strong> Requirements vary significantly.</li>
-      </ul>
-      <p>HLK provides full documentation packages to support your local registration.</p>
-
-      <h2>Making Your Decision</h2>
-      <p>The best nasal strip for your market balances consumer preferences, regulatory requirements, and your price positioning. Our team can guide you through the selection process — <a href="/contact">contact us</a> for a personalized consultation.</p>
-    `,
-  },
-  'nasal-strips-vs-sprays': {
-    title: 'Nasal Strips vs. Nasal Sprays: What Retailers Should Know',
-    date: 'June 28, 2026',
-    readTime: '6 min read',
-    category: 'Market Insights',
-    content: `
-      <p>As a retailer or distributor in the respiratory health space, you're likely evaluating whether to stock nasal strips, nasal sprays, or both. Here's our data-driven comparison to inform your product strategy.</p>
-
-      <h2>Market Size and Growth</h2>
-      <p>Nasal strips: $8.2B market (2025), growing at 8.2% CAGR. Nasal sprays: $28.6B market (2025), growing at 5.4% CAGR. While sprays dominate in absolute size, nasal strips are growing significantly faster — presenting a compelling opportunity for early-mover retailers.</p>
-
-      <h2>Consumer Preference Comparison</h2>
-      <table class="spec-table">
-        <tr><th>Factor</th><th>Nasal Strips</th><th>Nasal Sprays</th></tr>
-        <tr><td>Drug-free</td><td>&#10003; Yes</td><td>&#10007; Often contains medication</td></tr>
-        <tr><td>Side effects</td><td>&#10003; Minimal (skin only)</td><td>&#10007; Rebound congestion possible</td></tr>
-        <tr><td>Duration</td><td>&#10003; 8-12 hours</td><td>&#10007; 4-6 hours typical</td></tr>
-        <tr><td>Reusable</td><td>&#10007; Single use</td><td>&#10003; Multi-dose bottle</td></tr>
-        <tr><td>Sports use</td><td>&#10003; Excellent</td><td>&#10007; Impractical during exercise</td></tr>
-        <tr><td>Price point</td><td>$0.15-0.40 per strip</td><td>$0.05-0.15 per dose</td></tr>
-        <tr><td>Regulatory</td><td>Class I medical device</td><td>OTC drug (varies)</td></tr>
-      </table>
-
-      <h2>Why Retailers Are Adding Nasal Strips</h2>
-      <p>Three key reasons:</p>
-      <ol>
-        <li><strong>Complementary, not competitive:</strong> Most consumers use both products for different situations. Strips for sleep and exercise, sprays for daytime congestion relief. Stocking both increases basket size.</li>
-        <li><strong>Higher margin potential:</strong> Nasal strips have 45-60% retail margins, compared to 30-40% for branded sprays. Private label strips can achieve even higher margins.</li>
-        <li><strong>Growing awareness:</strong> Athlete endorsements, social media trends, and sleep health awareness are driving consumer interest in drug-free breathing solutions.</li>
-      </ol>
-
-      <h2>Retail Channel Performance</h2>
-      <p>Nasal strips perform well across multiple channels:</p>
-      <ul>
-        <li><strong>Pharmacies:</strong> 40% of sales. Trust factor is highest here.</li>
-        <li><strong>Sports retailers:</strong> 25% of sales. Fastest growing channel.</li>
-        <li><strong>E-commerce:</strong> 20% of sales. Amazon dominates, but branded sites are growing.</li>
-        <li><strong>Supermarkets:</strong> 10% of sales. Impulse purchase driven.</li>
-        <li><strong>Specialty (sleep clinics, ENT):</strong> 5% of sales. High-value, loyal customers.</li>
-      </ul>
-
-      <h2>Our Recommendation</h2>
-      <p>If you currently stock nasal sprays but not strips, you're missing a complementary category with higher growth and better margins. Start with a classic nasal strip SKU in standard and large sizes — that covers 90% of demand. <a href="/contact">Talk to us</a> about starter quantities and retail-ready packaging.</p>
-    `,
-  },
-  'oem-nasal-strips-guide': {
-    title: 'OEM Nasal Strips: A Complete Guide for Importers',
-    date: 'June 28, 2026',
-    readTime: '7 min read',
-    category: 'Import Guide',
-    content: `
-      <p>Launching your own nasal strip brand is one of the most lucrative opportunities in the consumer health space — if you get the manufacturing partnership right. Here's everything you need to know about OEM nasal strip production in China.</p>
-
-      <h2>Step 1: Define Your Product</h2>
-      <p>Before contacting factories, decide on:</p>
-      <ul>
-        <li><strong>Target market:</strong> This determines certifications needed (FDA for US, CE for EU, etc.)</li>
-        <li><strong>Price positioning:</strong> Budget, mid-market, or premium? This affects material and packaging choices.</li>
-        <li><strong>Unique selling proposition:</strong> What makes your brand different? Better adhesion? Natural ingredients? Eco-friendly packaging?</li>
-      </ul>
-
-      <h2>Step 2: Choose the Right Factory</h2>
-      <p>Not all factories are equal. Look for:</p>
-      <ul>
-        <li><strong>Certifications:</strong> FDA registration, ISO 13485, CE marking — non-negotiable for serious importers.</li>
-        <li><strong>Experience:</strong> 10+ years in medical adhesives is ideal. Ask for client references.</li>
-        <li><strong>R&amp;D capability:</strong> Can they develop custom formulations or just produce standard items?</li>
-        <li><strong>Communication:</strong> English-speaking account managers save enormous time and prevent specification errors.</li>
-        <li><strong>Minimum order quantity (MOQ):</strong> Should match your initial budget. HLK starts at 1,000 boxes for standard products.</li>
-      </ul>
-
-      <h2>Step 3: The Sampling Process</h2>
-      <p>Never skip this step. Here's the proper sampling workflow:</p>
-      <ol>
-        <li>Send your specification requirements (size, adhesion level, material, color, packaging concept).</li>
-        <li>Factory produces 3-5 prototype versions (3-5 days at HLK).</li>
-        <li>Test samples yourself: wear them, sleep with them, exercise with them. Give them to colleagues for feedback.</li>
-        <li>Provide specific feedback — "needs 20% more adhesion" is more helpful than "not sticky enough."</li>
-        <li>Factory adjusts and sends revised samples. Iterate until perfect.</li>
-      </ol>
-
-      <h2>Step 4: Packaging Development</h2>
-      <p>Your packaging must satisfy three goals: shelf appeal, regulatory compliance, and product protection. Key decisions:</p>
-      <ul>
-        <li>Individual sachet material (foil for maximum protection, paper for eco-positioning)</li>
-        <li>Box count (10, 30, 50, or 100 — 30-count is global bestseller)</li>
-        <li>Display features (peg hole, counter display, shelf tray)</li>
-        <li>Required labeling (ingredients, warnings, instructions, barcode, country of origin)</li>
-      </ul>
-
-      <h2>Step 5: Production and Quality Control</h2>
-      <p>Once samples are approved and packaging is finalized:</p>
-      <ol>
-        <li>Factory produces your order (7-15 days for standard quantities).</li>
-        <li>Request pre-shipment inspection (we recommend third-party inspection for first orders).</li>
-        <li>Factory provides QC documentation: adhesion test reports, dimension reports, packaging integrity reports.</li>
-        <li>Arrange shipping: FOB, CIF, or DDP depending on your preference.</li>
-      </ol>
-
-      <h2>Step 6: Logistics and Import</h2>
-      <p>Sea freight is most cost-effective for orders over 50 boxes. Air freight for urgent restocking. Express couriers (DHL/UPS/FedEx) for samples and small initial orders. Work with a customs broker for first-time imports — they handle FDA clearance, duties, and documentation.</p>
-
-      <h2>Common Mistakes to Avoid</h2>
-      <ul>
-        <li><strong>Skipping certification verification:</strong> Always ask for current certificates (they expire). Verify FDA registration number online.</li>
-        <li><strong>Ordering too much packaging:</strong> Start with smaller packaging runs in case you need design changes.</li>
-        <li><strong>Not testing in your climate:</strong> Adhesive performs differently in humid vs. dry environments.</li>
-        <li><strong>Rushing sampling:</strong> The biggest cost in OEM is getting the specification wrong. Take your time with samples.</li>
-      </ul>
-
-      <h2>Ready to Launch?</h2>
-      <p>HLK has helped dozens of brands successfully launch nasal strip products in markets worldwide. <a href="/contact">Contact us</a> to start your OEM project. We'll respond with a detailed proposal within 24 hours.</p>
-    `,
-  },
-};
-
-const article = articles[slug as keyof typeof articles];
+const { post } = Astro.props;
+const { Content } = await render(post);
 ---
 
 <BaseLayout
-  title={`${article.title} | HLK Blog`}
-  description={article.title}
+  title={`${post.data.title} | HLK Blog`}
+  description={post.data.excerpt}
 >
-  <section class="page-header">
-    <div class="container">
-      <span class="badge badge-blue" style="margin-bottom: 1rem;">{article.category}</span>
-      <h1>{article.title}</h1>
-      <p>{article.date} &middot; {article.readTime}</p>
+  {post.data.cover && (
+    <section style="padding: 0; margin: 0;">
+      <div style="width: 100%; height: 360px; overflow: hidden; position: relative;">
+        <img
+          src={post.data.cover}
+          alt={post.data.title}
+          style="width: 100%; height: 100%; object-fit: cover;"
+        />
+        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 100%);"></div>
+      </div>
+    </section>
+  )}
+
+  <section class="page-header" style={post.data.cover ? 'background: var(--gray-900); color: white;' : ''}>
+    <div class="container" style={post.data.cover ? 'max-width: 760px;' : ''}>
+      <span class="badge badge-blue" style="margin-bottom: 1rem;">{post.data.category}</span>
+      <h1>{post.data.title}</h1>
+      <p>{post.data.date}{post.data.readTime && ` &middot; ${post.data.readTime}`}</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container" style="max-width: 760px;">
-      <div style="font-size: 1.05rem; line-height: 1.85; color: var(--gray-700);">
-        <Fragment set:html={article.content} />
+      <div class="prose" style="font-size: 1.05rem; line-height: 1.85; color: var(--gray-700);">
+        <Content />
       </div>
 
       <div style="margin-top: 3rem; padding: 2rem; background: var(--gray-50); border-radius: var(--radius-lg); text-align: center;">
