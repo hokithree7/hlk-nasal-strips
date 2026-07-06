@@ -228,7 +228,7 @@ img {
 /* Hero section */
 .hero {
   position: relative;
-  min-height: 85vh;
+  min-height: 68vh;
   display: flex;
   align-items: center;
   background: url('/images/hero.webp') center/cover no-repeat, var(--blue-900);
@@ -827,10 +827,24 @@ img {
 
 /* Page header */
 .page-header {
-  background: var(--blue-800);
+  background: url('/images/HLK_Lifestyle_Female_Model.jpg') center/cover no-repeat, var(--blue-800);
   color: white;
   padding: 5rem 0 3rem;
   text-align: center;
+  position: relative;
+}
+
+.page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(15,23,42,0.82) 0%, rgba(15,23,42,0.6) 50%, rgba(30,64,175,0.45) 100%);
+  pointer-events: none;
+}
+
+.page-header > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .page-header h1 {
