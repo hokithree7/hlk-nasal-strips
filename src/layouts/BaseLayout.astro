@@ -86,6 +86,51 @@ const isArticle = !!articlePublishedTime;
         </div>
       </div>
     </dialog>
+
+    <!-- Floating WhatsApp Chat Widget -->
+    <div id="wa-float-btn" class="wa-float-btn" aria-label="Chat with us on WhatsApp">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.149-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      <span class="wa-float-badge">1</span>
+    </div>
+
+    <div id="wa-chat-card" class="wa-chat-card">
+      <div class="wa-chat-header">
+        <div class="wa-chat-avatar">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.149-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/>
+          </svg>
+        </div>
+        <div class="wa-chat-info">
+          <div class="wa-chat-name">Vicky &mdash; HLK Sales</div>
+          <div class="wa-chat-status">
+            <span class="wa-chat-dot"></span>
+            Online now
+          </div>
+        </div>
+        <button id="wa-chat-close" class="wa-chat-close-btn" aria-label="Close">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="wa-chat-body">
+        <div class="wa-chat-message">
+          Hi there! &#128075; I'm Vicky from HLK Nasal Strips. <br/>
+          How can I help you with OEM, pricing, or samples today?
+        </div>
+        <div class="wa-chat-time">HLK Team &middot; Typically replies in minutes</div>
+      </div>
+      <div class="wa-chat-actions">
+        <a href="https://wa.me/8619805957675?text=Hi%20Vicky%2C%20I'm%20interested%20in%20your%20nasal%20strips.%20Can%20you%20send%20me%20a%20quote%3F" target="_blank" rel="noopener" class="wa-chat-btn wa-chat-btn-wa">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.149-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+          Chat on WhatsApp
+        </a>
+        <a href="mailto:salesmanager@hlktape.com" class="wa-chat-btn wa-chat-btn-email">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg>
+          Email Us
+        </a>
+      </div>
+    </div>
     <script is:inline>
       (function() {
         const lightbox = document.getElementById('cert-lightbox');
@@ -113,6 +158,36 @@ const isArticle = !!articlePublishedTime;
         el.innerHTML = '<div class="video-iframe-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy" title="HLK Factory Video"></iframe></div>';
         el.style.cursor = 'default';
       }
+
+      // Floating WhatsApp chat widget
+      (function() {
+        var btn = document.getElementById('wa-float-btn');
+        var card = document.getElementById('wa-chat-card');
+        var closeBtn = document.getElementById('wa-chat-close');
+        var isOpen = false;
+
+        function toggle(open) {
+          isOpen = (typeof open === 'boolean') ? open : !isOpen;
+          card.classList.toggle('wa-chat-open', isOpen);
+          btn.classList.toggle('wa-btn-active', isOpen);
+        }
+
+        btn.addEventListener('click', function() { toggle(); });
+        closeBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          toggle(false);
+        });
+
+        // Auto-open after 4 seconds, then auto-close after 8s if no interaction
+        setTimeout(function() {
+          if (!isOpen) {
+            toggle(true);
+            setTimeout(function() {
+              if (isOpen && !card.matches(':hover')) toggle(false);
+            }, 8000);
+          }
+        }, 4000);
+      })();
     </script>
   </body>
 </html>
