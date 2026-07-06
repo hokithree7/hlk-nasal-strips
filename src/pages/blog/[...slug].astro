@@ -12,44 +12,268 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+
+// Extract TOC headings from raw markdown
+const rawBody = post.body || '';
+const tocHeadings: { level: number; text: string; id: string }[] = [];
+const headingRegex = /^(#{2,3})\s+(.+)$/gm;
+let match: RegExpExecArray | null;
+while ((match = headingRegex.exec(rawBody)) !== null) {
+  const level = match[1].length;
+  const text = match[2].trim();
+  const id = text
+    .toLowerCase()
+    .replace(/[^a-z0-9\u4e00-\u9fff]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+  tocHeadings.push({ level, text, id });
+}
 ---
 
 <BaseLayout
   title={`${post.data.title} | HLK Blog`}
   description={post.data.excerpt}
 >
-  {post.data.cover && (
-    <section style="padding: 0; margin: 0;">
-      <div style="width: 100%; height: 360px; overflow: hidden; position: relative;">
-        <img
-          src={post.data.cover}
-          alt={post.data.title}
-          style="width: 100%; height: 100%; object-fit: cover;"
-        />
-        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 100%);"></div>
-      </div>
-    </section>
-  )}
-
-  <section class="page-header" style={post.data.cover ? 'background: var(--gray-900); color: white;' : ''}>
-    <div class="container" style={post.data.cover ? 'max-width: 760px;' : ''}>
+  <!-- ===== PAGE HEADER ===== -->
+  <section class="page-header blog-article-header">
+    <div class="container" style="max-width: 960px;">
       <span class="badge badge-blue" style="margin-bottom: 1rem;">{post.data.category}</span>
       <h1>{post.data.title}</h1>
-      <p>{post.data.date}{post.data.readTime && ` &middot; ${post.data.readTime}`}</p>
+      <p style="color: var(--gray-500); font-size: 0.9rem;">
+        {post.data.date}{post.data.readTime && ` &middot; ${post.data.readTime}`}
+      </p>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container" style="max-width: 760px;">
-      <div class="prose" style="font-size: 1.05rem; line-height: 1.85; color: var(--gray-700);">
-        <Content />
-      </div>
+  <!-- ===== ARTICLE LAYOUT ===== -->
+  <section class="section" style="padding-top: 1.5rem;">
+    <div class="container blog-article-layout">
 
-      <div style="margin-top: 3rem; padding: 2rem; background: var(--gray-50); border-radius: var(--radius-lg); text-align: center;">
-        <h3 style="margin-bottom: 0.5rem;">Ready to Source Nasal Strips?</h3>
-        <p style="margin-bottom: 1.25rem;">Get a factory-direct quote within 24 hours. Free samples available.</p>
-        <a href="/contact" class="btn btn-primary btn-lg">Contact Us</a>
-      </div>
+      <!-- LEFT: Main Content -->
+      <article class="blog-article-main">
+
+        <!-- Cover image embedded at top -->
+        {post.data.cover && (
+          <img
+            src={post.data.cover}
+            alt={post.data.title}
+            class="blog-cover-inline"
+            loading="lazy"
+          />
+        )}
+
+        <!-- Markdown prose content -->
+        <div class="prose">
+          <Content />
+        </div>
+
+        <!-- ===== LEAD CAPTURE FORM ===== -->
+        <div class="blog-lead-form" id="blog-lead-form">
+          <div class="blog-lead-form-inner">
+            <div class="blog-lead-form-text">
+              <h3>Get Free Samples &mdash; Factory-Direct Quote in 24 Hours</h3>
+              <p>No obligation. No middlemen. Tell us what you need and we&rsquo;ll send a detailed proposal with free product samples to your door.</p>
+              <div class="blog-lead-benefits">
+                <span>&#10003; Free sample delivery</span>
+                <span>&#10003; Custom formulation available</span>
+                <span>&#10003; Response within 24 hours</span>
+              </div>
+            </div>
+            <form class="blog-lead-form-fields" id="blog-lead">
+              <input type="text" name="name" placeholder="Your Name *" required />
+              <input type="email" name="email" placeholder="Work Email *" required />
+              <input type="text" name="company" placeholder="Company Name" />
+              <select name="product">
+                <option value="">Select Product Interest</option>
+                <option>Nasal Strips</option>
+                <option>Mouth Tape</option>
+                <option>Sleep Patch</option>
+                <option>Face Tape</option>
+                <option>Nasal Dilator</option>
+                <option>Other / Not Sure</option>
+              </select>
+              <input type="text" name="quantity" placeholder="Estimated Quantity (e.g. 5000 boxes)" />
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                <span class="btn-text">Request Free Samples &amp; Quote</span>
+              </button>
+              <div class="blog-lead-status" style="display:none;"></div>
+            </form>
+          </div>
+        </div>
+      </article>
+
+      <!-- RIGHT: Sidebar -->
+      <aside class="blog-article-sidebar">
+        <div class="blog-sidebar-sticky">
+
+          <!-- Table of Contents -->
+          {tocHeadings.length > 0 && (
+            <nav class="blog-toc">
+              <h4 class="blog-toc-title">Table of Contents</h4>
+              <ul class="blog-toc-list">
+                {tocHeadings.map((h) => (
+                  <li class={`toc-item toc-level-${h.level}`}>
+                    <a href={`#${h.id}`} data-toc={h.id}>{h.text}</a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )}
+
+          <!-- Product Navigation -->
+          <nav class="blog-product-nav">
+            <h4 class="blog-toc-title">Our Products</h4>
+            <ul class="blog-product-nav-list">
+              <li>
+                <a href="/products#nasal-strips">
+                  <span class="bp-icon">&#128066;</span>
+                  <div>
+                    <strong>Nasal Strips</strong>
+                    <span>Anti-snoring &amp; breathing</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/products#mouth-tape">
+                  <span class="bp-icon">&#128483;</span>
+                  <div>
+                    <strong>Mouth Tape</strong>
+                    <span>Sleep quality improvement</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/products#sleep-patch">
+                  <span class="bp-icon">&#127807;</span>
+                  <div>
+                    <strong>Sleep Patch</strong>
+                    <span>Lavender &amp; chamomile</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/products#face-tape">
+                  <span class="bp-icon">&#10024;</span>
+                  <div>
+                    <strong>Face Tape</strong>
+                    <span>Lifting &amp; smoothing</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/products#nasal-dilator">
+                  <span class="bp-icon">&#128168;</span>
+                  <div>
+                    <strong>Nasal Dilator</strong>
+                    <span>Mechanical airflow boost</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <a href="/oem" class="blog-sidebar-oem-cta">
+              Custom OEM &amp; Private Label &rarr;
+            </a>
+          </nav>
+        </div>
+      </aside>
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  // ── TOC active section tracking ──
+  (function() {
+    const tocLinks = document.querySelectorAll('.blog-toc-list a[data-toc]');
+    if (!tocLinks.length) return;
+
+    const headingIds = Array.from(tocLinks).map(a => a.getAttribute('data-toc')!);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const link = document.querySelector(`.blog-toc-list a[data-toc="${entry.target.id}"]`);
+        if (link) {
+          link.classList.toggle('toc-active', entry.isIntersecting);
+        }
+      });
+    }, { rootMargin: '-80px 0px -70% 0px', threshold: 0 });
+
+    headingIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    // Smooth scroll for TOC links
+    tocLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const id = link.getAttribute('data-toc');
+        const target = document.getElementById(id!);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.pushState(null, '', `#${id}`);
+        }
+      });
+    });
+  })();
+
+  // ── Blog lead form handler ──
+  (function() {
+    const form = document.getElementById('blog-lead');
+    if (!form) return;
+
+    const statusDiv = form.querySelector('.blog-lead-status') as HTMLDivElement;
+    const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    const btnText = btn.querySelector('.btn-text') as HTMLSpanElement;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const data: Record<string, string> = {};
+      formData.forEach((v, k) => { data[k] = v.toString(); });
+
+      if (!data.name || !data.email) {
+        statusDiv.style.display = 'block';
+        statusDiv.className = 'blog-lead-status blog-lead-error';
+        statusDiv.textContent = 'Please fill in your name and email.';
+        return;
+      }
+
+      btn.disabled = true;
+      btnText.textContent = 'Sending...';
+      statusDiv.style.display = 'block';
+      statusDiv.className = 'blog-lead-status blog-lead-loading';
+      statusDiv.textContent = 'Submitting your request...';
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: data.name,
+            email: data.email,
+            company: data.company || '',
+            phone: '',
+            product: data.product || 'Blog Inquiry',
+            quantity: data.quantity || '',
+            message: `Source: Blog article "${document.title.replace(' | HLK Blog', '')}" — ${window.location.href}`,
+          }),
+        });
+
+        if (res.ok) {
+          statusDiv.className = 'blog-lead-status blog-lead-success';
+          statusDiv.textContent = '✓ Request submitted! We\'ll contact you within 24 hours. Check your inbox (and spam folder) for our reply.';
+          form.reset();
+        } else {
+          const err = await res.json().catch(() => ({}));
+          throw new Error(err.error || 'Submission failed');
+        }
+      } catch (err: any) {
+        statusDiv.className = 'blog-lead-status blog-lead-error';
+        statusDiv.textContent = `Something went wrong. Please email us directly at salesmanager@hlktape.com`;
+        console.error('Form error:', err);
+      } finally {
+        btn.disabled = false;
+        btnText.textContent = 'Request Free Samples & Quote';
+      }
+    });
+  })();
+</script>
