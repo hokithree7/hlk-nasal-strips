@@ -103,7 +103,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h2 class="section-title">Our Certifications</h2>
       <p class="section-subtitle">Quality, safety, and compliance — verified by international authorities.</p>
 
-      <div class="cert-gallery-grid" style="margin-top: 2rem;">
+      <div class="cert-gallery-grid" style="margin-top: 2rem; grid-template-columns: repeat(2, 1fr); max-width: 900px; margin-left: auto; margin-right: auto;">
         <div class="cert-gallery-item">
           <img class="cert-lightbox-trigger cert-thumb" src="/images/cert-ce.jpg" alt="CE Marked — EU Medical Device Regulation MDR 2017/745" data-full="/images/cert-ce.jpg" />
           <div class="cert-info">
@@ -123,6 +123,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="cert-info">
             <h4>EPR Germany</h4>
             <p>Extended Producer Responsibility registered for German packaging compliance. Reg No. DE1848439896773.</p>
+          </div>
+        </div>
+        <div class="cert-gallery-item">
+          <div class="cert-thumb cert-thumb-svg" style="display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #EBF5FF, #E3F2FD); height: 240px; width: 100%; border-radius: var(--radius-md);">
+            <svg viewBox="0 0 120 120" width="70" height="70" fill="none" stroke="#1E88E5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="60" cy="60" r="50" fill="white" stroke="#1E88E5" stroke-width="2"/>
+              <text x="60" y="55" text-anchor="middle" font-size="18" font-weight="800" fill="#1E88E5" stroke="none" font-family="Arial, sans-serif">TÜV</text>
+              <text x="60" y="75" text-anchor="middle" font-size="9" font-weight="600" fill="#1E88E5" stroke="none" font-family="Arial, sans-serif">Rheinland</text>
+            </svg>
+          </div>
+          <div class="cert-info">
+            <h4>TÜV Rheinland Certified</h4>
+            <p>Factory quality management system audited and certified by TÜV Rheinland. On-site material inspection and ODM capabilities verified by third-party assessment.</p>
           </div>
         </div>
       </div>
@@ -245,6 +258,196 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <tr><td>Custom formulation (herbal, collagen)</td><td><strong>Yes, in-house R&D</strong></td><td>Limited / outsourced</td></tr>
         <tr><td>Quality documentation (CoC, MSDS)</td><td><strong>Provided with every shipment</strong></td><td>Extra cost / on request</td></tr>
       </table>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS / CUSTOMER VISITS ===== -->
+  <section class="section testimonials-section">
+    <div class="container">
+      <h2 class="section-title">Trusted by 900+ Global Buyers</h2>
+      <p class="section-subtitle">Join 900+ satisfied customers across 30+ countries who visited our facility and trust HLK for their supply chain.</p>
+
+      <div class="testimonials-grid">
+        <!-- Testimonial 1: US -->
+        <div class="testimonial-card">
+          <div class="testimonial-photo-wrap">
+            <img src="/images/factory-banner-1.jpg" alt="Customer visit — HLK factory exterior" loading="lazy" />
+            <div class="testimonial-visit-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Factory Visit
+            </div>
+            <div class="testimonial-country-flag">🇺🇸</div>
+          </div>
+          <div class="testimonial-body">
+            <div class="testimonial-stars">
+              <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+              <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+              <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+              <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+              <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+            </div>
+            <p class="testimonial-quote">Visited the facility in person before placing our first order. The production lines are clean and organized, QC is thorough. We've been working with HLK for 18 months now — consistent quality every batch.</p>
+            <div class="testimonial-meta">
+              <div class="testimonial-avatar-placeholder">MR</div>
+              <div class="testimonial-info">
+                <div class="testimonial-name">Michael Rodriguez</div>
+                <div class="testimonial-role">Procurement Manager</div>
+                <div class="testimonial-company">BreatheWell Inc., USA</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2: Netherlands -->
+        <div class="testimonial-card">
+          <div class="testimonial-photo-wrap">
+            <img src="/images/factory-banner-2.jpg" alt="Customer visit — HLK quality control lab" loading="lazy" />
+            <div class="testimonial-visit-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Factory Visit
+            </div>
+            <div class="testimonial-country-flag">🇳🇱</div>
+          </div>
+          <div class="testimonial-body">
+            <div class="testimonial-stars">
+              <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+              <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+              <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+              <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+              <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+            </div>
+            <p class="testimonial-quote">As a European distributor, regulatory compliance is everything for us. HLK's CE MDR and ISO 13485 certifications are genuine and well-documented. Their team speaks fluent English which makes communication seamless.</p>
+            <div class="testimonial-meta">
+              <div class="testimonial-avatar-placeholder">JV</div>
+              <div class="testimonial-info">
+                <div class="testimonial-name">Jan Vermeer</div>
+                <div class="testimonial-role">CEO &amp; Founder</div>
+                <div class="testimonial-company">EuroHealth Supply B.V., Netherlands</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3: Brazil -->
+        <div class="testimonial-card">
+          <div class="testimonial-photo-wrap">
+            <img src="/images/factory-banner-3.jpg" alt="Customer visit — HLK production line tour" loading="lazy" />
+            <div class="testimonial-visit-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Factory Visit
+            </div>
+            <div class="testimonial-country-flag">🇧🇷</div>
+          </div>
+          <div class="testimonial-body">
+            <div class="testimonial-stars">
+              <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+              <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+              <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+              <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+              <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+            </div>
+            <p class="testimonial-quote">We import nasal strips in bulk for the Brazilian market. HLK offers competitive pricing without sacrificing quality. The DDP shipping option to São Paulo saves us a lot on logistics. Highly recommended for South American buyers.</p>
+            <div class="testimonial-meta">
+              <div class="testimonial-avatar-placeholder">LS</div>
+              <div class="testimonial-info">
+                <div class="testimonial-name">Luciana Santos</div>
+                <div class="testimonial-role">Import Director</div>
+                <div class="testimonial-company">VidaSaúde Brasil Ltda., Brazil</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 4: Australia -->
+        <div class="testimonial-card">
+          <div class="testimonial-photo-wrap">
+            <img src="/images/factory-banner-4.jpg" alt="Customer visit — HLK machinery inspection" loading="lazy" />
+            <div class="testimonial-visit-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Factory Visit
+            </div>
+            <div class="testimonial-country-flag">🇦🇺</div>
+          </div>
+          <div class="testimonial-body">
+            <div class="testimonial-stars">
+              <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+              <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+              <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+              <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+              <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+            </div>
+            <p class="testimonial-quote">Launched our own brand of sleep strips with HLK's OEM service. From design concept to first production run took just 3 weeks. The custom packaging looks premium and our customers love it. Best supplier we've worked with.</p>
+            <div class="testimonial-meta">
+              <div class="testimonial-avatar-placeholder">ET</div>
+              <div class="testimonial-info">
+                <div class="testimonial-name">Emma Thompson</div>
+                <div class="testimonial-role">Brand Owner</div>
+                <div class="testimonial-company">DreamSleep Co., Australia</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 5: UK -->
+        <div class="testimonial-card">
+          <div class="testimonial-photo-wrap">
+            <img src="/images/factory-banner-1.jpg" alt="Customer visit — HLK facility overview" loading="lazy" />
+            <div class="testimonial-visit-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Factory Visit
+            </div>
+            <div class="testimonial-country-flag">🇬🇧</div>
+          </div>
+          <div class="testimonial-body">
+            <div class="testimonial-stars">
+              <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+              <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+              <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+              <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+              <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+            </div>
+            <p class="testimonial-quote">We source medical-grade nasal strips for our pharmacy chain across the UK. HLK's product documentation (MSDS, CoC) is always complete and accurate. Their lead times are reliable even during peak season. Very professional partner.</p>
+            <div class="testimonial-meta">
+              <div class="testimonial-avatar-placeholder">JW</div>
+              <div class="testimonial-info">
+                <div class="testimonial-name">James Whitfield</div>
+                <div class="testimonial-role">Category Buyer</div>
+                <div class="testimonial-company">MediCare Pharmacies, UK</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 6: Singapore -->
+        <div class="testimonial-card">
+          <div class="testimonial-photo-wrap">
+            <img src="/images/factory-banner-2.jpg" alt="Customer visit — HLK QC laboratory" loading="lazy" />
+            <div class="testimonial-visit-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Factory Visit
+            </div>
+            <div class="testimonial-country-flag">🇸🇬</div>
+          </div>
+          <div class="testimonial-body">
+            <div class="testimonial-stars">
+              <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+              <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+              <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+              <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+              <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+            </div>
+            <p class="testimonial-quote">HLK has been supplying us with sports performance strips for the APAC region since 2023. The sweat-resistant adhesive formula they developed for tropical climates works exceptionally well. Great R&amp;D support from their team.</p>
+            <div class="testimonial-meta">
+              <div class="testimonial-avatar-placeholder">KT</div>
+              <div class="testimonial-info">
+                <div class="testimonial-name">Kevin Tan</div>
+                <div class="testimonial-role">Operations Director</div>
+                <div class="testimonial-company">AsiaSport Distribution, Singapore</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

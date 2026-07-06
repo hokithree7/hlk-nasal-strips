@@ -14,14 +14,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- ===== Product Category Nav ===== -->
-  <section style="background: var(--gray-50); padding: 1rem 0; position: sticky; top: 0; z-index: 50; border-bottom: 1px solid var(--gray-200);">
+  <!-- ===== Product Category Nav (sticky, below fixed header) ===== -->
+  <section class="prod-cat-nav" style="background: var(--gray-50); border-bottom: 1px solid var(--gray-200);">
     <div class="container">
-      <nav style="display: flex; gap: 0.5rem; overflow-x: auto; padding-bottom: 0.25rem;" aria-label="Product categories">
-        <a href="#nasal-strips" style="white-space: nowrap; padding: 0.5rem 1.2rem; background: var(--blue-600); color: white; border-radius: 50px; font-size: 0.85rem; font-weight: 600; text-decoration: none;">Nasal Strips</a>
-        <a href="#mouth-tape" style="white-space: nowrap; padding: 0.5rem 1.2rem; background: white; color: var(--gray-700); border-radius: 50px; font-size: 0.85rem; font-weight: 600; text-decoration: none; border: 1px solid var(--gray-300);">Mouth Tape</a>
-        <a href="#sleep-patch" style="white-space: nowrap; padding: 0.5rem 1.2rem; background: white; color: var(--gray-700); border-radius: 50px; font-size: 0.85rem; font-weight: 600; text-decoration: none; border: 1px solid var(--gray-300);">Sleep Patch</a>
-        <a href="#face-tape" style="white-space: nowrap; padding: 0.5rem 1.2rem; background: white; color: var(--gray-700); border-radius: 50px; font-size: 0.85rem; font-weight: 600; text-decoration: none; border: 1px solid var(--gray-300);">Face Tape</a>
+      <nav class="prod-cat-nav-inner" aria-label="Product categories">
+        <a href="#nasal-strips" class="prod-cat-link prod-cat-link--active">Nasal Strips</a>
+        <a href="#mouth-tape" class="prod-cat-link">Mouth Tape</a>
+        <a href="#sleep-patch" class="prod-cat-link">Sleep Patch</a>
+        <a href="#face-tape" class="prod-cat-link">Face Tape</a>
+        <a href="#focus-patch" class="prod-cat-link">Focus Patch</a>
+        <a href="#cgm-patch" class="prod-cat-link">CGM Sensor</a>
+        <a href="#sports-tape" class="prod-cat-link">Sports Tape</a>
       </nav>
     </div>
   </section>
@@ -31,11 +34,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- ========================================== -->
   <section id="nasal-strips" class="section">
     <div class="container">
-      <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+      <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem; flex-wrap: wrap;">
         <span style="font-size: 2.2rem;">🫁</span>
-        <div>
+        <div style="flex: 1; min-width: 200px;">
           <h2 class="section-title" style="margin-bottom: 0.25rem;">Nasal Strips</h2>
           <p class="section-subtitle" style="margin-bottom: 0;">Dual spring-action bands. Instant airflow improvement. FDA, CE, ISO 13485 certified.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.15rem;">
+          <span style="font-size: 0.72rem; color: var(--gray-500); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Starting from</span>
+          <span style="font-size: 1.5rem; font-weight: 800; color: var(--blue-600); font-family: var(--font-heading);">$0.02<span style="font-size: 0.85rem; color: var(--gray-500); font-weight: 500;">/pc</span></span>
         </div>
       </div>
 
@@ -147,11 +154,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- ========================================== -->
   <section id="mouth-tape" class="section" style="background: var(--gray-50);">
     <div class="container">
-      <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+      <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">
         <span style="font-size: 2.2rem;">😴</span>
-        <div>
+        <div style="flex: 1; min-width: 200px;">
           <h2 class="section-title" style="margin-bottom: 0.25rem;">Mouth Tape</h2>
           <p class="section-subtitle" style="margin-bottom: 0;">Promote nasal breathing during sleep. Hypoallergenic, latex-free, comfortable all-night wear.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.15rem;">
+          <span style="font-size: 0.72rem; color: var(--gray-500); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Starting from</span>
+          <span style="font-size: 1.5rem; font-weight: 800; color: var(--blue-600); font-family: var(--font-heading);">$0.02<span style="font-size: 0.85rem; color: var(--gray-500); font-weight: 500;">/pc</span></span>
         </div>
       </div>
 
@@ -213,11 +224,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- ========================================== -->
   <section id="sleep-patch" class="section">
     <div class="container">
-      <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+      <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">
         <span style="font-size: 2.2rem;">🌿</span>
-        <div>
+        <div style="flex: 1; min-width: 200px;">
           <h2 class="section-title" style="margin-bottom: 0.25rem;">Sleep Patch</h2>
           <p class="section-subtitle" style="margin-bottom: 0;">100% natural plant-based sleep aid. Drug-free, melatonin-free, 8-hour slow release.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.15rem;">
+          <span style="font-size: 0.72rem; color: var(--gray-500); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Starting from</span>
+          <span style="font-size: 1.5rem; font-weight: 800; color: var(--blue-600); font-family: var(--font-heading);">$0.01<span style="font-size: 0.85rem; color: var(--gray-500); font-weight: 500;">/pc</span></span>
         </div>
       </div>
 
@@ -258,11 +273,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- ========================================== -->
   <section id="face-tape" class="section" style="background: var(--gray-50);">
     <div class="container">
-      <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+      <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">
         <span style="font-size: 2.2rem;">✨</span>
-        <div>
+        <div style="flex: 1; min-width: 200px;">
           <h2 class="section-title" style="margin-bottom: 0.25rem;">Face Tape</h2>
           <p class="section-subtitle" style="margin-bottom: 0;">Anti-wrinkle, face lifting & jawline contouring. Premium kinesiology-grade materials.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.15rem;">
+          <span style="font-size: 0.72rem; color: var(--gray-500); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Starting from</span>
+          <span style="font-size: 1.5rem; font-weight: 800; color: var(--blue-600); font-family: var(--font-heading);">$0.06<span style="font-size: 0.85rem; color: var(--gray-500); font-weight: 500;">/pc</span></span>
         </div>
       </div>
 
@@ -288,6 +307,202 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <a href="/contact" class="btn btn-primary" style="font-size: 0.9rem;">Get Face Tape Quote</a>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- FOCUS & CALM PATCH -->
+  <!-- ========================================== -->
+  <section id="focus-patch" class="section">
+    <div class="container">
+      <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">
+        <span style="font-size: 2.2rem;">🎯</span>
+        <div style="flex: 1; min-width: 200px;">
+          <h2 class="section-title" style="margin-bottom: 0.25rem;">Focus &amp; Calm Patches</h2>
+          <p class="section-subtitle" style="margin-bottom: 0;">Plant-based, drug-free clarity patches. Essential oil blends for focus, calm, and mental wellness.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.15rem;">
+          <span style="font-size: 0.72rem; color: var(--gray-500); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Starting from</span>
+          <span style="font-size: 1.5rem; font-weight: 800; color: var(--blue-600); font-family: var(--font-heading);">$0.02<span style="font-size: 0.85rem; color: var(--gray-500); font-weight: 500;">/pc</span></span>
+        </div>
+      </div>
+
+      <div class="product-detail-card product-detail-card--reverse">
+        <div class="product-detail-image">
+          <img src="https://s.alicdn.com/@sc04/kf/Hfdc639fcf10249f3bff6ca9d2f71e7ceJ/HLK-31-Airflow-Enhanced-Professional-Factory-Custom.png_350x350.jpg" alt="HLK Focus & Calm Patch — Plant-Based Essential Oil Patch" loading="lazy" style="width: 100%; height: auto; border-radius: 12px;" />
+        </div>
+        <div class="product-detail-info">
+          <span class="badge badge-green" style="margin-bottom: 0.75rem;">New Category</span>
+          <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;">Focus &amp; Calm Essential Oil Patches</h3>
+          <p style="margin-bottom: 1rem; color: var(--gray-600);">Drug-free, vegan-friendly patches infused with pure plant essential oils. Designed for focus enhancement, stress relief, and mental clarity. 8-hour slow-release through breathable backing. Perfect for the fast-growing wellness and productivity market.</p>
+
+          <table class="spec-table">
+            <tr><th>Active Ingredients</th><td>Lavender, Peppermint, Rosemary, Bergamot, Custom blends</td></tr>
+            <tr><th>Formula Type</th><td>100% plant-based, vegan, drug-free, non-habit forming</td></tr>
+            <tr><th>Release Duration</th><td>8 hours sustained release</td></tr>
+            <tr><th>Material</th><td>Breathable spunlace nonwoven, latex-free</td></tr>
+            <tr><th>Pack Size</th><td>30 patches per box</td></tr>
+            <tr><th>MOQ</th><td>1,000 boxes</td></tr>
+            <tr><th>Price Range</th><td>$0.02-0.04/patch</td></tr>
+          </table>
+
+          <div style="margin-top: 1.25rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <a href="/contact" class="btn btn-primary" style="font-size: 0.9rem;">Request Quote</a>
+            <a href="/oem" class="btn btn-outline" style="font-size: 0.9rem;">Custom Formula</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- CGM SENSOR PATCH -->
+  <!-- ========================================== -->
+  <section id="cgm-patch" class="section" style="background: var(--gray-50);">
+    <div class="container">
+      <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">
+        <span style="font-size: 2.2rem;">🔬</span>
+        <div style="flex: 1; min-width: 200px;">
+          <h2 class="section-title" style="margin-bottom: 0.25rem;">CGM Sensor Fixation Patches</h2>
+          <p class="section-subtitle" style="margin-bottom: 0;">Continuous Glucose Monitor sensor overlay patches. Medical-grade adhesion for 14-day wear.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.15rem;">
+          <span style="font-size: 0.72rem; color: var(--gray-500); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Starting from</span>
+          <span style="font-size: 1.5rem; font-weight: 800; color: var(--blue-600); font-family: var(--font-heading);">$0.13<span style="font-size: 0.85rem; color: var(--gray-500); font-weight: 500;">/pc</span></span>
+        </div>
+      </div>
+
+      <div class="product-detail-card">
+        <div class="product-detail-image">
+          <img src="https://s.alicdn.com/@sc04/kf/H065aebb94c2e4d02af2173be36d63956D/HLK-2026-Customized-LOGO-Sleep-Strip-Bulk.png_350x350.jpg" alt="HLK CGM Sensor Patch — Glucose Monitor Fixation" loading="lazy" style="width: 100%; height: auto; border-radius: 12px;" />
+        </div>
+        <div class="product-detail-info">
+          <span class="badge badge-blue" style="margin-bottom: 0.75rem;">Medical Device</span>
+          <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;">CGM Sensor Overlay Patch</h3>
+          <p style="margin-bottom: 1rem; color: var(--gray-600);">Custom-designed fixation patches for Continuous Glucose Monitoring sensors (Dexcom, Freestyle Libre, etc.). Medical-grade adhesive ensures 14-day secure wear while remaining gentle on skin. Waterproof, sweatproof, and friction-resistant. Pre-cut to fit all major CGM sensor models.</p>
+
+          <table class="spec-table">
+            <tr><th>Compatibility</th><td>Dexcom G6/G7, Libre 2/3, Medtronic, Custom die-cut</td></tr>
+            <tr><th>Material</th><td>Polyurethane film + medical acrylic adhesive</td></tr>
+            <tr><th>Wear Duration</th><td>Up to 14 days continuous wear</td></tr>
+            <tr><th>Features</th><td>Waterproof, sweatproof, friction-resistant, breathable</td></tr>
+            <tr><th>Custom Shapes</th><td>Round, oval, custom die-cut to sensor dimensions</td></tr>
+            <tr><th>MOQ</th><td>5,000 pieces</td></tr>
+            <tr><th>Price Range</th><td>$0.13-0.19/piece</td></tr>
+          </table>
+
+          <div style="margin-top: 1.25rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <a href="/contact" class="btn btn-primary" style="font-size: 0.9rem;">Request CGM Quote</a>
+            <a href="/oem" class="btn btn-outline" style="font-size: 0.9rem;">Custom Shape</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- SPORTS TAPE -->
+  <!-- ========================================== -->
+  <section id="sports-tape" class="section">
+    <div class="container">
+      <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">
+        <span style="font-size: 2.2rem;">🏅</span>
+        <div style="flex: 1; min-width: 200px;">
+          <h2 class="section-title" style="margin-bottom: 0.25rem;">Sports &amp; Athletic Tape</h2>
+          <p class="section-subtitle" style="margin-bottom: 0;">Professional-grade athletic tape. From BJJ finger tape to kinesiology &mdash; trusted by athletes worldwide.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.15rem;">
+          <span style="font-size: 0.72rem; color: var(--gray-500); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Starting from</span>
+          <span style="font-size: 1.5rem; font-weight: 800; color: var(--blue-600); font-family: var(--font-heading);">$0.19<span style="font-size: 0.85rem; color: var(--gray-500); font-weight: 500;">/roll</span></span>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="card" style="overflow: hidden;">
+          <img src="https://s.alicdn.com/@sc04/kf/Hd427c795ba8b4fd2b956ae4c864d3cdcC/HLK-Extra-Strength-Pain-Free-Removal-Custom.jpg_350x350.jpg" alt="BJJ Finger Tape" loading="lazy" style="width: 100%; height: 180px; object-fit: cover;" />
+          <div style="padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem;">BJJ Finger Tape</h3>
+            <p style="font-size: 0.85rem; color: var(--gray-600); margin-bottom: 0.75rem;">Premium cotton finger tape for Brazilian Jiu-Jitsu, climbing, and weightlifting. Rip-resistant, sweat-absorbent.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: 700; color: var(--blue-600);">$0.24-0.35/roll</span>
+              <span class="badge badge-blue">MOQ 100</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="overflow: hidden;">
+          <img src="https://s.alicdn.com/@sc04/kf/He2aea82c5c7e4d7baef889db937a6b8dd/HLK-CLOSE-MOUTH-TAPE-HLK-Safe-Adhesive.jpg_350x350.jpg" alt="Zinc Oxide Tape" loading="lazy" style="width: 100%; height: 180px; object-fit: cover;" />
+          <div style="padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem;">Zinc Oxide Tape</h3>
+            <p style="font-size: 0.85rem; color: var(--gray-600); margin-bottom: 0.75rem;">Rigid support tape for injury prevention and joint stabilization. Tearable by hand, strong adhesive.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: 700; color: var(--blue-600);">$0.65-0.73/roll</span>
+              <span class="badge badge-blue">MOQ 50</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="overflow: hidden;">
+          <img src="https://s.alicdn.com/@sc04/kf/Hd4aaaabbb42b4f5eaf7c755c18ed32716.jpg_960x960.jpg" alt="Kinesiology Tape" loading="lazy" style="width: 100%; height: 180px; object-fit: cover;" />
+          <div style="padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem;">Kinesiology Tape</h3>
+            <p style="font-size: 0.85rem; color: var(--gray-600); margin-bottom: 0.75rem;">Elastic cotton tape for muscle support and recovery. Water-resistant, 5-day wear. Multiple colors.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: 700; color: var(--blue-600);">$0.69-0.75/roll</span>
+              <span class="badge badge-teal">MOQ 50</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="overflow: hidden;">
+          <img src="https://s.alicdn.com/@sc04/kf/H065aebb94c2e4d02af2173be36d63956D/HLK-2026-Customized-LOGO-Sleep-Strip-Bulk.png_350x350.jpg" alt="Cohesive Bandage" loading="lazy" style="width: 100%; height: 180px; object-fit: cover;" />
+          <div style="padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem;">Cohesive Bandage</h3>
+            <p style="font-size: 0.85rem; color: var(--gray-600); margin-bottom: 0.75rem;">Self-adhering vet wrap bandage. Sticks to itself, not to skin or hair. Tearable by hand.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: 700; color: var(--blue-600);">$0.19-0.30/roll</span>
+              <span class="badge badge-green">MOQ 100</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="overflow: hidden;">
+          <img src="https://s.alicdn.com/@sc04/kf/Hd427c795ba8b4fd2b956ae4c864d3cdcC/HLK-Extra-Strength-Pain-Free-Removal-Custom.jpg_350x350.jpg" alt="EAB Hook Grip Tape" loading="lazy" style="width: 100%; height: 180px; object-fit: cover;" />
+          <div style="padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem;">EAB Hook Grip Tape</h3>
+            <p style="font-size: 0.85rem; color: var(--gray-600); margin-bottom: 0.75rem;">Weightlifting thumb tape with extra-tacky adhesive. Prevents bar slippage during heavy lifts.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: 700; color: var(--blue-600);">$0.29-0.59/roll</span>
+              <span class="badge badge-blue">MOQ 10</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="overflow: hidden;">
+          <img src="https://s.alicdn.com/@sc04/kf/He2aea82c5c7e4d7baef889db937a6b8dd/HLK-CLOSE-MOUTH-TAPE-HLK-Safe-Adhesive.jpg_350x350.jpg" alt="Hockey Stick Tape" loading="lazy" style="width: 100%; height: 180px; object-fit: cover;" />
+          <div style="padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem;">Hockey Stick Tape</h3>
+            <p style="font-size: 0.85rem; color: var(--gray-600); margin-bottom: 0.75rem;">Premium cloth tape for hockey stick blades and handles. Durable, moisture-resistant, multiple colors.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: 700; color: var(--blue-600);">$0.95-1.00/roll</span>
+              <span class="badge badge-teal">MOQ 10</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <table class="spec-table" style="margin-top: 2rem; max-width: 700px;">
+        <tr><th>Material Options</th><td>Cotton, Synthetic, blended fabric</td></tr>
+        <tr><th>Adhesive</th><td>Zinc oxide, acrylic, rubber-based</td></tr>
+        <tr><th>Width Options</th><td>1.5cm, 2.5cm, 3.8cm, 5cm, Custom</td></tr>
+        <tr><th>Colors</th><td>White, Black, Blue, Red, Neon, Custom</td></tr>
+        <tr><th>Certifications</th><td>CE, FDA, ISO 13485</td></tr>
+        <tr><th>Customization</th><td>Size, color, logo print, packaging, material</td></tr>
+      </table>
+
+      <div style="margin-top: 1.5rem;">
+        <a href="/contact" class="btn btn-primary">Inquire About Sports Tape</a>
       </div>
     </div>
   </section>
@@ -414,6 +629,73 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
+/* ===== Sticky Product Category Nav ===== */
+.prod-cat-nav {
+  position: sticky;
+  top: 0;
+  z-index: 90;
+}
+
+@media (min-width: 769px) {
+  .prod-cat-nav {
+    top: 66px; /* fixed header height on desktop */
+  }
+}
+
+.prod-cat-nav-inner {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.65rem 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.prod-cat-nav-inner::-webkit-scrollbar { display: none; }
+
+.prod-cat-link {
+  white-space: nowrap;
+  padding: 0.5rem 1.2rem;
+  background: white;
+  color: var(--gray-700);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid var(--gray-300);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.prod-cat-link:hover {
+  background: var(--blue-50);
+  border-color: var(--blue-300);
+  color: var(--blue-600);
+}
+
+.prod-cat-link--active {
+  background: var(--blue-600);
+  color: white;
+  border-color: var(--blue-600);
+}
+
+.prod-cat-link--active:hover {
+  background: var(--blue-600);
+  color: white;
+  border-color: var(--blue-600);
+}
+
+/* Offset anchor scroll so section titles aren't hidden behind sticky nav */
+#nasal-strips,
+#mouth-tape,
+#sleep-patch,
+#face-tape,
+#focus-patch,
+#cgm-patch,
+#sports-tape {
+  scroll-margin-top: 120px;
+}
+
+/* ===== Product Detail Cards ===== */
 .product-detail-card {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -443,3 +725,43 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 }
 </style>
+
+<script is:inline>
+  // Active section highlighting on scroll
+  (function() {
+    const links = document.querySelectorAll('.prod-cat-link');
+    const sections = ['nasal-strips', 'mouth-tape', 'sleep-patch', 'face-tape', 'focus-patch', 'cgm-patch', 'sports-tape']
+      .map(id => document.getElementById(id))
+      .filter(Boolean);
+
+    if (!links.length || !sections.length) return;
+
+    function updateActive() {
+      const navBottom = document.querySelector('.prod-cat-nav')?.getBoundingClientRect().bottom || 100;
+      let current = sections[0];
+      for (const sec of sections) {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top <= navBottom + 20) {
+          current = sec;
+        }
+      }
+      links.forEach(link => {
+        const isActive = link.getAttribute('href') === '#' + current.id;
+        link.classList.toggle('prod-cat-link--active', isActive);
+      });
+    }
+
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          updateActive();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    updateActive();
+  })();
+</script>
