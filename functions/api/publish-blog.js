@@ -176,100 +176,105 @@ export async function onRequestPost(context) {
     });
   }
 
-  // Validate API key
-  const apiKey = request.headers.get('x-api-key');
-  const expectedKey = env.BLOG_API_KEY || process.env.BLOG_API_KEY;
-
-  if (!expectedKey) {
-    return json({ success: false, error: 'BLOG_API_KEY not configured on server' }, 500);
-  }
-
-  if (apiKey !== expectedKey) {
-    return json({ success: false, error: 'Invalid or missing API key' }, 401);
-  }
-
-  // Parse request body
-  let data;
   try {
-    data = await request.json();
-  } catch (e) {
-    return json({ success: false, error: 'Invalid JSON body' }, 400);
-  }
+    // Validate API key
+    const apiKey = request.headers.get('x-api-key');
+    const expectedKey = env.BLOG_API_KEY;
 
-  // Validate required fields
-  if (!data.title || typeof data.title !== 'string') {
-    return json({ success: false, error: 'title is required' }, 400);
-  }
-
-  if (!data.markdown || typeof data.markdown !== 'string') {
-    return json({ success: false, error: 'markdown is required' }, 400);
-  }
-
-  // Generate slug
-  const slug = data.slug ? slugify(data.slug) : slugify(data.title);
-
-  if (!slug) {
-    return json({ success: false, error: 'Could not generate valid slug from title' }, 400);
-  }
-
-  // Handle cover image
-  let coverPath = null;
-  if (data.coverImage) {
-    if (data.coverImage.startsWith('http://') || data.coverImage.startsWith('https://')) {
-      // Download external image and commit to repo
-      try {
-        const { buffer, ext } = await downloadImage(data.coverImage);
-        const imagePath = `public/images/blog/${slug}.${ext}`;
-
-        await commitToGitHub(
-          imagePath,
-          buffer,
-          `Blog cover image: ${slug}`,
-          true,  // isBinary
-          env
-        );
-        coverPath = `/images/blog/${slug}.${ext}`;
-      } catch (e) {
-        console.error('Cover image download failed:', e.message);
-        // Continue without cover image if download fails
-      }
-    } else {
-      // Local path like /images/xxx.jpg — use as-is
-      coverPath = data.coverImage;
+    if (!expectedKey) {
+      return json({ success: false, error: 'BLOG_API_KEY not configured on server' }, 500);
     }
-  }
 
-  // Build markdown file content
-  const markdownContent = buildMarkdownFile({
-    title: data.title,
-    excerpt: data.excerpt,
-    category: data.category,
-    markdown: data.markdown,
-    readTime: data.readTime,
-    coverImage: coverPath,
-  });
+    if (apiKey !== expectedKey) {
+      return json({ success: false, error: 'Invalid or missing API key' }, 401);
+    }
 
-  // Commit to GitHub
-  const filePath = `src/content/blog/${slug}.md`;
-  try {
-    await commitToGitHub(
-      filePath,
-      markdownContent,
-      `Blog post: ${data.title}`,
-      false,  // isBinary
-      env
-    );
+    // Parse request body
+    let data;
+    try {
+      data = await request.json();
+    } catch (e) {
+      return json({ success: false, error: 'Invalid JSON body' }, 400);
+    }
+
+    // Validate required fields
+    if (!data.title || typeof data.title !== 'string') {
+      return json({ success: false, error: 'title is required' }, 400);
+    }
+
+    if (!data.markdown || typeof data.markdown !== 'string') {
+      return json({ success: false, error: 'markdown is required' }, 400);
+    }
+
+    // Generate slug
+    const slug = data.slug ? slugify(data.slug) : slugify(data.title);
+
+    if (!slug) {
+      return json({ success: false, error: 'Could not generate valid slug from title' }, 400);
+    }
+
+    // Handle cover image
+    let coverPath = null;
+    if (data.coverImage) {
+      if (data.coverImage.startsWith('http://') || data.coverImage.startsWith('https://')) {
+        // Download external image and commit to repo
+        try {
+          const { buffer, ext } = await downloadImage(data.coverImage);
+          const imagePath = `public/images/blog/${slug}.${ext}`;
+
+          await commitToGitHub(
+            imagePath,
+            buffer,
+            `Blog cover image: ${slug}`,
+            true,  // isBinary
+            env
+          );
+          coverPath = `/images/blog/${slug}.${ext}`;
+        } catch (e) {
+          console.error('Cover image download failed:', e.message);
+          // Continue without cover image if download fails
+        }
+      } else {
+        // Local path like /images/xxx.jpg — use as-is
+        coverPath = data.coverImage;
+      }
+    }
+
+    // Build markdown file content
+    const markdownContent = buildMarkdownFile({
+      title: data.title,
+      excerpt: data.excerpt,
+      category: data.category,
+      markdown: data.markdown,
+      readTime: data.readTime,
+      coverImage: coverPath,
+    });
+
+    // Commit to GitHub
+    const filePath = `src/content/blog/${slug}.md`;
+    try {
+      await commitToGitHub(
+        filePath,
+        markdownContent,
+        `Blog post: ${data.title}`,
+        false,  // isBinary
+        env
+      );
+    } catch (e) {
+      console.error('GitHub commit failed:', e.message);
+      return json({ success: false, error: `Failed to publish: ${e.message}` }, 500);
+    }
+
+    return json({
+      success: true,
+      url: `/blog/${slug}`,
+      slug,
+      message: 'Blog post published. Cloudflare Pages will auto-deploy in ~1-2 minutes.',
+    });
   } catch (e) {
-    console.error('GitHub commit failed:', e.message);
-    return json({ success: false, error: `Failed to publish: ${e.message}` }, 500);
+    console.error('Publish error:', e.message, e.stack);
+    return json({ success: false, error: `Server error: ${e.message}` }, 500);
   }
-
-  return json({
-    success: true,
-    url: `/blog/${slug}`,
-    slug,
-    message: 'Blog post published. Cloudflare Pages will auto-deploy in ~1-2 minutes.',
-  });
 }
 
 // Handle OPTIONS for CORS
