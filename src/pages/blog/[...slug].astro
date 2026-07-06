@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -12,6 +13,12 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+
+const slug = post.id.replace(/\.md$/, '');
+const articleUrl = `https://en.hlknasalstrips.com/blog/${slug}`;
+const pubDate = post.data.date instanceof Date
+  ? post.data.date.toISOString()
+  : String(post.data.date);
 
 // Extract TOC headings from raw markdown
 const rawBody = post.body || '';
@@ -32,7 +39,18 @@ while ((match = headingRegex.exec(rawBody)) !== null) {
 <BaseLayout
   title={`${post.data.title} | HLK Blog`}
   description={post.data.excerpt}
+  image={post.data.cover || undefined}
+  canonical={articleUrl}
+  articlePublishedTime={pubDate}
 >
+  <ArticleSchema
+    title={post.data.title}
+    description={post.data.excerpt}
+    coverImage={post.data.cover || undefined}
+    datePublished={pubDate}
+    url={articleUrl}
+    category={post.data.category}
+  />
   <!-- ===== PAGE HEADER ===== -->
   <section class="page-header blog-article-header">
     <div class="container" style="max-width: 960px;">

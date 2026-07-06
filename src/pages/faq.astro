@@ -1,11 +1,33 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQSchema from '../components/FAQSchema.astro';
+
+const faqItems = [
+  { question: 'What is your minimum order quantity (MOQ)?', answer: 'Standard stock products: 1,000 boxes. Custom/OEM packaging: 5,000 boxes. We\'re flexible — let us know your situation and we\'ll find a solution.' },
+  { question: 'How much do your nasal strips cost?', answer: 'Pricing depends on specifications, quantity, packaging, and customization level. As a manufacturer, our prices are highly competitive. Contact us with your requirements for an exact quotation — you\'ll receive it within 24 hours.' },
+  { question: 'Do you offer free samples?', answer: 'Yes. We provide free samples of our standard products for qualified buyers. The sample cost is refundable on your first order. Custom/OEM samples may involve a small development fee, also refundable upon bulk order placement.' },
+  { question: 'What payment terms do you accept?', answer: 'We accept T/T (30% deposit, 70% before shipment or against B/L copy), L/C at sight, and Western Union for small amounts. For long-term partners, we offer flexible terms including OA 30/60 days.' },
+  { question: 'What certifications do your nasal strips have?', answer: 'Our products are FDA registered, CE marked (EU MDR 2017/745), ISO 13485 certified, SGS tested, and RoHS compliant. We can provide full documentation including certificates, test reports, and MSDS.' },
+  { question: 'What materials do you use?', answer: 'We use medical-grade non-woven fabric with PET spring-action bands and hypoallergenic acrylic adhesive. All materials are latex-free, BPA-free, and dermatologically tested. Custom materials available for OEM orders.' },
+  { question: 'Can you add menthol or essential oils to the strips?', answer: 'Yes. We offer menthol-infused and essential oil (lavender, eucalyptus, peppermint) formulations. Available for OEM orders. Formulation can be adjusted to your desired intensity level.' },
+  { question: 'How do you ensure quality control?', answer: 'Every batch undergoes: visual inspection, dimension check, adhesion strength test, skin irritation test, packaging integrity check, and accelerated aging test. Our ISO 13485 quality system documents every step.' },
+  { question: 'What can I customize?', answer: 'Almost everything: strip dimensions, adhesive strength, material type, color, menthol/essential oil content, box design, packaging type (sachet/blister/tray), labeling, and inserts. See our OEM page for full details.' },
+  { question: 'How long does OEM development take?', answer: 'Sample development: 3-5 days. Client testing and feedback: typically 1-2 weeks. Mass production after approval: 7-15 days. Total timeline from concept to delivery: 4-7 weeks.' },
+  { question: 'Do you provide design support for packaging?', answer: 'Yes. Our in-house design team can help with packaging artwork, instruction inserts, and display box design. Or you can provide your own artwork files (AI, PSD, PDF format accepted).' },
+  { question: 'What shipping methods do you offer?', answer: 'Sea freight (most cost-effective for bulk orders, 15-30 days), air freight (faster, 5-10 days), and express courier (DHL/UPS/FedEx, 3-7 days for samples and small orders).' },
+  { question: 'What Incoterms do you support?', answer: 'EXW, FOB (Xiamen/Shanghai), CIF, and DDP for select destinations. We\'ll recommend the best option based on your location and order volume.' },
+  { question: 'Do you ship to my country?', answer: 'We currently ship to 30+ countries including the US, EU member states, Brazil, Australia, Canada, UK, Singapore, and more. Contact us to confirm availability for your location.' },
+  { question: 'Can I visit your factory?', answer: 'Absolutely! We welcome factory visits and third-party audits. Please schedule in advance so we can prepare your visit properly. Virtual factory tours also available via video call.' },
+  { question: 'Do you offer exclusivity for my market?', answer: 'For clients who commit to minimum annual purchase volumes, we can offer market exclusivity agreements. This means no other client will receive the same product with your specifications in your defined territory.' },
+  { question: 'How do I get started?', answer: 'Simply contact us with your requirements. We\'ll respond with product recommendations, pricing, and next steps within 24 hours. You\'ll have samples in your hands within 1-2 weeks.' },
+];
 ---
 
 <BaseLayout
   title="FAQ — Nasal Strips Wholesale, OEM, Shipping & More | HLK"
   description="Frequently asked questions about HLK nasal strips: MOQ, pricing, OEM customization, shipping, certifications, payment terms, and more."
 >
+  <FAQSchema questions={faqItems} />
   <section class="page-header">
     <div class="container">
       <h1>Frequently Asked Questions</h1>

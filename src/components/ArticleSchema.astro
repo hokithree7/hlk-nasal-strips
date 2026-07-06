@@ -1,0 +1,44 @@
+---
+// Article Structured Data — for blog post pages
+export interface Props {
+  title: string;
+  description: string;
+  coverImage?: string;
+  datePublished: string;
+  dateModified?: string;
+  author?: string;
+  url: string;
+  category?: string;
+}
+const { title, description, coverImage, datePublished, dateModified, author, url, category } = Astro.props;
+const baseUrl = 'https://en.hlknasalstrips.com';
+---
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  'headline': title,
+  'description': description,
+  'image': coverImage ? `${baseUrl}${coverImage}` : undefined,
+  'datePublished': datePublished,
+  'dateModified': dateModified || datePublished,
+  'author': {
+    '@type': 'Organization',
+    'name': author || 'HLK Nasal Strips',
+    'url': baseUrl,
+  },
+  'publisher': {
+    '@type': 'Organization',
+    'name': 'HLK Nasal Strips',
+    'logo': {
+      '@type': 'ImageObject',
+      'url': `${baseUrl}/favicon.svg`,
+    },
+  },
+  'url': url,
+  'mainEntityOfPage': {
+    '@type': 'WebPage',
+    '@id': url,
+  },
+  ...(category ? { 'articleSection': category } : {}),
+})} />

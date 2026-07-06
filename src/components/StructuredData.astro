@@ -1,0 +1,40 @@
+---
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  'name': 'Quanzhou Honglinkai New Material Co., Ltd.',
+  'alternateName': 'HLK Nasal Strips',
+  'url': 'https://en.hlknasalstrips.com',
+  'logo': 'https://en.hlknasalstrips.com/favicon.svg',
+  'contactPoint': {
+    '@type': 'ContactPoint',
+    'telephone': '+86-198-0595-7675',
+    'contactType': 'sales',
+    'availableLanguage': ['English', 'Chinese'],
+    'areaServed': ['US', 'EU', 'BR', 'AU', 'NL', 'CA', 'PE', 'PL', 'GB', 'SG', 'IT'],
+  },
+  'sameAs': [
+    'https://www.youtube.com/@HLKTape',
+    'https://cnhlk.en.alibaba.com/',
+  ],
+  'address': {
+    '@type': 'PostalAddress',
+    'addressCountry': 'CN',
+  },
+};
+
+const webSiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  'name': 'HLK Nasal Strips',
+  'url': 'https://en.hlknasalstrips.com',
+  'potentialAction': {
+    '@type': 'SearchAction',
+    'target': 'https://en.hlknasalstrips.com/?s={search_term_string}',
+    'query-input': 'required name=search_term_string',
+  },
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(orgSchema)}></script>
+<script type="application/ld+json" set:html={JSON.stringify(webSiteSchema)}></script>
