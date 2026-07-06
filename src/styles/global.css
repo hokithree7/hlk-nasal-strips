@@ -231,7 +231,7 @@ img {
   min-height: 85vh;
   display: flex;
   align-items: center;
-  background: url('/images/HLK_Lifestyle_Female_Model.jpg') center/cover no-repeat, var(--blue-900);
+  background: url('/images/hero.webp') center/cover no-repeat, var(--blue-900);
   overflow: hidden;
 }
 
