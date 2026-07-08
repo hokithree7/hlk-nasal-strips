@@ -1075,6 +1075,94 @@ img {
   line-height: 1.5;
 }
 
+/* ===== Customization Steps Visual Cards ===== */
+.custom-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.custom-step-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  border: 1px solid var(--gray-100);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.custom-step-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(30,136,229,0.15);
+  border-color: var(--blue-200, #BBDEFB);
+}
+
+.custom-step-image-wrap {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--gray-100);
+}
+
+.custom-step-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.custom-step-card:hover .custom-step-image-wrap img {
+  transform: scale(1.06);
+}
+
+.custom-step-num-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue-600, #1E88E5), var(--blue-700, #1565C0));
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(30,136,229,0.4);
+  z-index: 2;
+}
+
+.custom-step-body {
+  padding: 1.5rem;
+}
+
+.custom-step-body h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.custom-step-body p {
+  font-size: 0.88rem;
+  color: var(--gray-500);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .custom-steps-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+  .custom-step-body { padding: 1.25rem; }
+  .custom-step-body h4 { font-size: 1.05rem; }
+  .custom-step-body p { font-size: 0.85rem; }
+}
+
 .oem-additional-options {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
