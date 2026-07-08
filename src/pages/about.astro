@@ -103,7 +103,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h2 class="section-title">Our Certifications</h2>
       <p class="section-subtitle">Quality, safety, and compliance — verified by international authorities.</p>
 
-      <div class="cert-gallery-grid" style="margin-top: 2rem; grid-template-columns: repeat(2, 1fr); max-width: 900px; margin-left: auto; margin-right: auto;">
+      <div class="cert-gallery-grid" style="margin-top: 2rem; grid-template-columns: repeat(3, 1fr); max-width: 1100px; margin-left: auto; margin-right: auto;">
         <div class="cert-gallery-item">
           <img class="cert-lightbox-trigger cert-thumb" src="/images/cert-ce.jpg" alt="CE Marked — EU Medical Device Regulation MDR 2017/745" data-full="/images/cert-ce.jpg" />
           <div class="cert-info">
@@ -126,16 +126,39 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
         </div>
         <div class="cert-gallery-item">
-          <div class="cert-thumb cert-thumb-svg" style="display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #EBF5FF, #E3F2FD); height: 240px; width: 100%; border-radius: var(--radius-md);">
-            <svg viewBox="0 0 120 120" width="70" height="70" fill="none" stroke="#1E88E5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="60" cy="60" r="50" fill="white" stroke="#1E88E5" stroke-width="2"/>
-              <text x="60" y="55" text-anchor="middle" font-size="18" font-weight="800" fill="#1E88E5" stroke="none" font-family="Arial, sans-serif">TÜV</text>
-              <text x="60" y="75" text-anchor="middle" font-size="9" font-weight="600" fill="#1E88E5" stroke="none" font-family="Arial, sans-serif">Rheinland</text>
-            </svg>
+          <div class="cert-thumb cert-thumb-svg" style="display: flex; align-items: center; justify-content: center; background: white; height: 240px; width: 100%; border-radius: var(--radius-md); padding: 1rem;">
+            <img src="/images/certs/01.png" alt="TÜV Rheinland Certified" style="max-height: 200px; max-width: 100%; object-fit: contain;" loading="lazy" />
           </div>
           <div class="cert-info">
             <h4>TÜV Rheinland Certified</h4>
             <p>Factory quality management system audited and certified by TÜV Rheinland. On-site material inspection and ODM capabilities verified by third-party assessment.</p>
+          </div>
+        </div>
+        <div class="cert-gallery-item">
+          <div class="cert-thumb cert-thumb-svg" style="display: flex; align-items: center; justify-content: center; background: white; height: 240px; width: 100%; border-radius: var(--radius-md); padding: 1rem;">
+            <img src="/images/certs/02.png" alt="ISO 13485 Certified" style="max-height: 200px; max-width: 100%; object-fit: contain;" loading="lazy" />
+          </div>
+          <div class="cert-info">
+            <h4>ISO 13485</h4>
+            <p>Medical devices — Quality Management Systems. Requirements for regulatory purposes. Certified to ISO 13485:2016.</p>
+          </div>
+        </div>
+        <div class="cert-gallery-item">
+          <div class="cert-thumb cert-thumb-svg" style="display: flex; align-items: center; justify-content: center; background: white; height: 240px; width: 100%; border-radius: var(--radius-md); padding: 1rem;">
+            <img src="/images/certs/图片高度延长_03.png" alt="SGS Certified" style="max-height: 200px; max-width: 100%; object-fit: contain;" loading="lazy" />
+          </div>
+          <div class="cert-info">
+            <h4>SGS Tested</h4>
+            <p>Products tested by SGS, the world's leading inspection, verification, testing and certification company.</p>
+          </div>
+        </div>
+        <div class="cert-gallery-item">
+          <div class="cert-thumb cert-thumb-svg" style="display: flex; align-items: center; justify-content: center; background: white; height: 240px; width: 100%; border-radius: var(--radius-md); padding: 1rem;">
+            <img src="/images/certs/what-is-MDR-2017-745-Compliance.webp" alt="CE MDR 2017/745 Compliance" style="max-height: 200px; max-width: 100%; object-fit: contain;" loading="lazy" />
+          </div>
+          <div class="cert-info">
+            <h4>CE MDR 2017/745</h4>
+            <p>EU Medical Device Regulation compliance. Certified for free sale across all 27 EU member states.</p>
           </div>
         </div>
       </div>
@@ -271,7 +294,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <!-- Testimonial 1: US -->
         <div class="testimonial-card">
           <div class="testimonial-photo-wrap">
-            <img src="/images/factory-banner-1.jpg" alt="Customer visit — HLK factory exterior" loading="lazy" />
+            <img src="/images/kh/Michael-Peterson.jpg" alt="Michael Peterson visiting HLK factory" loading="lazy" />
             <div class="testimonial-visit-badge">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
               Factory Visit
@@ -288,9 +311,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </div>
             <p class="testimonial-quote">Visited the facility in person before placing our first order. The production lines are clean and organized, QC is thorough. We've been working with HLK for 18 months now — consistent quality every batch.</p>
             <div class="testimonial-meta">
-              <div class="testimonial-avatar-placeholder">MR</div>
+              <div class="testimonial-avatar-placeholder">MP</div>
               <div class="testimonial-info">
-                <div class="testimonial-name">Michael Rodriguez</div>
+                <div class="testimonial-name">Michael Peterson</div>
                 <div class="testimonial-role">Procurement Manager</div>
                 <div class="testimonial-company">BreatheWell Inc., USA</div>
               </div>
@@ -301,7 +324,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <!-- Testimonial 2: Netherlands -->
         <div class="testimonial-card">
           <div class="testimonial-photo-wrap">
-            <img src="/images/factory-banner-2.jpg" alt="Customer visit — HLK quality control lab" loading="lazy" />
+            <img src="/images/kh/20260320042030_1272_49.jpg" alt="Customer group visit to HLK factory" loading="lazy" />
             <div class="testimonial-visit-badge">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
               Factory Visit
@@ -388,15 +411,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
         </div>
 
-        <!-- Testimonial 5: UK -->
+        <!-- Testimonial 5: France -->
         <div class="testimonial-card">
           <div class="testimonial-photo-wrap">
-            <img src="/images/factory-banner-1.jpg" alt="Customer visit — HLK facility overview" loading="lazy" />
+            <img src="/images/kh/Olivier-Duboi.jpg" alt="Olivier Dubois visiting HLK factory" loading="lazy" />
             <div class="testimonial-visit-badge">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
               Factory Visit
             </div>
-            <div class="testimonial-country-flag">🇬🇧</div>
+            <div class="testimonial-country-flag">🇫🇷</div>
           </div>
           <div class="testimonial-body">
             <div class="testimonial-stars">
@@ -406,13 +429,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
               <svg class="testimonial-star" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
             </div>
-            <p class="testimonial-quote">We source medical-grade nasal strips for our pharmacy chain across the UK. HLK's product documentation (MSDS, CoC) is always complete and accurate. Their lead times are reliable even during peak season. Very professional partner.</p>
+            <p class="testimonial-quote">We source medical-grade nasal strips for our pharmacy chain across France. HLK's product documentation (MSDS, CoC) is always complete and accurate. Their lead times are reliable even during peak season. Very professional partner.</p>
             <div class="testimonial-meta">
-              <div class="testimonial-avatar-placeholder">JW</div>
+              <div class="testimonial-avatar-placeholder">OD</div>
               <div class="testimonial-info">
-                <div class="testimonial-name">James Whitfield</div>
+                <div class="testimonial-name">Olivier Dubois</div>
                 <div class="testimonial-role">Category Buyer</div>
-                <div class="testimonial-company">MediCare Pharmacies, UK</div>
+                <div class="testimonial-company">Pharmacie Centrale, France</div>
               </div>
             </div>
           </div>
@@ -421,7 +444,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <!-- Testimonial 6: Singapore -->
         <div class="testimonial-card">
           <div class="testimonial-photo-wrap">
-            <img src="/images/factory-banner-2.jpg" alt="Customer visit — HLK QC laboratory" loading="lazy" />
+            <img src="/images/kh/Lim-Wei-Jie.jpg" alt="Lim Wei Jie visiting HLK factory" loading="lazy" />
             <div class="testimonial-visit-badge">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
               Factory Visit
@@ -438,9 +461,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </div>
             <p class="testimonial-quote">HLK has been supplying us with sports performance strips for the APAC region since 2023. The sweat-resistant adhesive formula they developed for tropical climates works exceptionally well. Great R&amp;D support from their team.</p>
             <div class="testimonial-meta">
-              <div class="testimonial-avatar-placeholder">KT</div>
+              <div class="testimonial-avatar-placeholder">LW</div>
               <div class="testimonial-info">
-                <div class="testimonial-name">Kevin Tan</div>
+                <div class="testimonial-name">Lim Wei Jie</div>
                 <div class="testimonial-role">Operations Director</div>
                 <div class="testimonial-company">AsiaSport Distribution, Singapore</div>
               </div>
