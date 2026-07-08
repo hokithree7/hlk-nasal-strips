@@ -1102,18 +1102,15 @@ img {
 
 .custom-step-image-wrap {
   position: relative;
-  height: 200px;
+  height: 260px;
   overflow: hidden;
   background: var(--gray-50, #F9FAFB);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .custom-step-image-wrap img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -1167,7 +1164,7 @@ img {
 
 @media (max-width: 600px) {
   .custom-steps-grid { grid-template-columns: 1fr; gap: 1rem; }
-  .custom-step-image-wrap { height: 180px; }
+  .custom-step-image-wrap { height: 220px; }
   .custom-step-body { padding: 1rem; }
   .custom-step-body h4 { font-size: 0.95rem; }
   .custom-step-body p { font-size: 0.78rem; }
