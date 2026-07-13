@@ -1,5 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import CertCarousel from '../components/CertCarousel.astro';
+
+const homepageCerts = [
+  { src: '/images/certs-new/Nasal Strips-CE-Analysis Certificate.gif', title: 'Nasal Strips CE' },
+  { src: '/images/certs-new/Nasal Strips-Reach-Analysis Certificate.gif', title: 'Nasal Strips REACH' },
+  { src: '/images/certs-new/Nasal Strips-Testing Certificate.gif', title: 'Testing Certificate' },
+  { src: '/images/certs-new/Mouthtape-CE-Analysis Certificate.gif', title: 'Mouth Tape CE' },
+  { src: '/images/certs-new/Mouthtape-Reach-Analysis Certificate.gif', title: 'Mouth Tape REACH' },
+  { src: '/images/certs-new/Mouthtape-Nasal Strips-MSDS-Analysis Certificate.gif', title: 'MSDS Analysis' },
+  { src: '/images/certs-new/Adhesive-SGS-Analysis Certificate.gif', title: 'SGS Analysis' },
+  { src: '/images/certs-new/CollagenMouthtape-COA.gif', title: 'COA Certificate' },
+  { src: '/images/certs-new/sgs.png', title: 'SGS Certified' },
+];
 ---
 
 <BaseLayout
@@ -444,29 +457,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h2 class="section-title">Certified Quality You Can Trust</h2>
       <p class="section-subtitle">Our facility and products meet the world's most rigorous standards — verified by international authorities.</p>
 
-      <div class="cert-gallery-grid" style="margin-top: 2rem;">
-        <div class="cert-gallery-item">
-          <img class="cert-lightbox-trigger cert-thumb" src="/images/cert-ce.jpg" alt="CE Marked — EU Medical Device Regulation MDR 2017/745" data-full="/images/cert-ce.jpg" />
-          <div class="cert-info">
-            <h4>CE Marked</h4>
-            <p>EU Medical Device Regulation (MDR 2017/745). Free sale across the European Union. Cert No. TST20240303098-3RC.</p>
-          </div>
-        </div>
-        <div class="cert-gallery-item">
-          <img class="cert-lightbox-trigger cert-thumb" src="/images/cert-rohs.jpg" alt="RoHS Compliant — Restriction of Hazardous Substances" data-full="/images/cert-rohs.jpg" />
-          <div class="cert-info">
-            <h4>RoHS Compliant</h4>
-            <p>All raw materials are RoHS-compliant, ensuring no hazardous substances are present in our products. Cert No. BSTDGF526245241010381HC.</p>
-          </div>
-        </div>
-        <div class="cert-gallery-item">
-          <img class="cert-lightbox-trigger cert-thumb" src="/images/cert-epr-de.jpg" alt="EPR Germany — Packaging Registration" data-full="/images/cert-epr-de.jpg" />
-          <div class="cert-info">
-            <h4>EPR Germany</h4>
-            <p>Extended Producer Responsibility registered for German packaging compliance. Reg No. DE1848439896773.</p>
-          </div>
-        </div>
-      </div>
+      <CertCarousel certs={homepageCerts} />
 
       <div style="margin-top: 2.5rem; text-align: center;">
         <a href="/contact" class="btn btn-outline btn-lg">Request Full Certification Documents</a>

@@ -1,5 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import CertCarousel from '../components/CertCarousel.astro';
+
+const oemCerts = [
+  { src: '/images/certs-new/Nasal Strips-CE-Analysis Certificate.gif', title: 'Nasal Strips CE' },
+  { src: '/images/certs-new/Nasal Strips-Reach-Analysis Certificate.gif', title: 'Nasal Strips REACH' },
+  { src: '/images/certs-new/Nasal Strips-Testing Certificate.gif', title: 'Testing Certificate' },
+  { src: '/images/certs-new/Mouthtape-CE-Analysis Certificate.gif', title: 'Mouth Tape CE' },
+  { src: '/images/certs-new/Mouthtape-Reach-Analysis Certificate.gif', title: 'Mouth Tape REACH' },
+  { src: '/images/certs-new/Mouthtape-Nasal Strips-MSDS-Analysis Certificate.gif', title: 'MSDS Analysis' },
+  { src: '/images/certs-new/Adhesive-SGS-Analysis Certificate.gif', title: 'SGS Analysis' },
+  { src: '/images/certs-new/CollagenMouthtape-COA.gif', title: 'COA Certificate' },
+  { src: '/images/certs-new/sgs.png', title: 'SGS Certified' },
+];
 ---
 
 <BaseLayout
@@ -251,29 +264,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <div style="margin-top: 2.5rem;">
         <h3 style="text-align: center; margin-bottom: 1.5rem; font-size: 1.4rem;">Certifications Available for Your Brand</h3>
-        <div class="cert-gallery-grid">
-          <div class="cert-gallery-item">
-            <img class="cert-lightbox-trigger cert-thumb" src="/images/cert-ce.jpg" alt="CE Marked — EU Medical Device Regulation MDR 2017/745" data-full="/images/cert-ce.jpg" />
-            <div class="cert-info">
-              <h4>CE Marked</h4>
-              <p>EU MDR 2017/745 compliant. Cert No. TST20240303098-3RC.</p>
-            </div>
-          </div>
-          <div class="cert-gallery-item">
-            <img class="cert-lightbox-trigger cert-thumb" src="/images/cert-rohs.jpg" alt="RoHS Compliant — Restriction of Hazardous Substances" data-full="/images/cert-rohs.jpg" />
-            <div class="cert-info">
-              <h4>RoHS Compliant</h4>
-              <p>No hazardous substances. Cert No. BSTDGF526245241010381HC.</p>
-            </div>
-          </div>
-          <div class="cert-gallery-item">
-            <img class="cert-lightbox-trigger cert-thumb" src="/images/cert-epr-de.jpg" alt="EPR Germany — Packaging Registration" data-full="/images/cert-epr-de.jpg" />
-            <div class="cert-info">
-              <h4>EPR Germany</h4>
-              <p>Packaging compliance registered. Reg No. DE1848439896773.</p>
-            </div>
-          </div>
-        </div>
+        <CertCarousel certs={oemCerts} />
       </div>
 
       <div style="margin-top: 2.5rem; text-align: center;">

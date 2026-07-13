@@ -1,0 +1,150 @@
+---
+// CertCarousel.astro — 证书轮播组件
+// props: certs: { src: string, title: string, desc: string }[]
+---
+
+<div class="cert-carousel-wrap">
+  <button class="cert-carousel-btn cert-carousel-prev" aria-label="Previous">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+
+  <div class="cert-carousel-track-wrap">
+    <div class="cert-carousel-track">
+      {Astro.props.certs.map((cert: any) => (
+        <div class="cert-carousel-card">
+          <div class="cert-carousel-img-wrap">
+            <img
+              src={cert.src}
+              alt={cert.title}
+              loading="lazy"
+              class="cert-carousel-img cert-lightbox-trigger"
+              data-full={cert.src}
+            />
+          </div>
+          <div class="cert-carousel-label">
+            <h4>{cert.title}</h4>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <button class="cert-carousel-btn cert-carousel-next" aria-label="Next">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
+</div>
+
+<script>
+  // 证书轮播逻辑
+  function initCertCarousels() {
+    document.querySelectorAll('.cert-carousel-wrap').forEach(wrap => {
+      const track = wrap.querySelector('.cert-carousel-track') as HTMLElement;
+      const cards = track.querySelectorAll('.cert-carousel-card');
+      const prevBtn = wrap.querySelector('.cert-carousel-prev') as HTMLElement;
+      const nextBtn = wrap.querySelector('.cert-carousel-next') as HTMLElement;
+
+      if (!track || cards.length === 0) return;
+
+      let currentIndex = 0;
+      let visibleCount = 3;
+      let autoTimer: ReturnType<typeof setInterval>;
+
+      function getVisibleCount() {
+        const w = window.innerWidth;
+        if (w < 640) return 1;
+        if (w < 1024) return 2;
+        return 3;
+      }
+
+      function getCardWidth() {
+        const firstCard = cards[0] as HTMLElement;
+        const wrapWidth = wrap.clientWidth;
+        const gap = 24; // matches CSS gap
+        const vc = getVisibleCount();
+        return (wrapWidth - gap * (vc - 1) - 80) / vc; // 80 for button widths
+      }
+
+      function updateSlide() {
+        const vc = getVisibleCount();
+        const cardW = getCardWidth();
+        const gap = 24;
+        const offset = currentIndex * (cardW + gap);
+        track.style.transform = `translateX(-${offset}px)`;
+        track.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+
+        // Toggle button visibility
+        const maxIndex = cards.length - vc;
+        if (prevBtn) prevBtn.style.opacity = currentIndex === 0 ? '0.3' : '1';
+        if (prevBtn) prevBtn.style.pointerEvents = currentIndex === 0 ? 'none' : 'auto';
+        if (nextBtn) nextBtn.style.opacity = currentIndex >= maxIndex ? '0.3' : '1';
+        if (nextBtn) nextBtn.style.pointerEvents = currentIndex >= maxIndex ? 'none' : 'auto';
+      }
+
+      function nextSlide() {
+        const vc = getVisibleCount();
+        const maxIndex = cards.length - vc;
+        if (currentIndex < maxIndex) {
+          currentIndex++;
+        } else {
+          currentIndex = 0; // loop back
+        }
+        updateSlide();
+      }
+
+      function prevSlide() {
+        const vc = getVisibleCount();
+        if (currentIndex > 0) {
+          currentIndex--;
+        } else {
+          currentIndex = cards.length - vc; // loop to end
+        }
+        updateSlide();
+      }
+
+      function startAuto() {
+        stopAuto();
+        autoTimer = setInterval(nextSlide, 4000);
+      }
+
+      function stopAuto() {
+        if (autoTimer) clearInterval(autoTimer);
+      }
+
+      nextBtn?.addEventListener('click', () => { nextSlide(); startAuto(); });
+      prevBtn?.addEventListener('click', () => { prevSlide(); startAuto(); });
+
+      wrap.addEventListener('mouseenter', stopAuto);
+      wrap.addEventListener('mouseleave', startAuto);
+
+      let touchStartX = 0;
+      track.addEventListener('touchstart', (e: any) => {
+        touchStartX = e.touches[0].clientX;
+        stopAuto();
+      }, { passive: true });
+
+      track.addEventListener('touchend', (e: any) => {
+        const diff = touchStartX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) {
+          if (diff > 0) nextSlide();
+          else prevSlide();
+        }
+        startAuto();
+      });
+
+      window.addEventListener('resize', () => {
+        visibleCount = getVisibleCount();
+        if (currentIndex > cards.length - visibleCount) {
+          currentIndex = Math.max(0, cards.length - visibleCount);
+        }
+        updateSlide();
+      });
+
+      updateSlide();
+      startAuto();
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initCertCarousels);
+  // Astro view transitions support
+  document.addEventListener('astro:page-load', initCertCarousels);
+</script>
