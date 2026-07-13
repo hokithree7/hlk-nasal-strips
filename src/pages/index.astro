@@ -308,37 +308,127 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- ===== CUSTOMIZATION STEPS ===== -->
-  <section class="section" style="background: linear-gradient(180deg, var(--white) 0%, var(--gray-50) 100%);">
+  <!-- ===== WHAT YOU CAN CUSTOMIZE ===== -->
+  <section class="section" style="background: var(--gray-50);">
     <div class="container">
       <h2 class="section-title">What You Can Customize</h2>
-      <p class="section-subtitle">Material, shape, color, logo, packaging — every aspect of your product is under your control.</p>
+      <p class="section-subtitle">Nearly every aspect of the product is under your control.</p>
 
-      <div class="customization-infographic cert-lightbox-trigger" data-full="/images/oem-customization-process.jpg" style="max-width: 1000px; margin: 2rem auto 1.5rem;">
-        <img src="/images/oem-customization-process.jpg" alt="HLK Product Customization Process — Material, Shape, Logo, Packaging" loading="lazy" />
+      <div class="grid-3" style="margin-top: 2rem;">
+        <div class="card">
+          <h3 style="margin-bottom: 0.75rem; font-size: 1.1rem;">Product Parameters</h3>
+          <ul style="list-style: none; padding: 0; font-size: 0.9rem; color: var(--gray-600);">
+            <li style="padding: 0.3rem 0;">&#10003; Strip dimensions (any size)</li>
+            <li style="padding: 0.3rem 0;">&#10003; Adhesive strength level</li>
+            <li style="padding: 0.3rem 0;">&#10003; Spring band tension</li>
+            <li style="padding: 0.3rem 0;">&#10003; Fabric material &amp; color</li>
+            <li style="padding: 0.3rem 0;">&#10003; Add menthol / essential oils</li>
+            <li style="padding: 0.3rem 0;">&#10003; Breathability level</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom: 0.75rem; font-size: 1.1rem;">Packaging &amp; Branding</h3>
+          <ul style="list-style: none; padding: 0; font-size: 0.9rem; color: var(--gray-600);">
+            <li style="padding: 0.3rem 0;">&#10003; Box artwork &amp; design</li>
+            <li style="padding: 0.3rem 0;">&#10003; Sachet / blister / tray</li>
+            <li style="padding: 0.3rem 0;">&#10003; Retail display boxes</li>
+            <li style="padding: 0.3rem 0;">&#10003; Instruction inserts</li>
+            <li style="padding: 0.3rem 0;">&#10003; UPC / EAN barcodes</li>
+            <li style="padding: 0.3rem 0;">&#10003; Eco-friendly options</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom: 0.75rem; font-size: 1.1rem;">Compliance Support</h3>
+          <ul style="list-style: none; padding: 0; font-size: 0.9rem; color: var(--gray-600);">
+            <li style="padding: 0.3rem 0;">&#10003; FDA 510(k) documentation</li>
+            <li style="padding: 0.3rem 0;">&#10003; CE technical file</li>
+            <li style="padding: 0.3rem 0;">&#10003; ISO 13485 certification</li>
+            <li style="padding: 0.3rem 0;">&#10003; SGS test reports</li>
+            <li style="padding: 0.3rem 0;">&#10003; MSDS &amp; COA documents</li>
+            <li style="padding: 0.3rem 0;">&#10003; Country-specific compliance</li>
+          </ul>
+        </div>
       </div>
-      <p style="text-align: center; font-size: 0.8rem; color: var(--gray-400); margin-bottom: 2rem;">Click image to zoom</p>
+    </div>
+  </section>
 
-      <div class="oem-additional-options" style="max-width: 900px; margin: 0 auto;">
+  <!-- ===== PRODUCT CUSTOMIZATION STEPS ===== -->
+  <section class="section" style="background: linear-gradient(180deg, var(--white) 0%, var(--gray-50) 100%);">
+    <div class="container">
+      <h2 class="section-title">Product Customization Steps</h2>
+      <p class="section-subtitle">From material selection to finished packaging — every detail is under your control.</p>
+
+      <div class="custom-steps-grid">
+        <!-- Step 1 -->
+        <div class="custom-step-card">
+          <div class="custom-step-image-wrap">
+            <div class="custom-step-num-badge">1</div>
+            <img src="/images/1.jpg" alt="Choose Material — Non-woven, Satin, PE options" loading="lazy" />
+          </div>
+          <div class="custom-step-body">
+            <h4>Choose Material</h4>
+            <p><strong>Non-woven fabric</strong> — soft, breathable, eco-friendly. <strong>Satin</strong> — smooth, silky, glossy finish. <strong>PE</strong> — waterproof, durable, invisible on skin. Pick the base that matches your brand positioning.</p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="custom-step-card">
+          <div class="custom-step-image-wrap">
+            <div class="custom-step-num-badge">2</div>
+            <img src="/images/2.jpg" alt="Choose Shape & Size — custom dimensions and shapes" loading="lazy" />
+          </div>
+          <div class="custom-step-body">
+            <h4>Choose Shape &amp; Size</h4>
+            <p>Standard sizes (S/M/L/XL) or fully custom dimensions. Special shapes for kids, athletes, or medical use. We cut dies to your exact specification with no extra tooling fee for orders over 5,000 units.</p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="custom-step-card">
+          <div class="custom-step-image-wrap">
+            <div class="custom-step-num-badge">3</div>
+            <img src="/images/3.jpg" alt="Customize Colors & Logo — Pantone matching and printing" loading="lazy" />
+          </div>
+          <div class="custom-step-body">
+            <h4>Customize Colors &amp; Logo</h4>
+            <p>15+ stock colors available. Positioning printing or full-color backing paper circular printing. Pantone matching for brand consistency. Add your logo on every strip and box.</p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="custom-step-card">
+          <div class="custom-step-image-wrap">
+            <div class="custom-step-num-badge">4</div>
+            <img src="/images/4.jpg" alt="Choose Packaging — PET bags, paper boxes, tin boxes" loading="lazy" />
+          </div>
+          <div class="custom-step-body">
+            <h4>Choose Packaging</h4>
+            <p>PET bags, paper boxes, tin boxes, or display cartons. We design artwork in-house or work with your designer. FSC-certified eco packaging available for sustainability-focused brands.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional options -->
+      <div class="oem-additional-options">
         <div class="oem-additional-option">
           <div class="addon-icon">🌿</div>
           <h5>Herbal Fragrance</h5>
-          <p>Lavender, chamomile, eucalyptus, mint</p>
+          <p>Lavender, chamomile, eucalyptus, mint, and more</p>
         </div>
         <div class="oem-additional-option">
           <div class="addon-icon">✨</div>
           <h5>Collagen</h5>
-          <p>Infused strips for skincare</p>
+          <p>Infused strips for skincare synergy</p>
         </div>
         <div class="oem-additional-option">
           <div class="addon-icon">💧</div>
           <h5>Hydrogel</h5>
-          <p>Cooling gel-based patches</p>
+          <p>Cooling, soothing gel-based patches</p>
         </div>
         <div class="oem-additional-option">
           <div class="addon-icon">⚙️</div>
           <h5>More Custom</h5>
-          <p>Tell us your idea</p>
+          <p>Tell us your idea — we make it real</p>
         </div>
       </div>
 
