@@ -46,28 +46,29 @@
       if (!track || cards.length === 0) return;
 
       let currentIndex = 0;
-      let visibleCount = 3;
+      let visibleCount = 5;
       let autoTimer: ReturnType<typeof setInterval>;
 
       function getVisibleCount() {
         const w = window.innerWidth;
-        if (w < 640) return 1;
-        if (w < 1024) return 2;
-        return 3;
+        if (w < 640) return 2;
+        if (w < 1024) return 3;
+        return 5;
       }
 
       function getCardWidth() {
-        const firstCard = cards[0] as HTMLElement;
         const wrapWidth = wrap.clientWidth;
-        const gap = 24; // matches CSS gap
         const vc = getVisibleCount();
-        return (wrapWidth - gap * (vc - 1) - 80) / vc; // 80 for button widths
+        // buttons: 40px each + 8px side margins = 96px; mobile 32px each + margins = 64px
+        const btnSpace = window.innerWidth < 640 ? 64 : 96;
+        const gap = 12;
+        return (wrapWidth - gap * (vc - 1) - btnSpace) / vc;
       }
 
       function updateSlide() {
         const vc = getVisibleCount();
         const cardW = getCardWidth();
-        const gap = 24;
+        const gap = 12;
         const offset = currentIndex * (cardW + gap);
         track.style.transform = `translateX(-${offset}px)`;
         track.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';

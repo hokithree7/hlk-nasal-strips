@@ -404,13 +404,13 @@ img {
 
 .cert-carousel-track {
   display: flex;
-  gap: 24px;
+  gap: 12px;
   will-change: transform;
 }
 
 .cert-carousel-card {
   flex-shrink: 0;
-  width: calc((100% - 48px) / 3); /* 3 cards on desktop: (100% - 2 gaps of 24px) / 3 */
+  width: calc((100% - 48px) / 5); /* 5 portrait cards: (100% - 4 gaps of 12px) / 5 */
   background: white;
   border-radius: var(--radius-lg);
   border: 1px solid var(--gray-200);
@@ -491,19 +491,19 @@ img {
 
 @media (max-width: 1023px) {
   .cert-carousel-card {
-    width: calc((100% - 24px) / 2); /* 2 cards on tablet */
+    width: calc((100% - 24px) / 3); /* 3 cards on tablet */
   }
   .cert-carousel-img-wrap {
-    height: 240px;
+    height: 260px;
   }
 }
 
 @media (max-width: 639px) {
   .cert-carousel-card {
-    width: 100%; /* 1 card on mobile */
+    width: calc((100% - 12px) / 2); /* 2 cards on mobile */
   }
   .cert-carousel-img-wrap {
-    height: 220px;
+    height: 240px;
   }
   .cert-carousel-btn {
     width: 32px;
