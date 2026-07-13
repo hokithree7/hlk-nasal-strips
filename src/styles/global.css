@@ -951,7 +951,7 @@ img {
 
 /* Page header */
 .page-header {
-  background: url('/images/HLK_Lifestyle_Female_Model.jpg') center/cover no-repeat, var(--blue-800);
+  background: var(--page-header-bg, url('/images/HLK_Lifestyle_Female_Model.jpg') center/cover no-repeat), var(--blue-800);
   color: white;
   padding: 5rem 0 3rem;
   text-align: center;
