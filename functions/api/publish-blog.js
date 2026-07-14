@@ -4,27 +4,29 @@
  * POST /api/publish-blog
  * Headers: x-api-key: YOUR_BLOG_API_KEY
  * Body: {
- *   title:     string  (required) — article title
- *   slug:      string  (optional) — URL slug, auto-generated from title if omitted
- *   excerpt:   string  (optional) — short description, auto-generated if omitted
- *   category:  string  (optional) — default "Industry Insights"
- *   markdown:  string  (required) — full article body in Markdown
- *   coverImage: string  (optional) — URL (http/https) to download, or local path (/images/...)
- *   readTime:  string  (optional) — e.g. "5 min read", auto-calculated if omitted
+ *   title:              string  (required) — article title
+ *   slug:               string  (optional) — URL slug, auto-generated from title if omitted
+ *   excerpt:            string  (optional) — short description, auto-generated if omitted
+ *   category:           string  (optional) — default "Industry Insights"
+ *   markdown:           string  (required) — full article body in Markdown
+ *   coverImage:         string  (optional) — URL (http/https) to download, or local path (/images/...)
+ *   readTime:           string  (optional) — e.g. "5 min read", auto-calculated if omitted
+ *   injectCoverToBody:  boolean (optional) — default true, inject ![cover](path) as first line of markdown
+ *   forceOverwriteCover: boolean (optional) — default true, force re-download & overwrite existing cover
  * }
  *
- * Response: { success: true, url: "/blog/your-slug" }
+ * Response: { success: true, url: "/blog/your-slug", slug, coverPath }
  *
  * Environment variables needed:
  *   BLOG_API_KEY    — shared secret for API authentication
  *   GITHUB_TOKEN    — GitHub personal access token with repo write access
- *   GITHUB_OWNER     — GitHub username (default: hokithree7)
- *   GITHUB_REPO      — GitHub repo name (default: hlk-nasal-strips)
  */
 
 const GITHUB_OWNER = 'hokithree7';
 const GITHUB_REPO = 'hlk-nasal-strips';
 const GITHUB_BRANCH = 'main';
+
+const COVER_EXTENSIONS = ['png', 'jpg', 'jpeg', 'webp'];
 
 function json(data, status = 200) {
   return new Response(JSON.stringify(data), {
@@ -63,6 +65,10 @@ function generateExcerpt(markdown) {
   return words + (plainText.split(/\s+/).length > 25 ? '...' : '');
 }
 
+/**
+ * Build markdown file with frontmatter.
+ * Solution B: optionally inject ![cover](coverPath) as first line of body.
+ */
 function buildMarkdownFile(data) {
   const frontmatter = {
     title: data.title,
@@ -80,9 +86,21 @@ function buildMarkdownFile(data) {
     .map(([key, value]) => `${key}: "${String(value).replace(/"/g, '\\"')}"`)
     .join('\n');
 
-  return `---\n${frontmatterYaml}\n---\n\n${data.markdown}\n`;
+  // Solution B: inject cover image markdown as first line of body
+  let body = data.markdown;
+  if (data.coverImage && data.injectCoverToBody !== false) {
+    const altText = (data.title || 'cover').replace(/"/g, '');
+    body = `![${altText}](${data.coverImage})\n\n${body}`;
+  }
+
+  return `---\n${frontmatterYaml}\n---\n\n${body}\n`;
 }
 
+/**
+ * Commit (create or update) a file to GitHub via Contents API.
+ * Uses SHA-based upsert — if file exists, its SHA is fetched and included
+ * in the PUT body to perform an overwrite.
+ */
 async function commitToGitHub(path, content, message, isBinary, env) {
   const token = env.GITHUB_TOKEN || '';
   if (!token) {
@@ -111,7 +129,6 @@ async function commitToGitHub(path, content, message, isBinary, env) {
   // Encode content to base64
   let base64Content;
   if (isBinary && content instanceof Uint8Array) {
-    // For binary data, convert to binary string in chunks to avoid stack overflow
     let binary = '';
     const chunkSize = 8192;
     for (let i = 0; i < content.length; i += chunkSize) {
@@ -149,6 +166,62 @@ async function commitToGitHub(path, content, message, isBinary, env) {
   }
 
   return await res.json();
+}
+
+/**
+ * Solution A: Delete a file from GitHub (for cleaning up old cover images
+ * with different extensions before uploading a new one).
+ */
+async function deleteFileFromGitHub(path, message, env) {
+  const token = env.GITHUB_TOKEN || '';
+  if (!token) return;
+
+  const url = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${path}`;
+
+  try {
+    const checkRes = await fetch(url, {
+      headers: {
+        'Authorization': `token ${token}`,
+        'User-Agent': 'hlk-blog-publisher',
+      },
+    });
+
+    if (checkRes.ok) {
+      const existing = await checkRes.json();
+      const sha = existing.sha;
+
+      await fetch(url, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `token ${token}`,
+          'Content-Type': 'application/json',
+          'User-Agent': 'hlk-blog-publisher',
+        },
+        body: JSON.stringify({
+          message,
+          sha,
+          branch: GITHUB_BRANCH,
+        }),
+      });
+    }
+  } catch (e) {
+    // File doesn't exist, that's fine
+  }
+}
+
+/**
+ * Solution A: Clean up any existing cover images for this slug across
+ * all common extensions. This ensures that when a new cover is uploaded
+ * with a different extension, the old file is properly removed.
+ */
+async function cleanupOldCoverImages(slug, env, skipExt = null) {
+  const tasks = [];
+  for (const ext of COVER_EXTENSIONS) {
+    if (ext === skipExt) continue;
+    const path = `public/images/blog/${slug}.${ext}`;
+    tasks.push(deleteFileFromGitHub(path, `Clean up old cover: ${slug}.${ext}`, env));
+  }
+  await Promise.all(tasks);
 }
 
 async function downloadImage(url) {
@@ -213,6 +286,12 @@ export async function onRequestPost(context) {
       return json({ success: false, error: 'Could not generate valid slug from title' }, 400);
     }
 
+    // Solution C: forceOverwriteCover (default true)
+    const forceOverwrite = data.forceOverwriteCover !== false;
+
+    // Solution B: injectCoverToBody (default true)
+    const injectCover = data.injectCoverToBody !== false;
+
     // Handle cover image
     let coverPath = null;
     if (data.coverImage) {
@@ -222,10 +301,14 @@ export async function onRequestPost(context) {
           const { buffer, ext } = await downloadImage(data.coverImage);
           const imagePath = `public/images/blog/${slug}.${ext}`;
 
+          // Solution A: clean up old cover files with different extensions
+          // before uploading the new one (ensures true upsert behavior)
+          await cleanupOldCoverImages(slug, env, ext);
+
           await commitToGitHub(
             imagePath,
             buffer,
-            `Blog cover image: ${slug}`,
+            `Blog cover image: ${slug} (forceOverwrite: ${forceOverwrite})`,
             true,  // isBinary
             env
           );
@@ -248,6 +331,7 @@ export async function onRequestPost(context) {
       markdown: data.markdown,
       readTime: data.readTime,
       coverImage: coverPath,
+      injectCoverToBody: injectCover,
     });
 
     // Commit to GitHub
@@ -269,6 +353,7 @@ export async function onRequestPost(context) {
       success: true,
       url: `/blog/${slug}`,
       slug,
+      coverPath,
       message: 'Blog post published. Cloudflare Pages will auto-deploy in ~1-2 minutes.',
     });
   } catch (e) {
