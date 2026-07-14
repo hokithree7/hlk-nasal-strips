@@ -1777,11 +1777,12 @@
         submitBtn.disabled = true;
         submitBtn.innerHTML = 'Sending...';
 
-        // Build WhatsApp message with form data
+        // Collect all fields
         var company = document.getElementById('inqCompany').value.trim();
         var phone = document.getElementById('inqPhone').value.trim();
         var quantity = document.getElementById('inqQuantity').value;
 
+        // Build WhatsApp message as fallback option
         var waMsg = 'Hi Vicky, I am interested in your nasal dilator OEM service.%0A%0A';
         waMsg += '*Name:* ' + encodeURIComponent(name) + '%0A';
         if (company) waMsg += '*Company:* ' + encodeURIComponent(company) + '%0A';
@@ -1790,17 +1791,54 @@
         waMsg += '*Product:* ' + encodeURIComponent(product) + '%0A';
         if (quantity) waMsg += '*Quantity:* ' + encodeURIComponent(quantity) + '%0A';
         waMsg += '*Message:* ' + encodeURIComponent(message);
+        var waLink = 'https://wa.me/8619805957675?text=' + waMsg;
 
-        // Show success and offer WhatsApp
-        showAlert('success',
-          '&#10003; Inquiry submitted! We will reply to <b>' + name.replace(/</g,'&lt;') + '</b> within 2 hours.' +
-          '<br><br><a href="https://wa.me/8619805957675?text=' + waMsg + '" target="_blank" rel="noopener" style="display:inline-block;background:#25D366;color:white;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:700;margin-top:8px;">' +
-          '&#128172; Send via WhatsApp (Faster)' +
-          '</a>'
-        );
-        form.reset();
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = 'Send My Factory Inquiry \u2192';
+        // POST to backend API (Cloudflare Pages Function -> email to salesmanager@hlktape.com)
+        fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            company: company,
+            phone: phone,
+            product: product,
+            quantity: quantity,
+            message: message
+          })
+        })
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+          if (data.success) {
+            showAlert('success',
+              '&#10003; Inquiry sent successfully! We will reply to <b>' + name.replace(/</g,'&lt;') + '</b> within 2 hours.' +
+              '<br><br><a href="' + waLink + '" target="_blank" rel="noopener" style="display:inline-block;background:#25D366;color:white;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:700;margin-top:8px;">' +
+              '&#128172; Also send via WhatsApp (Faster response)' +
+              '</a>'
+            );
+            form.reset();
+          } else {
+            showAlert('error',
+              'Submission issue: ' + (data.error || 'Please try again or use WhatsApp.') +
+              '<br><br><a href="' + waLink + '" target="_blank" rel="noopener" style="display:inline-block;background:#25D366;color:white;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:700;margin-top:8px;">' +
+              '&#128172; Send via WhatsApp' +
+              '</a>'
+            );
+          }
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = 'Send My Factory Inquiry \u2192';
+        })
+        .catch(function(err) {
+          // Network error — offer WhatsApp as fallback
+          showAlert('error',
+            'Network error. Please send your inquiry via WhatsApp directly.' +
+            '<br><br><a href="' + waLink + '" target="_blank" rel="noopener" style="display:inline-block;background:#25D366;color:white;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:700;margin-top:8px;">' +
+            '&#128172; Send via WhatsApp' +
+            '</a>'
+          );
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = 'Send My Factory Inquiry \u2192';
+        });
       });
 
       function showAlert(type, message) {
