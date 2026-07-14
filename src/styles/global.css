@@ -1045,6 +1045,49 @@ img {
   .oem-additional-options { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* ===== FACTORY CREDENTIALS BAR ===== */
+.factory-creds-bar {
+  padding: 1.25rem 0;
+  background: var(--blue-600);
+}
+.factory-creds-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+.factory-cred-item {
+  padding: 0 1.5rem;
+  text-align: center;
+}
+.factory-cred-number {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: white;
+  font-family: var(--font-heading);
+  line-height: 1.2;
+}
+.factory-cred-label {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.15rem;
+}
+.factory-cred-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255,255,255,0.2);
+}
+@media (max-width: 768px) {
+  .factory-creds-grid { gap: 0.5rem; }
+  .factory-cred-item { padding: 0.5rem 0.75rem; }
+  .factory-cred-number { font-size: 1.35rem; }
+  .factory-cred-label { font-size: 0.68rem; }
+  .factory-cred-divider { display: none; }
+}
+
 /* ===== CERTIFICATION ASSURANCE STRIP ===== */
 .cert-assurance-strip {
   padding: 1.5rem 0;
