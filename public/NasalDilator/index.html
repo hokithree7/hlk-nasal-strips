@@ -1163,16 +1163,125 @@
         </div>
     </div>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <a href="#" class="logo">HLK NASAL OEM</a>
-            <div class="nav-actions">
-                <a href="https://wa.me/8619805957675" class="nav-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp: +86 198 0595 7675</a>
-                <a href="#inquiry-form" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.9rem;">Get Price Sheet</a>
-            </div>
+    <!-- Navigation (matches main site header) -->
+    <header class="site-header" id="ndHeader">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;800&display=swap');
+            .site-header {
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+                background: rgba(255,255,255,0.92);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                border-bottom: 1px solid rgba(0,0,0,0.06);
+            }
+            .site-header .header-inner {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0.85rem 1.5rem;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            .site-header .logo {
+                display: flex;
+                align-items: center;
+                gap: 0.6rem;
+                text-decoration: none;
+                font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+                font-weight: 800;
+                font-size: 1.35rem;
+                color: #0D1B3E;
+                letter-spacing: -0.02em;
+            }
+            .site-header .logo-icon {
+                width: 38px; height: 38px; border-radius: 8px;
+                background: linear-gradient(135deg, #1E88E5, #00ACC1);
+                display: flex; align-items: center; justify-content: center;
+                color: white; font-size: 0.9rem; font-weight: 900; flex-shrink: 0;
+                font-family: 'Inter', sans-serif;
+            }
+            .site-header .nav-links {
+                display: flex; align-items: center; gap: 0.25rem;
+                list-style: none; margin: 0; padding: 0;
+            }
+            .site-header .nav-links a {
+                padding: 0.5rem 0.9rem; border-radius: 8px;
+                font-size: 0.88rem; font-weight: 500; color: #4B5563;
+                transition: all 0.2s ease; text-decoration: none;
+            }
+            .site-header .nav-links a:hover,
+            .site-header .nav-links a.active { color: #1E88E5; background: #E3F2FD; }
+            .site-header .nav-cta {
+                background: linear-gradient(135deg, #1E88E5, #00ACC1) !important;
+                color: white !important; font-weight: 600 !important;
+                padding: 0.55rem 1.25rem !important; margin-left: 0.5rem;
+            }
+            .site-header .nav-cta:hover {
+                box-shadow: 0 4px 14px rgba(30,136,229,0.35) !important; color: white !important;
+            }
+            .site-header .mobile-toggle {
+                display: none; background: none; border: none; cursor: pointer;
+                padding: 0.5rem; color: #374151;
+            }
+            .site-header .mobile-toggle svg { width: 26px; height: 26px; }
+            .site-header .mobile-menu {
+                display: none; position: absolute; top: 100%; left: 0; right: 0;
+                background: white; border-bottom: 1px solid #E5E7EB;
+                padding: 1rem 1.5rem; box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            }
+            .site-header .mobile-menu.open { display: block; }
+            .site-header .mobile-menu a {
+                display: block; padding: 0.75rem 0; font-size: 1rem; font-weight: 500;
+                color: #374151; text-decoration: none; border-bottom: 1px solid #F3F4F6;
+            }
+            .site-header .mobile-menu a:last-child { border-bottom: none; }
+            @media (max-width: 768px) {
+                .site-header .nav-links { display: none; }
+                .site-header .mobile-toggle { display: block; }
+            }
+            @media (min-width: 769px) { .site-header .mobile-menu { display: none !important; } }
+        </style>
+        <div class="header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">HLK</span>
+                Nasal Strips
+            </a>
+            <nav aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/products">Nasal Strips</a></li>
+                    <li><a href="/oem">OEM &amp; Custom</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/trust">Trust &amp; Safety</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/contact" class="nav-cta">Request Quote</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-toggle" id="ndMobileToggle" aria-label="Toggle menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
+            </button>
         </div>
-    </nav>
+        <div class="mobile-menu" id="ndMobileMenu">
+            <a href="/">Home</a>
+            <a href="/products">Nasal Strips</a>
+            <a href="/oem">OEM &amp; Custom</a>
+            <a href="/about">About</a>
+            <a href="/trust">Trust &amp; Safety</a>
+            <a href="/blog">Blog</a>
+            <a href="/contact">Contact</a>
+            <a href="/contact" style="color: #1E88E5; font-weight: 600;">Request Quote</a>
+        </div>
+        <script>
+            (function(){
+                var t = document.getElementById('ndMobileToggle');
+                var m = document.getElementById('ndMobileMenu');
+                if(t && m){ t.addEventListener('click', function(){ m.classList.toggle('open'); }); }
+            })();
+        </script>
+    </header>
 
     <!-- HERO -->
     <section class="hero">
@@ -1711,26 +1820,83 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-flex" style="justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-                <div>
-                    <p style="font-weight: 700; margin-bottom: 0.3rem;">Quanzhou Honglinkai New Material Co., Ltd.</p>
-                    <p style="font-size: 0.9rem; opacity: 0.7;">Quanzhou, Fujian, China 362000</p>
+    <!-- Footer (matches main site footer) -->
+    <footer class="site-footer">
+        <style>
+            .site-footer { background: #0D1B3E; color: rgba(255,255,255,0.7); padding: 4rem 0 0; }
+            .site-footer .footer-grid {
+                display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 3rem;
+                max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
+            }
+            .site-footer .footer-brand h3 { color: white; font-size: 1.4rem; margin-bottom: 0.75rem; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-weight: 800; }
+            .site-footer .footer-brand p { color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.7; }
+            .site-footer .footer-col h4 { color: white; font-size: 0.95rem; font-weight: 600; margin-bottom: 1.25rem; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+            .site-footer .footer-col ul { list-style: none; padding: 0; margin: 0; }
+            .site-footer .footer-col li { margin-bottom: 0.6rem; }
+            .site-footer .footer-col a { color: rgba(255,255,255,0.55); font-size: 0.88rem; transition: color 0.2s ease; }
+            .site-footer .footer-col a:hover { color: white; }
+            .site-footer .footer-contact-item { display: flex; align-items: flex-start; gap: 0.6rem; margin-bottom: 0.75rem; font-size: 0.88rem; }
+            .site-footer .footer-contact-item svg { width: 18px; height: 18px; margin-top: 2px; flex-shrink: 0; color: #42A5F5; }
+            .site-footer .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); margin-top: 3rem; padding: 1.5rem; text-align: center; font-size: 0.82rem; color: rgba(255,255,255,0.35); }
+            .site-footer .footer-whatsapp { display: inline-flex; align-items: center; gap: 0.4rem; background: #25D366; color: white; padding: 0.6rem 1.2rem; border-radius: 50px; font-weight: 600; font-size: 0.88rem; margin-top: 1rem; }
+            .site-footer .footer-whatsapp:hover { background: #20bd5a; color: white; }
+            @media (max-width: 768px) {
+                .site-footer .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+            }
+            @media (max-width: 480px) {
+                .site-footer .footer-grid { grid-template-columns: 1fr; }
+            }
+        </style>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>HLK Nasal Strips</h3>
+                <p>One-Stop Custom Tape &amp; Patch Supplier, Fully Certified &amp; Safety Guaranteed. 20+ years of adhesive technology expertise. Trusted by brands in 30+ countries worldwide.</p>
+                <a href="https://wa.me/8619805957675" target="_blank" rel="noopener" class="footer-whatsapp">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Chat on WhatsApp
+                </a>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/products">Nasal Strips</a></li>
+                    <li><a href="/oem">OEM &amp; Custom</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/trust">Trust &amp; Safety</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms &amp; Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>Quanzhou, Fujian<br/>China 362000</span>
                 </div>
-                <div style="text-align: right;">
-                    <p style="margin-bottom: 0.3rem;">
-                        <a href="mailto:salesmanager@hlktape.com" style="color: rgba(255,255,255,0.8);">salesmanager@hlktape.com</a>
-                    </p>
-                    <p style="font-size: 0.9rem; opacity: 0.7;">
-                        WhatsApp: +86 198 0595 7675（Vicky）
-                    </p>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    <span>salesmanager@hlktape.com</span>
+                </div>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                    <span>+86 198 0595 7675（Vicky）</span>
+                </div>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                    <a href="https://www.youtube.com/@HLKTape" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.55);">YouTube @HLKTape</a>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1);">
-                <p style="font-size: 0.85rem; opacity: 0.5;">&copy; 2026 Quanzhou Honglinkai New Material Co., Ltd. All rights reserved. | CE RZ7530335 | ISO 13485 | MSDS</p>
-            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Quanzhou Honglinkai New Material Co., Ltd. All rights reserved.</p>
         </div>
     </footer>
 
