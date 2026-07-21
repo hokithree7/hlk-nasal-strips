@@ -75,7 +75,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <div id="formAlert" style="display:none; padding: 0.85rem 1rem; border-radius: var(--radius-md); margin-bottom: 1rem; font-size: 0.9rem;"></div>
 
             <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;" id="submitBtn">
-              Submit Inquiry
+              Get Free Quote
             </button>
             <p style="font-size: 0.8rem; color: var(--gray-400); text-align: center; margin-top: 0.75rem;">We respect your privacy. Your information will never be shared.</p>
           </form>
@@ -247,7 +247,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     submitBtn.disabled = loading;
     submitBtn.innerHTML = loading
       ? '<span style="display:inline-block;width:18px;height:18px;border:2px solid rgba(255,255,255,0.3);border-top-color:white;border-radius:50%;animation:spin 0.6s linear infinite;margin-right:8px;"></span>Sending...'
-      : 'Submit Inquiry';
+      : 'Get Free Quote';
   }
 
   function showAlert(type, message) {

@@ -2297,6 +2297,16 @@ img {
   font-family: var(--font-heading);
 }
 
+.testimonial-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  flex-shrink: 0;
+}
+
 .testimonial-info {
   min-width: 0;
   flex: 1;
