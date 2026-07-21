@@ -7,7 +7,6 @@ readTime: "3 min read"
 cover: "/images/blog/why-nasal-strips-improve-athletic-performance-the-science-of-maximum-airflow.png"
 ---
 
-# Why Nasal Strips Improve Athletic Performance: The Science of Maximum Airflow
 
 ## The Performance Bottleneck: Nasal Valve Collapse
 For elite athletes and fitness enthusiasts, oxygen is the currency of performance. However, during high-intensity exercise, the increased inhalation force can cause the internal nasal valves to collapse inward, significantly restricting airflow. This forced oral breathing can lead to higher heart rates and faster onset of fatigue.

@@ -6,7 +6,6 @@ category: "Sports & Fitness"
 readTime: "1 min read"
 ---
 
-# Why Nasal Strips Improve Athletic Performance
 
 ## The Science of Nasal Breathing
 
