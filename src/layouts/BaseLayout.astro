@@ -9,12 +9,13 @@ import '../styles/global.css';
 export interface Props {
   title: string;
   description: string;
+  keywords?: string;
   image?: string;
   canonical?: string;
   articlePublishedTime?: string;
   articleModifiedTime?: string;
 }
-const { title, description, image, canonical, articlePublishedTime, articleModifiedTime } = Astro.props;
+const { title, description, keywords, image, canonical, articlePublishedTime, articleModifiedTime } = Astro.props;
 const siteUrl = 'https://en.hlknasalstrips.com';
 const currentUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
 const ogImage = image || '/images/og-default.jpg';
@@ -30,6 +31,7 @@ const isArticle = !!articlePublishedTime;
     <!-- Primary Meta -->
     <title>{title}</title>
     <meta name="description" content={description} />
+    {keywords && <meta name="keywords" content={keywords} />}
     <link rel="canonical" href={currentUrl} />
 
     <!-- Open Graph -->
