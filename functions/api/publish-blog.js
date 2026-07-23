@@ -11,6 +11,9 @@
  *   markdown:           string  (required) — full article body in Markdown
  *   coverImage:         string  (optional) — URL (http/https) to download, or local path (/images/...)
  *   readTime:           string  (optional) — e.g. "5 min read", auto-calculated if omitted
+ *   footer:             string  (optional) — brand/author signature block rendered between
+ *                                     article body and the lead-capture CTA. Supports simple
+ *                                     markdown (**bold**, links, emails). Stored as YAML block scalar.
  *   injectCoverToBody:  boolean (optional) — default true, inject ![cover](path) as first line of markdown
  *   forceOverwriteCover: boolean (optional) — default true, force re-download & overwrite existing cover
  * }
@@ -86,6 +89,14 @@ function buildMarkdownFile(data) {
     .map(([key, value]) => `${key}: "${String(value).replace(/"/g, '\\"')}"`)
     .join('\n');
 
+  // Footer is a multi-line brand/author signature block — store as a YAML
+  // literal block scalar so newlines survive (double-quoted scalars would fold them).
+  let footerYaml = '';
+  if (data.footer && data.footer.trim()) {
+    const indented = data.footer.trim().split('\n').map((l) => `  ${l}`).join('\n');
+    footerYaml = `\nfooter: |\n${indented}`;
+  }
+
   // Solution B: inject cover image markdown as first line of body
   let body = data.markdown;
   if (data.coverImage && data.injectCoverToBody !== false) {
@@ -93,7 +104,7 @@ function buildMarkdownFile(data) {
     body = `![${altText}](${data.coverImage})\n\n${body}`;
   }
 
-  return `---\n${frontmatterYaml}\n---\n\n${body}\n`;
+  return `---\n${frontmatterYaml}${footerYaml}\n---\n\n${body}\n`;
 }
 
 /**
@@ -332,6 +343,7 @@ export async function onRequestPost(context) {
       readTime: data.readTime,
       coverImage: coverPath,
       injectCoverToBody: injectCover,
+      footer: data.footer,
     });
 
     // Commit to GitHub

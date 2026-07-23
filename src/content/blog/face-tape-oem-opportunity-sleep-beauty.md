@@ -5,6 +5,13 @@ excerpt: "Face tape search interest is up 500% in 18 months. Discover why beauty
 category: "Industry News"
 readTime: "5 min read"
 cover: "/images/blog/face-tape-oem-opportunity-sleep-beauty.png"
+footer: |
+  **Slogan**: One-Stop Custom Tape and Patch Supplier, Fully Certified and Safety Guaranteed
+  **Website**: https://www.hlktape.com | https://hlknasalstrips.com | https://bodytapeoem.com
+  **Name**: Vicky
+  **Call/Whats**: +86 198 0595 7675
+  **Email**: salesmanager@hlktape.com
+  **YouTube**: https://www.youtube.com/@HLKTape
 ---
 
 Face tape is quietly becoming one of the fastest-growing subcategories in the sleep-and-beauty space. What started as a Korean and TikTok technique ??using long elastic kinesiology-style tape to lift, sculpt, and support facial muscles overnight ??is now a legitimate wellness product line. For OEM brand owners, it is one of the fastest paths to expand a mouth tape or nasal strip catalog. At HLK, we help distributors and beauty brands enter this space with medical-grade quality and full customization.
@@ -53,12 +60,3 @@ The real opportunity is bundling. Brands that already sell [mouth tape](/product
 3. Choose colors, adhesive grade, pouch design, and Custom Logo OEM
 4. Approve production sample
 5. Full run typically ships in 20-30 days DDP
-
----
-
-**Slogan**: One-Stop Custom Tape and Patch Supplier, Fully Certified and Safety Guaranteed
-**Website**: https://www.hlktape.com | https://hlknasalstrips.com | https://bodytapeoem.com
-**Name**: Vicky
-**Call/Whats**: +86 198 0595 7675
-**Email**: salesmanager@hlktape.com
-**YouTube**: https://www.youtube.com/@HLKTape

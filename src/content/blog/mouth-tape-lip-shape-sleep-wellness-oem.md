@@ -5,6 +5,13 @@ excerpt: "Mouth tape search interest is up over 400% since 2024. Discover why HL
 category: "Sleep Health"
 readTime: "6 min read"
 cover: "/images/blog/mouth-tape-lip-shape-sleep-wellness-oem.png"
+footer: |
+  **Slogan**: One-Stop Custom Tape and Patch Supplier, Fully Certified and Safety Guaranteed
+  **Website**: https://www.hlktape.com | https://hlknasalstrips.com | https://bodytapeoem.com
+  **Name**: Vicky
+  **Call/Whats**: +86 198 0595 7675
+  **Email**: salesmanager@hlktape.com
+  **YouTube**: https://www.youtube.com/@HLKTape
 ---
 
 Mouth breathing during sleep is the silent tax on modern recovery. It dries the throat, disrupts REM cycles, worsens snoring, and leaves people waking up already tired. In 2026, HLK's lip-shape mouth tape has emerged as the go-to non-drug solution for consumers who want to reclaim their sleep quality ??and for brand owners, one of the highest-growth OEM opportunities in the sleep wellness category.
@@ -74,12 +81,3 @@ Brand owners selling [nasal strips](/products#nasal-strips), [face tape](/produc
 ## Add Mouth Tape to Your Sleep Line
 
 If you are a sleep wellness brand, beauty retailer, or pharmacy chain, [contact Vicky](/contact) at HLK for free samples and a custom quote within 7 days. Full production runs typically ship in 20-30 days DDP to 50-plus countries.
-
----
-
-**Slogan**: One-Stop Custom Tape and Patch Supplier, Fully Certified and Safety Guaranteed
-**Website**: https://www.hlktape.com | https://hlknasalstrips.com | https://bodytapeoem.com
-**Name**: Vicky
-**Call/Whats**: +86 198 0595 7675
-**Email**: salesmanager@hlktape.com
-**YouTube**: https://www.youtube.com/@HLKTape

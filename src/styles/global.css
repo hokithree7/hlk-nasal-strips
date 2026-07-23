@@ -1696,6 +1696,35 @@ img {
   box-shadow: var(--shadow-lg);
 }
 
+/* ===== Blog footer / brand signature (from publish-blog API) ===== */
+.blog-footer-signature {
+  margin-top: 2.5rem;
+  padding: 1.5rem 1.75rem;
+  background: linear-gradient(135deg, rgba(30, 136, 229, 0.05), rgba(21, 101, 192, 0.08));
+  border: 1px solid var(--gray-200);
+  border-left: 4px solid var(--primary-color, #1E88E5);
+  border-radius: var(--radius-lg);
+}
+.blog-footer-signature p {
+  margin: 0 0 0.5rem;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--gray-700);
+}
+.blog-footer-signature p:last-child {
+  margin-bottom: 0;
+}
+.blog-footer-signature strong {
+  color: var(--primary-color, #1E88E5);
+  font-weight: 700;
+}
+.blog-footer-signature a {
+  color: var(--primary-color, #1E88E5);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  word-break: break-word;
+}
+
 .blog-lead-form-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;

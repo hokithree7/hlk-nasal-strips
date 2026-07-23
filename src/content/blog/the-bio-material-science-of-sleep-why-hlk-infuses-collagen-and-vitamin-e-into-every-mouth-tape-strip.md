@@ -5,6 +5,13 @@ excerpt: "The Bio-Material Science of Sleep: Why HLK Infuses Collagen and Vitami
 category: "Sleep Health"
 readTime: "3 min read"
 cover: "/images/blog/the-bio-material-science-of-sleep-why-hlk-infuses-collagen-and-vitamin-e-into-every-mouth-tape-strip.png"
+footer: |
+  **Slogan**: One-Stop Custom Tape & Patch Supplier, Fully Certified & Safety Guaranteed
+  **Website**: [hlktape.com](https://www.hlktape.com) | [hlknasalstrips.com](https://hlknasalstrips.com) | [bodytapeoem.com](https://bodytapeoem.com)
+  **Name**: Vicky
+  **Call/Whats**: +86 198 0595 7675
+  **Email**: salesmanager@hlktape.com
+  **YouTube**: [https://www.youtube.com/@HLKTape](https://www.youtube.com/@HLKTape)
 ---
 
 
@@ -35,11 +42,3 @@ As a one-stop custom tape and patch supplier with over 20 years of experience, H
 
 ## Conclusion: Engineering Your Best Night's Sleep
 The future of sleep care is where biological fundamentals meet advanced material engineering. With HLK's Collagen-infused mouth tape, you are not just closing your mouth; you are nurturing your skin and unlocking your body's full respiratory potential.
-
----
-**Slogan**: One-Stop Custom Tape & Patch Supplier, Fully Certified & Safety Guaranteed
-**Website**: [hlktape.com](https://www.hlktape.com) | [hlknasalstrips.com](https://hlknasalstrips.com) | [bodytapeoem.com](https://bodytapeoem.com)
-**Name**: Vicky
-**Call/Whats**: +86 198 0595 7675
-**Email**: salesmanager@hlktape.com
-**YouTube**: [https://www.youtube.com/@HLKTape](https://www.youtube.com/@HLKTape)

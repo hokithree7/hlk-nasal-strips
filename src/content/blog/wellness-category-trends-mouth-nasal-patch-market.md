@@ -5,6 +5,13 @@ excerpt: "Consumer demand is shifting to drug-free physical wellness solutions. 
 category: "Industry News"
 readTime: "6 min read"
 cover: "/images/blog/wellness-category-trends-mouth-nasal-patch-market.png"
+footer: |
+  **Slogan**: One-Stop Custom Tape and Patch Supplier, Fully Certified and Safety Guaranteed
+  **Website**: https://www.hlktape.com | https://hlknasalstrips.com | https://bodytapeoem.com
+  **Name**: Vicky
+  **Call/Whats**: +86 198 0595 7675
+  **Email**: salesmanager@hlktape.com
+  **YouTube**: https://www.youtube.com/@HLKTape
 ---
 
 As a leading OEM manufacturer of mouth tape, nasal strips, face tape, and sleep patches, HLK works with global brand owners to bring safer, more effective wellness products to market. Over the past 12 months we have watched consumer priorities shift dramatically. Here is what is driving demand in 2026 and how HLK helps you win.
@@ -46,12 +53,3 @@ Operating from our 5,000 sqm automated facility in Quanzhou, [HLK](/about) deliv
 ## How to Get Started
 
 Whether you are launching a new sleep wellness brand, expanding a beauty portfolio into face tape, or adding sports recovery to your catalog, HLK is your one-stop supplier. [Contact](/contact) our export team today for free samples and a custom quote.
-
----
-
-**Slogan**: One-Stop Custom Tape and Patch Supplier, Fully Certified and Safety Guaranteed
-**Website**: https://www.hlktape.com | https://hlknasalstrips.com | https://bodytapeoem.com
-**Name**: Vicky
-**Call/Whats**: +86 198 0595 7675
-**Email**: salesmanager@hlktape.com
-**YouTube**: https://www.youtube.com/@HLKTape

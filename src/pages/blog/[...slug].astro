@@ -34,6 +34,32 @@ while ((match = headingRegex.exec(rawBody)) !== null) {
     .replace(/(^-|-$)/g, '');
   tocHeadings.push({ level, text, id });
 }
+
+// Render the optional footer (brand/author signature) as safe HTML.
+// Source is a trusted, API-published string (markdown-ish: **bold**, links, emails, phones).
+// We escape first, then apply light formatting — never inject raw HTML.
+function renderFooter(raw: string): string {
+  const escapeHtml = (s: string) =>
+    s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+  return raw
+    .split('\n')
+    .map((l) => l.trim())
+    .filter((l) => l.length > 0)
+    .map((line) => {
+      let s = escapeHtml(line);
+      // **Label**: value  →  <strong>Label:</strong> value
+      s = s.replace(/\*\*(.+?)\*\*\s*:\s*(.*)/g, '<strong>$1:</strong> $2');
+      // Phone numbers (leading +), e.g. +86 198 0595 7675 — link first to avoid nesting
+      s = s.replace(/(?:\+\d[\d\s-]{6,}\d)/g, (m) => `<a href="tel:${m.replace(/\s/g, '')}">${m}</a>`);
+      // URLs (stop at |)
+      s = s.replace(/(https?:\/\/[^\s|]+)/g, '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>');
+      // Emails
+      s = s.replace(/([\w.+-]+@[\w-]+\.[\w.-]+)/g, '<a href="mailto:$1">$1</a>');
+      return `<p>${s}</p>`;
+    })
+    .join('');
+}
 ---
 
 <BaseLayout
@@ -84,6 +110,11 @@ while ((match = headingRegex.exec(rawBody)) !== null) {
         <div class="prose">
           <Content />
         </div>
+
+        {/* Brand / author signature footer (optional, supplied via publish-blog API) */}
+        {post.data.footer && (
+          <div class="blog-footer-signature" set:html={renderFooter(post.data.footer)} />
+        )}
 
         <!-- ===== LEAD CAPTURE FORM ===== -->
         <div class="blog-lead-form" id="blog-lead-form">

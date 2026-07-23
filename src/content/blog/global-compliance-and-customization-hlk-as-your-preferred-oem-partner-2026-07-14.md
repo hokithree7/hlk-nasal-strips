@@ -5,6 +5,13 @@ excerpt: "!HLK Full Range: Mouth Tape, Nasal Strips, Sports Tape Global Complian
 category: "OEM Tips"
 readTime: "3 min read"
 cover: "/images/blog/global-compliance-and-customization-hlk-as-your-preferred-oem-partner-2026-07-14.png"
+footer: |
+  **Slogan**: One-Stop Custom Tape and Patch Supplier, Fully Certified and Safety Guaranteed
+  **Website**: https://www.hlktape.com | https://hlknasalstrips.com | https://bodytapeoem.com
+  **Name**: Vicky
+  **Call/Whats**: +86 198 0595 7675
+  **Email**: salesmanager@hlktape.com
+  **YouTube**: https://www.youtube.com/@HLKTape
 ---
 
 ![HLK Full Range: Mouth Tape, Nasal Strips, Sports Tape](/images/blog-compliance-range.png)
@@ -46,12 +53,3 @@ We are not a trading company. We are a factory. Our 5,000 sqm automated facility
 - Full OEM/ODM with low MOQ
 - Factory-direct \.5/bag pricing
 - Global DDP logistics
-
----
-
-**Slogan**: One-Stop Custom Tape and Patch Supplier, Fully Certified and Safety Guaranteed
-**Website**: https://www.hlktape.com | https://hlknasalstrips.com | https://bodytapeoem.com
-**Name**: Vicky
-**Call/Whats**: +86 198 0595 7675
-**Email**: salesmanager@hlktape.com
-**YouTube**: https://www.youtube.com/@HLKTape

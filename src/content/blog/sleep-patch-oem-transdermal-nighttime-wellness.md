@@ -5,6 +5,13 @@ excerpt: "The transdermal sleep patch market is growing at over 7% annually. Dis
 category: "Sleep Health"
 readTime: "5 min read"
 cover: "/images/blog/sleep-patch-oem-transdermal-nighttime-wellness.png"
+footer: |
+  **Slogan**: One-Stop Custom Tape and Patch Supplier, Fully Certified and Safety Guaranteed
+  **Website**: https://www.hlktape.com | https://hlknasalstrips.com | https://bodytapeoem.com
+  **Name**: Vicky
+  **Call/Whats**: +86 198 0595 7675
+  **Email**: salesmanager@hlktape.com
+  **YouTube**: https://www.youtube.com/@HLKTape
 ---
 
 As a one-stop custom tape and patch supplier, HLK covers the full sleep-wellness spectrum. This week we have covered mouth tape, nasal strips, face tape, and sports tape. Today we complete the rotation with the product that ties the entire nighttime routine together: the HLK Sleep Patch.
@@ -66,12 +73,3 @@ HLK produces sleep patches alongside [mouth tape](/products#mouth-tape), [nasal 
 ## Complete Your Sleep-Wellness Line
 
 If you are a beauty retailer expanding into wellness, a pharmacy chain building a private-label sleep category, or a sleep coaching brand looking for a branded product line, [contact Vicky](/contact) at HLK for free samples and a custom quote. Full production runs typically ship in 20??0 days DDP.
-
----
-
-**Slogan**: One-Stop Custom Tape and Patch Supplier, Fully Certified and Safety Guaranteed
-**Website**: https://www.hlktape.com | https://hlknasalstrips.com | https://bodytapeoem.com
-**Name**: Vicky
-**Call/Whats**: +86 198 0595 7675
-**Email**: salesmanager@hlktape.com
-**YouTube**: https://www.youtube.com/@HLKTape

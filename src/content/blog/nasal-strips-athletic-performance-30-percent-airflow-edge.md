@@ -5,6 +5,13 @@ excerpt: "Elite athletes are turning to drug-free nasal strips to break the airf
 category: "Sports & Fitness"
 readTime: "5 min read"
 cover: "/images/blog/nasal-strips-athletic-performance-30-percent-airflow-edge.png"
+footer: |
+  **Slogan**: One-Stop Custom Tape and Patch Supplier, Fully Certified and Safety Guaranteed
+  **Website**: https://www.hlktape.com | https://hlknasalstrips.com | https://bodytapeoem.com
+  **Name**: Vicky
+  **Call/Whats**: +86 198 0595 7675
+  **Email**: salesmanager@hlktape.com
+  **YouTube**: https://www.youtube.com/@HLKTape
 ---
 
 The line between amateur and elite athletic performance often comes down to a single limiting factor: oxygen. In 2026, more coaches and endurance athletes are turning to a simple, drug-free tool to unlock that ceiling ??the HLK nasal strip. As a one-stop custom tape and patch supplier, HLK produces medical-grade nasal strips engineered specifically for the way athletes breathe.
@@ -57,12 +64,3 @@ The real B2B opportunity is bundling. Sports and wellness brands already selling
 ## Add Nasal Strips to Your Line
 
 If you are a sports brand, physiotherapy chain, or wellness distributor, [contact Vicky](/contact) at HLK to receive samples and a custom quote within 7 days. Full production runs typically ship in 20-30 days DDP to 50-plus countries.
-
----
-
-**Slogan**: One-Stop Custom Tape and Patch Supplier, Fully Certified and Safety Guaranteed
-**Website**: https://www.hlktape.com | https://hlknasalstrips.com | https://bodytapeoem.com
-**Name**: Vicky
-**Call/Whats**: +86 198 0595 7675
-**Email**: salesmanager@hlktape.com
-**YouTube**: https://www.youtube.com/@HLKTape

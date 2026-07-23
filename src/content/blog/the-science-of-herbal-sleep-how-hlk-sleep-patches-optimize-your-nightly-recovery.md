@@ -5,6 +5,13 @@ excerpt: "The Science of Herbal Sleep: How HLK Sleep Patches Optimize Your Night
 category: "Industry Insights"
 readTime: "2 min read"
 cover: "/images/blog/the-science-of-herbal-sleep-how-hlk-sleep-patches-optimize-your-nightly-recovery.png"
+footer: |
+  **Slogan**: One-Stop Custom Tape & Patch Supplier, Fully Certified & Safety Guaranteed
+  **Website**: https://www.hlktape.com | https://hlknasalstrips.com | https://bodytapeoem.com
+  **Name**: Vicky
+  **Call/Whats**: +86 198 0595 7675
+  **Email**: salesmanager@hlktape.com
+  **YouTube**: https://www.youtube.com/@HLKTape
 ---
 
 
@@ -30,11 +37,3 @@ With over 20 years of experience, Quanzhou Honglinkai New Material Co., Ltd. (HL
 - **ISO 13485 Certification**: We adhere to strict medical device quality standards.
 - **Advanced Adhesion**: Hypoallergenic adhesives that stay secure for 8-12 hours.
 - **Scalability**: Supporting startups and global brands with custom formulations and packaging.
-
----
-**Slogan**: One-Stop Custom Tape & Patch Supplier, Fully Certified & Safety Guaranteed
-**Website**: https://www.hlktape.com | https://hlknasalstrips.com | https://bodytapeoem.com
-**Name**: Vicky
-**Call/Whats**: +86 198 0595 7675
-**Email**: salesmanager@hlktape.com
-**YouTube**: https://www.youtube.com/@HLKTape
