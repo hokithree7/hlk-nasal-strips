@@ -11,7 +11,7 @@ Nine international buyers. Nine factory visits. Nine partnerships spanning 2022 
 
 | Year | Client | Company | Country | Key Value |
 |---|---|---|---|---|
-| 2022 | Michael Peterson | BreatheWell Inc. | USA | 18-month consistent quality |
+| 2022 | Michael Peterson | RestFit Wellness Inc. | USA | 18-month consistent quality |
 | 2023 | Jan Vermeer | EuroHealth Supply B.V. | Netherlands | CE MDR ISO 13485 verified |
 | 2023 | Olivier Dubois | Pharmacie Centrale | France | Complete MSDS/CoC documentation |
 | 2023 | Luciana Santos | VidaSaude Brasil Ltda. | Brazil | DDP to Sao Paulo |
