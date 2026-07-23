@@ -12,3 +12,5 @@ In 2022, Michael Peterson became one of the first international buyers to tour H
 > Visited the facility in person before placing our first order. The production lines are clean and organized, QC is thorough. We have been working with HLK for 18 months now - consistent quality every batch.
 
 **Michael Peterson - Procurement Manager - RestFit Wellness Inc., USA**
+
+**Slogan**: One-Stop Custom Tape and Patch Supplier, Fully Certified and Safety Guaranteed.  **Website**: https://www.hlktape.com | https://hlknasalstrips.com | https://bodytapeoem.com.  **Name**: Vicky.  **Call/Whats**: +86 198 0595 7675.  **Email**: salesmanager@hlktape.com.  **YouTube**: https://www.youtube.com/@HLKTape
