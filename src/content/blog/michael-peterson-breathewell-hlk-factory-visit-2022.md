@@ -1,7 +1,7 @@
 ---
-title: "2022: Our First US Procurement Manager Visit: Michael Peterson of BreatheWell Inc."
+title: "2022: Our First US Procurement Manager Visit: Michael Peterson of RestFit Wellness Inc."
 date: "2026-07-23"
-excerpt: "Michael Peterson, Procurement Manager at BreatheWell Inc. (USA), visited HLK factory before placing his first order. 18 months of consistent quality, clean production lines, thorough QC."
+excerpt: "Michael Peterson, Procurement Manager at RestFit Wellness Inc. (USA), visited HLK factory before placing his first order. 18 months of consistent quality."
 category: "Industry News"
 readTime: "4 min read"
 cover: "/images/blog/michael-peterson-breathewell-hlk-factory-visit-2022.jpg"
@@ -11,4 +11,4 @@ In 2022, Michael Peterson became one of the first international buyers to tour H
 
 > Visited the facility in person before placing our first order. The production lines are clean and organized, QC is thorough. We have been working with HLK for 18 months now - consistent quality every batch.
 
-**Michael Peterson - Procurement Manager - BreatheWell Inc., USA**
+**Michael Peterson - Procurement Manager - RestFit Wellness Inc., USA**
