@@ -40,7 +40,46 @@ const webSiteSchema = {
     'query-input': 'required name=search_term_string',
   },
 };
+
+const SITE = 'https://en.hlknasalstrips.com';
+const LABELS: Record<string, string> = {
+  'products': 'Products',
+  'oem': 'OEM / Private Label',
+  'about': 'About Us',
+  'trust': 'Trust & Safety',
+  'contact': 'Contact',
+  'faq': 'FAQ',
+  'blog': 'Blog',
+  'privacy': 'Privacy Policy',
+  'terms': 'Terms & Conditions',
+  'NasalDilator': 'Nasal Dilator',
+  'ClassicNasalStrips': 'Classic Nasal Strips',
+};
+
+// Auto-generate BreadcrumbList from the current URL path
+const segments = Astro.url.pathname.split('/').filter(Boolean);
+let breadcrumb: any = null;
+if (segments.length > 0) {
+  const trail = [{ name: 'Home', url: SITE + '/' }];
+  let acc = SITE;
+  for (const seg of segments) {
+    acc += '/' + seg;
+    const name = LABELS[seg] ?? seg.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+    trail.push({ name, url: acc + '/' });
+  }
+  breadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: trail.map((item: any, i: number) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+}
 ---
 
 <script type="application/ld+json" set:html={JSON.stringify(orgSchema)}></script>
 <script type="application/ld+json" set:html={JSON.stringify(webSiteSchema)}></script>
+{ breadcrumb && <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)}></script> }
