@@ -146,6 +146,44 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
       </div>
     </div>
+
+    <!-- ===== Feature of Our Nasal Strips ===== -->
+    <div class="feat-block">
+      <h3 class="feat-heading">Feature of Our Nasal Strips</h3>
+      <p class="feat-sub">Engineered for comfort, safety, and all-night reliability &mdash; the reasons brands choose HLK nasal strips.</p>
+      <div class="feat-grid">
+        <div class="feat-card">
+          <div class="feat-icon">🌬️</div>
+          <h4 class="feat-title">Breathable</h4>
+          <p class="feat-desc">Allows air to flow naturally, ensuring comfort during use without feeling suffocating.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">☁️</div>
+          <h4 class="feat-title">Comfortable</h4>
+          <p class="feat-desc">Made with soft, skin-friendly materials that feel gentle even with prolonged wear.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">🛡️</div>
+          <h4 class="feat-title">Non-Irritating</h4>
+          <p class="feat-desc">Gentle on sensitive skin, reducing redness or discomfort during use.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">🌿</div>
+          <h4 class="feat-title">Hypoallergenic</h4>
+          <p class="feat-desc">Formulated with medical-grade adhesives to minimize the risk of allergic reactions.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">🧫</div>
+          <h4 class="feat-title">Anti-microbial</h4>
+          <p class="feat-desc">Designed to resist bacteria growth, promoting better hygiene and safety.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">🩹</div>
+          <h4 class="feat-title">Easy Peel</h4>
+          <p class="feat-desc">Removes smoothly without pulling or leaving residue on the skin.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- ========================================== -->
@@ -215,6 +253,44 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div style="margin-top: 1.5rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
         <a href="/contact" class="btn btn-primary">Get Free Samples</a>
         <a href="https://wa.me/8619805957675" target="_blank" rel="noopener" class="btn btn-outline">Get Detailed Quote</a>
+      </div>
+    </div>
+
+    <!-- ===== Features of Our Mouth Tapes ===== -->
+    <div class="feat-block">
+      <h3 class="feat-heading">Features of Our Mouth Tapes</h3>
+      <p class="feat-sub">Soft, skin-friendly, and safe for sensitive skin &mdash; why customers love HLK mouth tape.</p>
+      <div class="feat-grid">
+        <div class="feat-card">
+          <div class="feat-icon">🌬️</div>
+          <h4 class="feat-title">Breathable</h4>
+          <p class="feat-desc">Allows air to flow naturally, ensuring comfort during use without feeling suffocating.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">☁️</div>
+          <h4 class="feat-title">Comfortable</h4>
+          <p class="feat-desc">Made with soft, skin-friendly materials that feel gentle even with prolonged wear.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">🛡️</div>
+          <h4 class="feat-title">Non-Irritating</h4>
+          <p class="feat-desc">Gentle on sensitive skin, reducing redness or discomfort during use.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">🌿</div>
+          <h4 class="feat-title">Hypoallergenic</h4>
+          <p class="feat-desc">Formulated with medical-grade adhesives to minimize the risk of allergic reactions.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">🧫</div>
+          <h4 class="feat-title">Anti-microbial</h4>
+          <p class="feat-desc">Designed to resist bacteria growth, promoting better hygiene and safety.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">🩹</div>
+          <h4 class="feat-title">Easy Peel</h4>
+          <p class="feat-desc">Removes smoothly without pulling or leaving residue on the skin.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -618,6 +694,63 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   border-color: var(--blue-400);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ===== Feature blocks (Mouth Tape / Nasal Strips) ===== */
+.feat-block {
+  margin-top: 3rem;
+}
+.feat-heading {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin-bottom: 0.4rem;
+}
+.feat-sub {
+  color: var(--gray-600);
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+.feat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+.feat-card {
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 14px;
+  padding: 1.5rem;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.feat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  border-color: var(--blue-200);
+}
+.feat-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  background: var(--blue-50);
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+.feat-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin-bottom: 0.5rem;
+}
+.feat-desc {
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  line-height: 1.6;
 }
 </style>
 
